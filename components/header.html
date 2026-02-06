@@ -19,19 +19,30 @@
             <a class="text-sm font-medium hover:text-primary transition-colors" href="https://client.mercuri.cx/auth/signin" target="_blank" rel="noopener noreferrer">Sign in</a>
             <a class="bg-primary text-white px-5 py-2 rounded-xl text-sm font-semibold hover:scale-[1.02] transition-transform shadow-sm" href="https://client.mercuri.cx/auth/signup" target="_blank" rel="noopener noreferrer">Get Started</a>
         </div>
-        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
             <span class="material-icons-outlined text-2xl" id="mobile-menu-icon">menu</span>
         </button>
     </div>
 </nav>
-<div class="md:hidden hidden border-b border-gray-100 dark:border-slate-800 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md" id="mobile-menu">
-    <div class="px-6 py-4 flex flex-col gap-4 text-sm font-medium text-gray-700 dark:text-gray-300">
-        <a class="hover:text-primary transition-colors" href="features.html">Features</a>
-        <a class="hover:text-primary transition-colors" href="ai.html">AI Agent</a>
-        <a class="hover:text-primary transition-colors" href="integrations.html">Integrations</a>
-        <a class="hover:text-primary transition-colors" href="pricing.html">Pricing</a>
-        <div class="h-px bg-gray-200 dark:bg-slate-700 my-2"></div>
-        <a class="hover:text-primary transition-colors" href="https://client.mercuri.cx/auth/signin" target="_blank" rel="noopener noreferrer">Sign in</a>
-        <a class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold text-center" href="https://client.mercuri.cx/auth/signup" target="_blank" rel="noopener noreferrer">Get Started</a>
+<div class="md:hidden fixed inset-0 z-50 hidden" id="mobile-drawer" aria-hidden="true">
+    <div class="absolute inset-0 bg-black/40" id="mobile-drawer-overlay"></div>
+    <div class="absolute top-0 right-0 h-full w-72 max-w-[85%] bg-background-light dark:bg-background-dark shadow-2xl border-l border-gray-200 dark:border-slate-800 p-6 flex flex-col gap-6">
+        <div class="flex items-center justify-between">
+            <span class="font-bold text-lg text-charcoal dark:text-white">Menu</span>
+            <button class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition" id="mobile-drawer-close" aria-label="Close menu">
+                <span class="material-icons-outlined text-xl">close</span>
+            </button>
+        </div>
+        <nav class="flex flex-col gap-4 text-sm font-medium text-gray-700 dark:text-gray-300">
+            <a class="hover:text-primary transition-colors" href="features.html">Features</a>
+            <a class="hover:text-primary transition-colors" href="ai.html">AI Agent</a>
+            <a class="hover:text-primary transition-colors" href="integrations.html">Integrations</a>
+            <a class="hover:text-primary transition-colors" href="pricing.html">Pricing</a>
+        </nav>
+        <div class="h-px bg-gray-200 dark:bg-slate-700"></div>
+        <div class="flex flex-col gap-3">
+            <a class="hover:text-primary transition-colors text-sm font-medium text-gray-700 dark:text-gray-300" href="https://client.mercuri.cx/auth/signin" target="_blank" rel="noopener noreferrer">Sign in</a>
+            <a class="bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold text-center" href="https://client.mercuri.cx/auth/signup" target="_blank" rel="noopener noreferrer">Get Started</a>
+        </div>
     </div>
 </div>

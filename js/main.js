@@ -116,32 +116,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const initMobileMenu = () => {
         const toggle = document.getElementById('mobile-menu-toggle');
-        const menu = document.getElementById('mobile-menu');
+        const drawer = document.getElementById('mobile-drawer');
+        const overlay = document.getElementById('mobile-drawer-overlay');
+        const closeBtn = document.getElementById('mobile-drawer-close');
         const icon = document.getElementById('mobile-menu-icon');
 
-        if (!toggle || !menu) return;
+        if (!toggle || !drawer) return;
 
         const closeMenu = () => {
-            menu.classList.add('hidden');
+            drawer.classList.add('hidden');
+            drawer.setAttribute('aria-hidden', 'true');
             toggle.setAttribute('aria-expanded', 'false');
             if (icon) icon.textContent = 'menu';
         };
 
         const openMenu = () => {
-            menu.classList.remove('hidden');
+            drawer.classList.remove('hidden');
+            drawer.setAttribute('aria-hidden', 'false');
             toggle.setAttribute('aria-expanded', 'true');
             if (icon) icon.textContent = 'close';
         };
 
         toggle.addEventListener('click', () => {
-            if (menu.classList.contains('hidden')) {
+            if (drawer.classList.contains('hidden')) {
                 openMenu();
             } else {
                 closeMenu();
             }
         });
 
-        menu.querySelectorAll('a').forEach((link) => {
+        if (overlay) overlay.addEventListener('click', closeMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+        drawer.querySelectorAll('a').forEach((link) => {
             link.addEventListener('click', closeMenu);
         });
 
