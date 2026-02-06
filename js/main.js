@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     ensureChatAnimationStyles();
     initChatTyping();
 
-    const loadComponent = (elementId, path) => {
+    const loadComponent = (elementId, path, onLoad) => {
         const element = document.getElementById(elementId);
         if (!element) return;
 
@@ -105,13 +105,54 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then((html) => {
                 element.innerHTML = html;
+                if (typeof onLoad === 'function') {
+                    onLoad();
+                }
             })
             .catch((error) => {
                 console.error(error);
             });
     };
 
-    loadComponent('header-placeholder', 'components/header.html');
+    const initMobileMenu = () => {
+        const toggle = document.getElementById('mobile-menu-toggle');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('mobile-menu-icon');
+
+        if (!toggle || !menu) return;
+
+        const closeMenu = () => {
+            menu.classList.add('hidden');
+            toggle.setAttribute('aria-expanded', 'false');
+            if (icon) icon.textContent = 'menu';
+        };
+
+        const openMenu = () => {
+            menu.classList.remove('hidden');
+            toggle.setAttribute('aria-expanded', 'true');
+            if (icon) icon.textContent = 'close';
+        };
+
+        toggle.addEventListener('click', () => {
+            if (menu.classList.contains('hidden')) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
+        });
+
+        menu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                closeMenu();
+            }
+        });
+    };
+
+    loadComponent('header-placeholder', 'components/header.html', initMobileMenu);
     loadComponent('footer-placeholder', 'components/footer.html');
     loadComponent('brands-placeholder', 'components/brands.html');
     loadComponent('reviews-placeholder', 'components/reviews.html');
