@@ -102,3 +102,16 @@ html {
 .pulse {
     animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
+/* Mobile: unify button sizing */
+@media (max-width: 640px) {
+    a[class*="px-"][class*="py-"],
+    button[class*="px-"][class*="py-"] {
+        width: 100% !important;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.875rem 1.5rem !important;
+        text-align: center;
+    }
+}
