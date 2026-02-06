@@ -92,6 +92,18 @@ document.addEventListener('DOMContentLoaded', function() {
     ensureChatAnimationStyles();
     initChatTyping();
 
+    const applyMobileFullWidthButtons = (root = document) => {
+        const candidates = root.querySelectorAll('a, button');
+        candidates.forEach((el) => {
+            const cls = typeof el.className === 'string' ? el.className : '';
+            if (!/\bpx-(4|5|6|8|10|12)\b/.test(cls)) return;
+            if (!/\bpy-\d/.test(cls)) return;
+            if (/\brounded-full\b/.test(cls)) return;
+
+            el.classList.add('w-full', 'sm:w-auto');
+        });
+    };
+
     const loadComponent = (elementId, path, onLoad) => {
         const element = document.getElementById(elementId);
         if (!element) return;
@@ -207,9 +219,19 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     setupGlobalMobileDrawer();
-    loadComponent('header-placeholder', 'components/header.html', initMobileMenu);
-    loadComponent('footer-placeholder', 'components/footer.html');
+    applyMobileFullWidthButtons();
+    loadComponent('header-placeholder', 'components/header.html', () => {
+        initMobileMenu();
+        applyMobileFullWidthButtons(document.getElementById('header-placeholder'));
+    });
+    loadComponent('footer-placeholder', 'components/footer.html', () => {
+        applyMobileFullWidthButtons(document.getElementById('footer-placeholder'));
+    });
     loadComponent('brands-placeholder', 'components/brands.html');
-    loadComponent('reviews-placeholder', 'components/reviews.html');
-    loadComponent('marketing-placeholder', 'components/marketing.html');
+    loadComponent('reviews-placeholder', 'components/reviews.html', () => {
+        applyMobileFullWidthButtons(document.getElementById('reviews-placeholder'));
+    });
+    loadComponent('marketing-placeholder', 'components/marketing.html', () => {
+        applyMobileFullWidthButtons(document.getElementById('marketing-placeholder'));
+    });
 });
