@@ -159,6 +159,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
+    const setupGlobalMobileDrawer = () => {
+        const toggleDrawer = (open) => {
+            const drawer = document.getElementById('mobile-drawer');
+            const toggle = document.getElementById('mobile-menu-toggle');
+            const icon = document.getElementById('mobile-menu-icon');
+            if (!drawer || !toggle) return;
+
+            if (open) {
+                drawer.classList.remove('hidden');
+                drawer.setAttribute('aria-hidden', 'false');
+                toggle.setAttribute('aria-expanded', 'true');
+                if (icon) icon.textContent = 'close';
+            } else {
+                drawer.classList.add('hidden');
+                drawer.setAttribute('aria-hidden', 'true');
+                toggle.setAttribute('aria-expanded', 'false');
+                if (icon) icon.textContent = 'menu';
+            }
+        };
+
+        document.addEventListener('click', (event) => {
+            const target = event.target;
+            const toggle = target.closest && target.closest('#mobile-menu-toggle');
+            const overlay = target.closest && target.closest('#mobile-drawer-overlay');
+            const closeBtn = target.closest && target.closest('#mobile-drawer-close');
+            const drawerLink = target.closest && target.closest('#mobile-drawer a');
+
+            if (toggle) {
+                const drawer = document.getElementById('mobile-drawer');
+                if (!drawer) return;
+                const isHidden = drawer.classList.contains('hidden');
+                toggleDrawer(isHidden);
+                return;
+            }
+
+            if (overlay || closeBtn || drawerLink) {
+                toggleDrawer(false);
+            }
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                toggleDrawer(false);
+            }
+        });
+    };
+
+    setupGlobalMobileDrawer();
     loadComponent('header-placeholder', 'components/header.html', initMobileMenu);
     loadComponent('footer-placeholder', 'components/footer.html');
     loadComponent('brands-placeholder', 'components/brands.html');
