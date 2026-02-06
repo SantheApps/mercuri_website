@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mercuri AI Agent | 24/7 SMS &amp; WhatsApp Automation</title>
+<link rel="icon" type="image/png" sizes="32x32" href="assets/images/Mercuri logo 32px.png">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#EB973D", // Vibrant orange accent
+                        "background-light": "#fdfdfb", // Off-white/Cream background
+                        "background-dark": "#0f172a", // Deep slate for dark mode
+                        "charcoal": "#1a1a1a",
+                    },
+                    fontFamily: {
+                        display: ["Instrument Serif", "serif"],
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        "xl": "1rem",
+                        "2xl": "1.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif-text {
+            font-family: 'Instrument Serif', serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(0,0,0,0.05) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+        .dark .hero-pattern {
+            background-image: radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-charcoal dark:text-slate-200 transition-colors duration-300">
+    <!-- Header Component -->
+    <div id="header-placeholder"></div>
+
+<header class="relative pt-16 pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-start">
+<div class="space-y-8 max-w-xl">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-charcoal dark:text-primary border border-primary/20 text-xs font-bold tracking-wider uppercase">
+<span class="material-icons-outlined text-sm">auto_awesome</span> Now: Automatic AI Training
+</div>
+<h1 class="serif-text text-6xl lg:text-7xl leading-[1.1] text-charcoal dark:text-white">
+                    Operate your business from <span class="text-primary">SMS &amp; WhatsApp</span>
+</h1>
+</div>
+<p class="text-xl text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+                    Mercuri keeps high-intent conversations alive so bookings and sales don't leak.
+                </p>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">AI-powered replies for common questions and follow-ups</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">Seamless transitions to human support</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-outlined text-primary text-lg">check_circle</span>
+<span class="text-slate-700 dark:text-slate-300">Works directly with Wix, Shopify, Pipedrive &amp; more</span>
+</li>
+</ul>
+<div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+<a href="https://client.mercuri.cx/auth/signup" target="_blank"
+    class="w-full sm:w-auto bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all text-center">
+    Get started for free
+</a>
+<a href="pricing.html"
+    class="w-full sm:w-auto bg-white dark:bg-slate-800 text-charcoal dark:text-white border border-gray-200 dark:border-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 dark:hover:bg-slate-700 transition-all text-center">
+    Pricing
+</a>
+</div>
+  <div class="flex items-center gap-4 pt-2">
+                    <!-- Logos -->
+                    <div class="flex -space-x-3">
+                        <!-- Pipedrive -->
+                        <img
+                        src="https://play-lh.googleusercontent.com/XAKratCqSJUb3ZmItve16p8RjiF0ZvN_czysEoqtGET7i-tsdJEozbnOYRM6jQNHEg=w240-h480-rw"
+                        alt="Pipedrive"
+                        title="Pipedrive"
+                        class="w-9 h-9 rounded-full bg-white p-1.5 border border-gray-200
+                                shadow-sm grayscale hover:grayscale-0
+                                hover:scale-105 transition-all duration-200"
+                        />
+
+                        <!-- Shopify -->
+                        <img
+                        src="https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-shopping-bag-full-color-66166b2e55d67988b56b4bd28b63c271e2b9713358cb723070a92bde17ad7d63.svg"
+                        alt="Shopify"
+                        title="Shopify"
+                        class="w-9 h-9 rounded-full bg-white p-1.5 border border-gray-200
+                                shadow-sm grayscale hover:grayscale-0
+                                hover:scale-105 transition-all duration-200"
+                        />
+                        <!-- Wix -->
+                        <img
+                        src="https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg"
+                        alt="Wix"
+                        title="Wix"
+                        class="w-9 h-9 rounded-full bg-white p-1.5 border border-gray-200
+                                shadow-sm grayscale hover:grayscale-0
+                                hover:scale-105 transition-all duration-200"
+                        />
+                        
+                    </div>
+
+                    <!-- Trust text -->
+                    <div class="text-sm">
+                        <div class="flex items-center gap-1 text-amber-400">
+                        <span class="material-icons-outlined text-xs">star</span>
+                        <span class="material-icons-outlined text-xs">star</span>
+                        <span class="material-icons-outlined text-xs">star</span>
+                        <span class="material-icons-outlined text-xs">star</span>
+                        <span class="material-icons-outlined text-xs">star</span>
+                        </div>
+                        <p class="text-gray-500 dark:text-gray-400 leading-tight">
+                        Trusted by <span class="font-medium text-gray-700 dark:text-gray-300">3,000+</span>
+                        businesses using WhatsApp & SMS daily
+                        </p>
+                    </div>
+                </div>
+</div>
+<div class="relative">
+  <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full -z-10"></div>
+  
+  <!-- Clean Chat Interface -->
+  <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-2xl overflow-hidden max-w-md">
+    
+    <!-- Header -->
+    <div class="px-6 pt-4 pb-5 border-b border-slate-100 dark:border-slate-800">
+      <div class="flex items-center justify-between text-slate-400 mb-3 text-[11px]">
+        <div class="flex items-center gap-1">
+          <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+          <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+          <span class="w-2 h-2 rounded-full bg-slate-300"></span>
+        </div>
+        <div class="ml-auto flex items-center gap-3 text-[11px]">
+          <span class="font-semibold text-slate-400">9:41</span>
+          <div class="flex items-center gap-2 text-xs">
+            <span class="material-icons-outlined text-sm">signal_cellular_alt</span>
+            <span class="material-icons-outlined text-sm">wifi</span>
+            <span class="material-icons-outlined text-sm">battery_full</span>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="w-9 h-9 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center">
+          <span class="material-icons-outlined text-base">person</span>
+        </div>
+        <h3 class="text-lg font-semibold text-slate-900 dark:text-white">
+          Zenith Fitness
+        </h3>
+      </div>
+    </div>
+
+    <!-- Conversation -->
+    <div class="p-6 space-y-4 bg-slate-50/50 dark:bg-slate-800/30 chat-typing">
+      <!-- Customer message -->
+      <div class="max-w-[85%] chat-bubble" style="--delay: 0s;" data-typing-bubble>
+        <div class="bg-white dark:bg-slate-900 rounded-lg p-3 text-sm shadow-sm mb-1">
+          <span data-typing="I'd like to reschedule my Yoga class on Tuesday."></span>
+        </div>
+        <p class="text-[11px] text-slate-500 ml-1">Customer • 2:16 PM</p>
+      </div>
+
+      <!-- AI response with options -->
+      <div class="max-w-[85%] ml-auto chat-bubble" style="--delay: 3s;" data-typing-bubble>
+        <div class="bg-primary/10 text-slate-900 dark:text-slate-100 rounded-lg p-3 text-sm shadow-sm mb-1">
+          <p class="text-[11px] font-bold text-primary mb-1">
+            Mercuri AI Agent
+          </p>
+          <span data-typing="No problem! You're currently booked for 10:00 AM. I have these slots available for Tuesday afternoon:"></span>
+          
+          <!-- Time slot options -->
+          <div class="mt-3 space-y-2">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2 flex items-center justify-between text-sm shadow-sm">
+              <span class="font-medium">2:30 PM</span>
+              <span class="material-icons-outlined text-sm text-slate-400">chevron_right</span>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg p-2 flex items-center justify-between text-sm shadow-sm">
+              <span class="font-medium">4:00 PM</span>
+              <span class="material-icons-outlined text-sm text-slate-400">chevron_right</span>
+            </div>
+          </div>
+        </div>
+        <p class="text-[11px] text-slate-500 text-right mr-1">
+          Sent instantly • 2:16 PM
+        </p>
+      </div>
+
+      <!-- Customer selection -->
+      <div class="max-w-[85%] chat-bubble" style="--delay: 6s;" data-typing-bubble>
+        <div class="bg-white dark:bg-slate-900 rounded-lg p-3 text-sm shadow-sm mb-1">
+          <span data-typing="Let's do 4:00 PM."></span>
+        </div>
+        <p class="text-[11px] text-slate-500 ml-1">Customer • 2:16 PM</p>
+      </div>
+
+      <!-- AI confirmation -->
+      <div class="max-w-[85%] ml-auto chat-bubble" style="--delay: 9s;" data-typing-bubble>
+        <div class="bg-primary/10 text-slate-900 dark:text-slate-100 rounded-lg p-3 text-sm shadow-sm mb-1">
+          <p class="text-[11px] font-bold text-primary mb-1">
+            Mercuri AI Agent
+          </p>
+          <span data-typing="Done! You're all set for 4:00 PM Tuesday. I've sent a calendar invite to your email."></span>
+        </div>
+        <p class="text-[11px] text-slate-500 text-right mr-1">
+          Sent instantly • 2:16 PM
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Success indicator -->
+    <div class="p-6 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-green-100 dark:bg-green-500/20 flex items-center justify-center">
+          <span class="material-icons-outlined text-green-600">check_circle</span>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-slate-900 dark:text-white">
+            Rescheduled successfully
+          </p>
+          <p class="text-xs text-slate-500">
+            AI handled entire process
+          </p>
+        </div>
+      </div>
+
+      <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">
+        AUTO
+      </span>
+    </div>
+  </div>
+</div>
+</div>
+</header>
+<div id="brands-placeholder"></div>
+<section class="py-24 bg-slate-50 dark:bg-charcoal/50">
+<div class="max-w-7xl mx-auto px-6">
+<div class="text-center mb-16">
+<p class="text-primary font-bold tracking-widest uppercase text-sm mb-4">How it works</p>
+<h2 class="text-4xl font-display font-bold text-slate-900 dark:text-white">Three steps to AI-powered messaging</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-12">
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all">
+<div class="w-14 h-14 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons-outlined text-2xl">cable</span>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">1. Connect</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Connect your WhatsApp Business API or Twilio SMS number in just one click. No technical skills required.</p>
+</div>
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all">
+<div class="w-14 h-14 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons-outlined text-2xl">model_training</span>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">2. Train</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Upload your business docs, FAQ sheets, or just paste your website URL. Mercuri learns everything about your business.</p>
+</div>
+<div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 shadow-sm hover:shadow-md transition-all">
+<div class="w-14 h-14 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center mb-6 text-slate-600 dark:text-slate-300 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-icons-outlined text-2xl">rocket_launch</span>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-slate-900 dark:text-white">3. Go Live</h3>
+<p class="text-slate-600 dark:text-slate-400 leading-relaxed">Deploy your AI Agent instantly. It starts handling conversations, booking appointments, and qualifying leads 24/7.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-24 border-b border-slate-100 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="mb-10 max-w-2xl">
+      <p class="text-primary font-bold tracking-widest uppercase text-sm mb-3">Training Dashboard</p>
+      <h2 class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-3">Where your AI learns to handle customers</h2>
+      <p class="text-lg text-slate-600 dark:text-slate-400">
+        Control how your AI talks, what it knows, and how it handles bookings, questions, and complex requests — from one simple interface.
+      </p>
+    </div>
+
+    <div
+      class="relative rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-charcoal shadow-2xl overflow-hidden">
+      <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full -z-10"></div>
+      <div class="flex items-center gap-2 px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div class="flex gap-1.5">
+          <div class="w-3 h-3 rounded-full bg-red-400"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+          <div class="w-3 h-3 rounded-full bg-green-400"></div>
+        </div>
+        <div class="ml-4 bg-slate-100 dark:bg-slate-800 px-4 py-1 rounded-full text-[10px] text-slate-400">
+          mercuri.ai/ai-assistants/create
+        </div>
+        <div class="ml-auto hidden sm:flex items-center gap-3 text-xs text-slate-400">
+          <span>Balance: $330.86</span>
+          <span class="bg-blue-600 text-white px-2 py-0.5 rounded-full font-semibold">Pro</span>
+          <span class="w-6 h-6 rounded-full bg-slate-200 dark:bg-slate-700 inline-flex items-center justify-center">🔔</span>
+        </div>
+      </div>
+
+      <div class="p-8 lg:p-10">
+        <div class="text-sm text-slate-400 mb-6">
+          AI Assistants <span class="mx-2">›</span>
+          <span class="text-slate-700 dark:text-slate-200 font-semibold">Create</span>
+        </div>
+
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Create New Agent</h3>
+        <p class="text-slate-500 dark:text-slate-400 mt-1">Follow the steps below to set up your AI agent</p>
+
+        <div class="flex items-center gap-2 mt-6 mb-8">
+          <span class="w-2.5 h-2.5 rounded-full bg-black"></span>
+          <span class="w-8 h-2.5 rounded-full bg-black"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+          <span class="w-2.5 h-2.5 rounded-full bg-slate-300"></span>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 p-6 space-y-6">
+          <div>
+            <h4 class="text-lg font-bold text-slate-900 dark:text-white">What's your agent's name?</h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">
+              Give your agent a descriptive name that reflects its purpose
+            </p>
+            <input
+              class="w-full border border-slate-300 dark:border-slate-700 rounded-lg px-4 py-3 bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary"
+              value="Support Agent" />
+          </div>
+
+          <div>
+            <h4 class="text-lg font-bold text-slate-900 dark:text-white">Use case</h4>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+              Choose the tools and capabilities your agent should have access to
+            </p>
+
+            <div class="space-y-3">
+              <label
+                class="flex items-start gap-3 p-4 border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-900">
+                <input type="checkbox"
+                  class="mt-1 w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary" />
+                <div>
+                  <p class="font-semibold text-slate-900 dark:text-white">Bookings Support</p>
+                  <p class="text-sm text-slate-500">Help customers manage their bookings and appointments</p>
+                </div>
+              </label>
+
+              <label
+                class="flex items-start gap-3 p-4 border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-900">
+                <input type="checkbox"
+                  class="mt-1 w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary" />
+                <div>
+                  <p class="font-semibold text-slate-900 dark:text-white">Order Tracking</p>
+                  <p class="text-sm text-slate-500">Assist customers in tracking their order status and delivery</p>
+                </div>
+              </label>
+
+              <label
+                class="flex items-start gap-3 p-4 border border-slate-200 dark:border-slate-700 rounded-xl bg-white dark:bg-slate-900">
+                <input type="checkbox"
+                  class="mt-1 w-4 h-4 rounded border-slate-300 text-primary focus:ring-primary" />
+                <div>
+                  <p class="font-semibold text-slate-900 dark:text-white">Product Enquiry</p>
+                  <p class="text-sm text-slate-500">Answer questions about products, features, and availability</p>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 bg-white dark:bg-charcoal overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+<div class="order-2 lg:order-1 relative">
+<div class="space-y-6">
+<div class="bg-slate-50 dark:bg-slate-800 rounded-3xl p-6 shadow-xl border border-slate-200 dark:border-slate-700">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-bold flex items-center gap-2">
+<span class="material-icons-outlined text-slate-400">inbox</span>
+                                Team Inbox
+                            </h3>
+<div class="flex gap-2">
+<span class="px-2 py-1 rounded bg-blue-100 text-blue-600 text-[10px] font-bold">14 Unassigned</span>
+<span class="px-2 py-1 rounded bg-green-100 text-green-600 text-[10px] font-bold">82 Handled by AI</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-white dark:bg-charcoal rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold">Alex Johnson (WhatsApp)</span>
+<span class="text-[10px] text-slate-400">2:45 PM</span>
+</div>
+<p class="text-xs text-slate-500 mb-3 italic">"I have a specific question about your corporate plan discounts..."</p>
+<div class="flex items-center gap-2">
+<div class="px-3 py-1 bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 rounded-full text-[10px] font-bold border border-amber-100 dark:border-amber-800">
+                                        Handed to Human
+                                    </div>
+<button class="ml-auto bg-charcoal text-white dark:bg-primary dark:text-charcoal px-4 py-1.5 rounded-lg text-[10px] font-bold">Claim Thread</button>
+</div>
+</div>
+<div class="p-4 bg-white/50 dark:bg-charcoal/50 rounded-2xl border border-slate-100 dark:border-slate-700 opacity-60">
+<div class="flex items-center justify-between mb-2">
+<span class="text-xs font-bold">Sarah Miller (SMS)</span>
+<span class="text-[10px] text-slate-400">2:30 PM</span>
+</div>
+<p class="text-xs text-slate-500">Handled by AI Agent: Appointment Confirmed.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="absolute -bottom-10 -right-10 bg-primary text-charcoal p-6 rounded-3xl shadow-2xl max-w-[240px] hidden md:block rotate-3">
+<p class="font-bold text-sm mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-base">tips_and_updates</span>
+Pro-tip
+</p>
+<p class="text-xs leading-relaxed">When conversations get complex, the AI flags them and smoothly hands control to your team in the shared inbox.</p>
+</div>
+</div>
+<div class="order-1 lg:order-2 space-y-8">
+<p class="text-primary font-bold tracking-widest uppercase text-sm">Human-Smart, Machine-Fast</p>
+<h2 class="text-4xl lg:text-5xl font-display font-bold text-slate-900 dark:text-white leading-tight">AI when you want it, human when you need it.</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                    Mercuri isn't a black box. It seamlessly transitions conversations to your support team when things get complicated, ensuring your customers always get the best experience.
+                </p>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-icons-outlined text-primary mt-1">check_circle</span>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Smart Handoff</p>
+<p class="text-sm text-slate-500">Auto-detects sentiment and complexity to alert human agents.</p>
+</div>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-icons-outlined text-primary mt-1">check_circle</span>
+<div>
+<p class="font-bold text-slate-900 dark:text-white">Collaborative Inbox</p>
+<p class="text-sm text-slate-500">Shared space for your team to oversee all AI conversations.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<div id="reviews-placeholder"></div>
+<section class="py-24">
+<div class="max-w-7xl mx-auto px-6">
+<div class="bg-charcoal rounded-[3rem] p-12 lg:p-20 relative overflow-hidden text-center text-white shadow-2xl">
+<div class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/20 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
+<div class="relative z-10 max-w-3xl mx-auto space-y-10">
+<h2 class="text-4xl lg:text-6xl font-display font-bold">Ready to automate your customer experience?</h2>
+<p class="text-xl text-slate-400 max-w-xl mx-auto">
+                        Join 3,000+ businesses using Mercuri to protect bookings without adding staff.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<a href="https://client.mercuri.cx/auth/signup" target="_blank"
+    class="w-full sm:w-auto bg-white text-slate-900 px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors text-center">Get
+    started for free</a>
+<a href="https://calendly.com/karthikmanjunath/30min" target="_blank"
+    class="w-full sm:w-auto bg-white/10 text-white backdrop-blur-sm border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-colors text-center">Book
+    a demo</a>
+</div>
+<div class="flex flex-wrap justify-center gap-8 pt-6 opacity-60">
+<div class="flex items-center gap-2 text-sm"><span class="material-icons-outlined text-primary">verified</span> Free 30-day trial</div>
+<div class="flex items-center gap-2 text-sm"><span class="material-icons-outlined text-primary">verified</span> No credit card required</div>
+<div class="flex items-center gap-2 text-sm"><span class="material-icons-outlined text-primary">verified</span> Setup in 5 minutes</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Load Components Script -->
+    <script src="js/main.js"></script>
+</body></html>
