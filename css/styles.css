@@ -113,5 +113,8 @@ html {
         justify-content: center;
         padding: 0.875rem 1.5rem !important;
         text-align: center;
+        font-size: 0.95rem !important;
+        line-height: 1.25rem !important;
+        min-height: 48px;
     }
 }
