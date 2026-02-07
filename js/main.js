@@ -23,6 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    const setupMetaPixelConversions = () => {
+        document.addEventListener('click', (event) => {
+            const link = event.target.closest && event.target.closest('a');
+            if (!link) return;
+
+            const href = link.getAttribute('href') || '';
+            if (href.includes('https://client.mercuri.cx/auth/signup')) {
+                if (window.fbq) {
+                    fbq('track', 'Lead', { source: 'signup_link' });
+                }
+            }
+        });
+    };
+
     const ensureChatAnimationStyles = () => {
         if (document.getElementById('chat-demo-styles')) return;
         const style = document.createElement('style');
@@ -113,6 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     ensureFavicon();
     initMetaPixel();
+    setupMetaPixelConversions();
     ensureChatAnimationStyles();
     initChatTyping();
 
