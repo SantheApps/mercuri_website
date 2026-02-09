@@ -42,90 +42,141 @@
         .serif-text {
             font-family: 'Instrument Serif', serif;
         }
+        table th,
+        table td {
+            vertical-align: middle;
+        }
+        .pricing-table td .material-symbols-outlined {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 1.25rem;
+            height: 1.25rem;
+            line-height: 1;
+        }
+        .pricing-table .feature-col {
+            width: 36%;
+        }
+        .pricing-table .plan-col {
+            width: 16%;
+        }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-charcoal dark:text-slate-200 transition-colors duration-300">
     <div id="header-placeholder"></div>
 
-    <header class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-32 overflow-hidden">
+    <header class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-28 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-5xl mx-auto text-center">
-            <p class="uppercase tracking-widest text-sm font-bold text-primary mb-6">Pricing</p>
-            <h1 class="serif-text text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-charcoal dark:text-white mb-8">
-                Plans that protect every conversation
-            </h1>
-            <p class="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-10 max-w-3xl mx-auto">
-                Mercuri keeps high-intent conversations alive so bookings and sales don't leak.
-            </p>
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://client.mercuri.cx/auth/signup" target="_blank" class="w-full sm:w-auto bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all text-center">
-                    Get started for free
-                </a>
-                <a href="pricing.html" class="w-full sm:w-auto bg-white dark:bg-slate-800 text-charcoal dark:text-white border border-gray-200 dark:border-slate-700 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-50 dark:hover:bg-slate-700 transition-all text-center">
-                    Talk to sales
-                </a>
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="uppercase tracking-widest text-sm font-bold text-primary mb-6">Pricing</p>
+                <h1 class="serif-text text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-charcoal dark:text-white mb-6">
+                    Simple, Transparent Pricing
+                </h1>
+                <p class="text-base sm:text-lg lg:text-xl text-gray-600 dark:text-gray-400 mb-10">
+                    The operating system for customer conversations — Messaging, Marketing, Automation &amp; AI in one place.
+                </p>
+                
             </div>
-        </div>
         </div>
     </header>
 
     <section class="max-w-7xl mx-auto px-6 pb-24">
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 flex flex-col gap-6 shadow-sm hover:shadow-md transition-all">
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 shadow-sm flex flex-col gap-6">
                 <div>
                     <p class="text-xs uppercase tracking-widest text-primary font-bold mb-2">Free</p>
                     <div class="flex items-baseline gap-2">
-                        <span class="text-4xl sm:text-5xl font-bold">$0</span>
-                        <span class="text-sm text-gray-500">/month</span>
+                        <span class="text-4xl font-semibold">$0</span>
+                        <span class="text-sm text-gray-500">/ month</span>
                     </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For solo founders and small stores.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For solo founders getting started</p>
                 </div>
-                <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Abandoned recovery</li>
-                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Standard AI agent</li>
-                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Shopify integration</li>
+                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <li>1 user</li>
+                    <li>Unlimited contacts</li>
+                    <li>3 automations</li>
+                    <li>1 WhatsApp + 1 SMS number</li>
+                    <li>30-day logs</li>
                 </ul>
-                <button class="mt-auto w-full py-3 rounded-lg border border-gray-200 dark:border-slate-700 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-                    Start for free
-                </button>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800/60 px-3 py-2 text-xs text-gray-600 dark:text-gray-300">
+                    WhatsApp $0.025/message · SMS varies by country · $3/month per SMS number
+                </div>
+                <a href="https://client.mercuri.cx/auth/signup" target="_blank" class="mt-auto w-full py-3 rounded-lg border border-gray-200 dark:border-slate-700 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition text-center">
+                    Start Free
+                </a>
             </div>
 
-            <div class="group bg-white dark:bg-slate-900 border-2 border-primary rounded-2xl p-8 flex flex-col gap-6 shadow-sm hover:shadow-md transition-all">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 shadow-sm flex flex-col gap-6">
                 <div>
                     <p class="text-xs uppercase tracking-widest text-primary font-bold mb-2">Growth</p>
                     <div class="flex items-baseline gap-2">
-                        <span class="text-4xl sm:text-5xl font-bold">$29</span>
-                        <span class="text-sm text-gray-500">/month</span>
+                        <span class="text-4xl font-semibold">$29</span>
+                        <span class="text-sm text-gray-500">/ month</span>
                     </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For teams protecting more bookings.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For growing businesses</p>
                 </div>
-                <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Unlimited workflows</li>
-                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Advanced AI agent</li>
-                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Wix &amp; HubSpot integrations</li>
+                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <li>3 users included</li>
+                    <li>Unlimited contacts</li>
+                    <li>20 automations</li>
+                    <li>1 AI agent</li>
+                    <li>Unlimited campaigns</li>
+                    <li>Webhooks + API access</li>
+                    <li>90-day logs</li>
                 </ul>
-                <button class="mt-auto w-full py-3 rounded-lg bg-charcoal text-white text-sm font-semibold hover:opacity-90 transition">
-                    Select Growth
-                </button>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800/60 px-3 py-2 text-xs text-gray-600 dark:text-gray-300">
+                    WhatsApp $0.025/message · SMS varies by country · $3/month per SMS number
+                </div>
+                <a href="https://client.mercuri.cx/auth/signup" target="_blank" class="mt-auto w-full py-3 rounded-lg bg-charcoal text-white text-sm font-semibold hover:opacity-90 transition text-center">
+                    Upgrade to Growth
+                </a>
             </div>
 
-            <div class="group bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 flex flex-col gap-6 shadow-sm hover:shadow-md transition-all">
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 shadow-lg ring-2 ring-primary flex flex-col gap-6 relative">
+                <span class="absolute -top-3 left-6 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</span>
+                <div>
+                    <p class="text-xs uppercase tracking-widest text-primary font-bold mb-2">Pro</p>
+                    <div class="flex items-baseline gap-2">
+                        <span class="text-4xl font-semibold">$99</span>
+                        <span class="text-sm text-gray-500">/ month</span>
+                    </div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For high-volume teams</p>
+                </div>
+                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <li>Unlimited users</li>
+                    <li>Unlimited contacts</li>
+                    <li>Unlimited automations</li>
+                    <li>Unlimited AI agents</li>
+                    <li>Advanced segmentation</li>
+                    <li>180-day logs</li>
+                </ul>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800/60 px-3 py-2 text-xs text-gray-600 dark:text-gray-300">
+                    WhatsApp $0.025/message · SMS varies by country · $3/month per SMS number
+                </div>
+                <a href="https://client.mercuri.cx/auth/signup" target="_blank" class="mt-auto w-full py-3 rounded-lg border border-gray-200 dark:border-slate-700 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition text-center">
+                    Go Pro
+                </a>
+            </div>
+
+            <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 shadow-sm flex flex-col gap-6">
                 <div>
                     <p class="text-xs uppercase tracking-widest text-primary font-bold mb-2">Enterprise</p>
-                    <div class="flex items-baseline gap-2">
-                        <span class="text-4xl sm:text-5xl font-bold">$99</span>
-                        <span class="text-sm text-gray-500">/month</span>
-                    </div>
-                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">Full control for large organizations.</p>
+                    <div class="text-3xl font-semibold">Custom Pricing</div>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For enterprise deployments &amp; SLAs</p>
                 </div>
-                <ul class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Dedicated account manager</li>
-                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> Founder support access</li>
-                    <li class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">check_circle</span> SLA &amp; custom contracts</li>
+                <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                    <li>Unlimited contacts</li>
+                    <li>Custom AI training</li>
+                    <li>Dedicated infrastructure</li>
+                    <li>SLA + Account Manager</li>
+                    <li>Multi-location management</li>
                 </ul>
-                <button class="mt-auto w-full py-3 rounded-lg border border-gray-200 dark:border-slate-700 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition">
-                    Contact sales
-                </button>
+                <div class="rounded-lg bg-slate-50 dark:bg-slate-800/60 px-3 py-2 text-xs text-gray-600 dark:text-gray-300">
+                    WhatsApp $0.025/message · SMS varies by country · $3/month per SMS number
+                </div>
+                <a href="#final-cta" class="mt-auto w-full py-3 rounded-lg border border-gray-200 dark:border-slate-700 text-sm font-semibold hover:bg-gray-50 dark:hover:bg-slate-800 transition text-center">
+                    Contact Sales
+                </a>
             </div>
         </div>
     </section>
@@ -133,127 +184,514 @@
     <section class="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-24">
         <div class="text-center mb-12">
             <p class="uppercase tracking-widest text-sm font-bold text-primary mb-4">Compare</p>
-            <h2 class="serif-text text-3xl sm:text-4xl md:text-5xl text-charcoal dark:text-white">Compare features</h2>
+            <h2 class="serif-text text-3xl sm:text-4xl md:text-5xl text-charcoal dark:text-white">Compare All Features</h2>
         </div>
-        <div class="overflow-x-auto bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl">
-            <table class="w-full text-left min-w-[800px]">
-                <thead>
-                    <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
-                        <th class="py-4 px-6">Features</th>
-                        <th class="py-4 px-6 text-center">Free</th>
-                        <th class="py-4 px-6 text-center">Growth</th>
-                        <th class="py-4 px-6 text-center">Enterprise</th>
-                    </tr>
-                </thead>
-                <tbody class="text-sm">
-                    <tr class="bg-slate-50 dark:bg-slate-800/50">
-                        <td class="py-3 px-6 font-semibold text-primary" colspan="4">Core Features</td>
-                    </tr>
-                    <tr class="border-b border-gray-200 dark:border-slate-800">
-                        <td class="py-4 px-6 font-medium">Abandoned recovery</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                    </tr>
-                    <tr class="border-b border-gray-200 dark:border-slate-800">
-                        <td class="py-4 px-6 font-medium">AI agent</td>
-                        <td class="py-4 px-6 text-center">Standard</td>
-                        <td class="py-4 px-6 text-center">Advanced</td>
-                        <td class="py-4 px-6 text-center">Custom trained</td>
-                    </tr>
-                    <tr class="border-b border-gray-200 dark:border-slate-800">
-                        <td class="py-4 px-6 font-medium">SMS follow-ups</td>
-                        <td class="py-4 px-6 text-center">100/mo</td>
-                        <td class="py-4 px-6 text-center">Unlimited</td>
-                        <td class="py-4 px-6 text-center">Unlimited</td>
-                    </tr>
-                    <tr class="bg-slate-50 dark:bg-slate-800/50">
-                        <td class="py-3 px-6 font-semibold text-primary" colspan="4">Integrations</td>
-                    </tr>
-                    <tr class="border-b border-gray-200 dark:border-slate-800">
-                        <td class="py-4 px-6 font-medium">Shopify</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                    </tr>
-                    <tr class="border-b border-gray-200 dark:border-slate-800">
-                        <td class="py-4 px-6 font-medium">Wix</td>
-                        <td class="py-4 px-6 text-center">—</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                    </tr>
-                    <tr class="border-b border-gray-200 dark:border-slate-800">
-                        <td class="py-4 px-6 font-medium">HubSpot</td>
-                        <td class="py-4 px-6 text-center">—</td>
-                        <td class="py-4 px-6 text-center">Beta</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                    </tr>
-                    <tr class="bg-slate-50 dark:bg-slate-800/50">
-                        <td class="py-3 px-6 font-semibold text-primary" colspan="4">Support</td>
-                    </tr>
-                    <tr class="border-b border-gray-200 dark:border-slate-800">
-                        <td class="py-4 px-6 font-medium">Email support</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                    </tr>
-                    <tr class="border-b border-gray-200 dark:border-slate-800">
-                        <td class="py-4 px-6 font-medium">Priority support</td>
-                        <td class="py-4 px-6 text-center">—</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                    </tr>
-                    <tr>
-                        <td class="py-4 px-6 font-medium">Founder support</td>
-                        <td class="py-4 px-6 text-center">—</td>
-                        <td class="py-4 px-6 text-center">—</td>
-                        <td class="py-4 px-6 text-center">✓</td>
-                    </tr>
-                </tbody>
-            </table>
+
+        <div class="hidden md:block space-y-8">
+            <div class="overflow-x-auto bg-white dark:bg-slate-900 rounded-2xl shadow-sm">
+                <table class="w-full text-left min-w-[900px] pricing-table">
+                    <colgroup>
+                        <col class="feature-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                    </colgroup>
+                    <thead>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
+                            <th class="py-4 px-6">Conversations</th>
+                            <th class="py-4 px-6 text-center">Free</th>
+                            <th class="py-4 px-6 text-center">Growth</th>
+                            <th class="py-4 px-6 text-center">Pro</th>
+                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Shared Inbox</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Team Members</td>
+                            <td class="py-4 px-6 text-center">1</td>
+                            <td class="py-4 px-6 text-center">3</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Assign Conversations</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Internal Notes</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="overflow-x-auto bg-white dark:bg-slate-900 rounded-2xl shadow-sm">
+                <table class="w-full text-left min-w-[900px] pricing-table">
+                    <colgroup>
+                        <col class="feature-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                    </colgroup>
+                    <thead>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
+                            <th class="py-4 px-6">Contacts</th>
+                            <th class="py-4 px-6 text-center">Free</th>
+                            <th class="py-4 px-6 text-center">Growth</th>
+                            <th class="py-4 px-6 text-center">Pro</th>
+                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Contact Limit</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Tags &amp; Labels</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">CRM Sync (Wix / Shopify)</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">HubSpot / Pipedrive Sync</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center">Add-on</td>
+                            <td class="py-4 px-6 text-center">Included</td>
+                            <td class="py-4 px-6 text-center">Included</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="overflow-x-auto bg-white dark:bg-slate-900 rounded-2xl shadow-sm">
+                <table class="w-full text-left min-w-[900px] pricing-table">
+                    <colgroup>
+                        <col class="feature-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                    </colgroup>
+                    <thead>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
+                            <th class="py-4 px-6">Marketing</th>
+                            <th class="py-4 px-6 text-center">Free</th>
+                            <th class="py-4 px-6 text-center">Growth</th>
+                            <th class="py-4 px-6 text-center">Pro</th>
+                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Broadcast Campaigns</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Scheduled Campaigns</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Campaign Analytics</td>
+                            <td class="py-4 px-6 text-center">—</td>
+                            <td class="py-4 px-6 text-center">Advanced</td>
+                            <td class="py-4 px-6 text-center">Advanced</td>
+                            <td class="py-4 px-6 text-center">Custom</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="overflow-x-auto bg-white dark:bg-slate-900 rounded-2xl shadow-sm">
+                <table class="w-full text-left min-w-[900px] pricing-table">
+                    <colgroup>
+                        <col class="feature-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                    </colgroup>
+                    <thead>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
+                            <th class="py-4 px-6">Automations</th>
+                            <th class="py-4 px-6 text-center">Free</th>
+                            <th class="py-4 px-6 text-center">Growth</th>
+                            <th class="py-4 px-6 text-center">Pro</th>
+                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Active Workflows</td>
+                            <td class="py-4 px-6 text-center">3</td>
+                            <td class="py-4 px-6 text-center">20</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Multi-Step Workflows</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center">Custom</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Webhooks</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">API Access</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center">Higher Limits</td>
+                            <td class="py-4 px-6 text-center">Custom</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="overflow-x-auto bg-white dark:bg-slate-900 rounded-2xl shadow-sm">
+                <table class="w-full text-left min-w-[900px] pricing-table">
+                    <colgroup>
+                        <col class="feature-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                    </colgroup>
+                    <thead>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
+                            <th class="py-4 px-6">AI Assistants</th>
+                            <th class="py-4 px-6 text-center">Free</th>
+                            <th class="py-4 px-6 text-center">Growth</th>
+                            <th class="py-4 px-6 text-center">Pro</th>
+                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">AI Agents</td>
+                            <td class="py-4 px-6 text-center">—</td>
+                            <td class="py-4 px-6 text-center">1</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Custom</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Lead Qualification</td>
+                            <td class="py-4 px-6 text-center">—</td>
+                            <td class="py-4 px-6 text-center">—</td>
+                            <td class="py-4 px-6 text-center">Advanced</td>
+                            <td class="py-4 px-6 text-center">Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Custom Knowledge Base</td>
+                            <td class="py-4 px-6 text-center">—</td>
+                            <td class="py-4 px-6 text-center">—</td>
+                            <td class="py-4 px-6 text-center">Full</td>
+                            <td class="py-4 px-6 text-center">Custom</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="overflow-x-auto bg-white dark:bg-slate-900 rounded-2xl shadow-sm">
+                <table class="w-full text-left min-w-[900px] pricing-table">
+                    <colgroup>
+                        <col class="feature-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                    </colgroup>
+                    <thead>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
+                            <th class="py-4 px-6">Templates &amp; Logs</th>
+                            <th class="py-4 px-6 text-center">Free</th>
+                            <th class="py-4 px-6 text-center">Growth</th>
+                            <th class="py-4 px-6 text-center">Pro</th>
+                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">WhatsApp Templates</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">SMS Templates</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                            <td class="py-4 px-6 text-center">Unlimited</td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Message Retention</td>
+                            <td class="py-4 px-6 text-center">30 days</td>
+                            <td class="py-4 px-6 text-center">90 days</td>
+                            <td class="py-4 px-6 text-center">180 days</td>
+                            <td class="py-4 px-6 text-center">Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Export Logs</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="overflow-x-auto bg-white dark:bg-slate-900 rounded-2xl shadow-sm">
+                <table class="w-full text-left min-w-[900px] pricing-table">
+                    <colgroup>
+                        <col class="feature-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                        <col class="plan-col">
+                    </colgroup>
+                    <thead>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
+                            <th class="py-4 px-6">Developer Tools</th>
+                            <th class="py-4 px-6 text-center">Free</th>
+                            <th class="py-4 px-6 text-center">Growth</th>
+                            <th class="py-4 px-6 text-center">Pro</th>
+                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Webhooks</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                        <tr class="border-b border-gray-200 dark:border-slate-800">
+                            <td class="py-4 px-6 font-medium">Public API</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center">Higher Limits</td>
+                            <td class="py-4 px-6 text-center">Custom</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Sandbox Mode</td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="md:hidden space-y-4">
+            <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
+                <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
+                    Conversations
+                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                </summary>
+                <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center justify-between"><span>Shared Inbox</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>Team Members</span><span>1 · 3 · Unlimited · Unlimited</span></div>
+                    <div class="flex items-center justify-between"><span>Assign Conversations</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>Internal Notes</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                </div>
+            </details>
+
+            <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
+                <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
+                    Contacts
+                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                </summary>
+                <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center justify-between"><span>Contact Limit</span><span>Unlimited · Unlimited · Unlimited · Unlimited</span></div>
+                    <div class="flex items-center justify-between"><span>Tags &amp; Labels</span><span><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>CRM Sync (Wix / Shopify)</span><span><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>HubSpot / Pipedrive Sync</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · Add-on · Included · Included</span></div>
+                </div>
+            </details>
+
+            <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
+                <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
+                    Marketing
+                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                </summary>
+                <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center justify-between"><span>Broadcast Campaigns</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · Unlimited · Unlimited · Unlimited</span></div>
+                    <div class="flex items-center justify-between"><span>Scheduled Campaigns</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>Campaign Analytics</span><span>— · Advanced · Advanced · Custom</span></div>
+                </div>
+            </details>
+
+            <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
+                <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
+                    Automations
+                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                </summary>
+                <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center justify-between"><span>Active Workflows</span><span>3 · 20 · Unlimited · Unlimited</span></div>
+                    <div class="flex items-center justify-between"><span>Multi-Step Workflows</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · Custom</span></div>
+                    <div class="flex items-center justify-between"><span>Webhooks</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>API Access</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · Higher · Custom</span></div>
+                </div>
+            </details>
+
+            <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
+                <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
+                    AI Assistants
+                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                </summary>
+                <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center justify-between"><span>AI Agents</span><span>— · 1 · Unlimited · Custom</span></div>
+                    <div class="flex items-center justify-between"><span>Lead Qualification</span><span>— · — · Advanced · Custom</span></div>
+                    <div class="flex items-center justify-between"><span>Custom Knowledge Base</span><span>— · — · Full · Custom</span></div>
+                </div>
+            </details>
+
+            <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
+                <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
+                    Templates &amp; Logs
+                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                </summary>
+                <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center justify-between"><span>WhatsApp Templates</span><span>Unlimited · Unlimited · Unlimited · Unlimited</span></div>
+                    <div class="flex items-center justify-between"><span>SMS Templates</span><span>Unlimited · Unlimited · Unlimited · Unlimited</span></div>
+                    <div class="flex items-center justify-between"><span>Message Retention</span><span>30d · 90d · 180d · Custom</span></div>
+                    <div class="flex items-center justify-between"><span>Export Logs</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                </div>
+            </details>
+
+            <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
+                <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
+                    Developer Tools
+                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                </summary>
+                <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
+                    <div class="flex items-center justify-between"><span>Webhooks</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>Public API</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · Higher · Custom</span></div>
+                    <div class="flex items-center justify-between"><span>Sandbox Mode</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                </div>
+            </details>
         </div>
     </section>
 
-    <div id="reviews-placeholder"></div>
-
-    <section class="max-w-4xl mx-auto px-6 pb-24">
+    <section class="max-w-5xl mx-auto px-6 pb-24" id="faq">
         <div class="text-center mb-12">
             <p class="uppercase tracking-widest text-sm font-bold text-primary mb-4">FAQ</p>
-            <h2 class="serif-text text-3xl sm:text-4xl md:text-5xl text-charcoal dark:text-white">Frequently asked questions</h2>
+            <h2 class="serif-text text-3xl sm:text-4xl md:text-5xl text-charcoal dark:text-white">Frequently Asked Questions</h2>
         </div>
         <div class="space-y-4">
-            <div class="border border-gray-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-6">
-                <h4 class="text-lg font-semibold mb-3">How does the AI recover bookings?</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Our AI agent monitors booking conversations in real time. When someone goes quiet, it sends a personalized message on WhatsApp or SMS, answers questions, offers alternative times, and helps them confirm.</p>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                <h4 class="text-lg font-semibold mb-3">How does Mercuri pricing work?</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    Your total monthly cost includes a platform subscription (Free, Growth, Pro, or Enterprise), WhatsApp and SMS message charges, and $3/month per SMS phone number (if purchased). Total = Plan fee + Messages sent + Phone numbers.
+                </p>
             </div>
-            <div class="border border-gray-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-6">
-                <h4 class="text-lg font-semibold mb-3">Is there a free trial?</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Yes. Start on the Free plan with no time limit, or use a 14-day trial of Growth and Enterprise.</p>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                <h4 class="text-lg font-semibold mb-3">How is WhatsApp pricing calculated?</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    WhatsApp includes Meta’s conversation fee (varies by country and type) plus Mercuri’s platform fee of $0.025 per message. This applies to template messages, campaigns, automations, and AI replies.
+                </p>
             </div>
-            <div class="border border-gray-200 dark:border-slate-800 rounded-2xl bg-white dark:bg-slate-900 p-6">
-                <h4 class="text-lg font-semibold mb-3">Can I switch plans later?</h4>
-                <p class="text-sm text-gray-600 dark:text-gray-400">Absolutely. Upgrade or downgrade anytime and changes show up in your next billing cycle.</p>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                <h4 class="text-lg font-semibold mb-3">How is AI usage charged?</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    There are no AI limits. Each AI-generated reply is charged at $0.025 per message. AI continues working — you’re billed based on usage.
+                </p>
+            </div>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                <h4 class="text-lg font-semibold mb-3">How is SMS pricing calculated?</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    SMS messages are charged per message based on destination country and carrier rates. Rates are visible in your dashboard before sending.
+                </p>
+            </div>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                <h4 class="text-lg font-semibold mb-3">Do I need to buy a phone number?</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    SMS numbers cost $3 per month per number. WhatsApp does not require a monthly number rental.
+                </p>
+            </div>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                <h4 class="text-lg font-semibold mb-3">Can I use my existing WhatsApp Business number?</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    Yes. You can connect your existing WhatsApp Business number to the WhatsApp Business API through Meta approval.
+                </p>
+            </div>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                <h4 class="text-lg font-semibold mb-3">Are messages included in my subscription plan?</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    No. Your subscription gives you access to the platform features. Messaging is charged separately based on usage.
+                </p>
+            </div>
+            <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
+                <h4 class="text-lg font-semibold mb-3">Are there any hidden fees or contracts?</h4>
+                <p class="text-sm text-gray-600 dark:text-gray-400">
+                    No. There are no setup fees and no long-term contracts.
+                </p>
             </div>
         </div>
     </section>
 
-    <section class="py-16 sm:py-20 lg:py-24 px-6 relative overflow-hidden bg-slate-900 dark:bg-slate-950">
+    <section class="py-16 sm:py-20 lg:py-24 px-6 relative overflow-hidden bg-slate-900 dark:bg-slate-950" id="final-cta">
         <div class="absolute inset-0 opacity-10">
             <img alt="Abstract tech background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5PKnlzpNYd3DxwryQxNMPBWSBgFLivPIKkEs2Yp_UhZKIJ9SLKYxT4maYToJAXHomXpHGiQVDCF8nqTCYnPwi_f7arZYBAmcO1k3HKNxNwRYH5_aMwqYIJJwcfMYBjQV2oDL-c7GuT5D5fEfqZOfDjmGTEJif2hVtg-HXoZd9ohWtr_YNNuO_2aw5INk_GbjJa1KzVqSknoGZiC9k2CcbdwNJl6erkkwbTlQzcwgKahQ0xqD2vg-WIkNyCZ-YhgpV3Ly2UX8NyYef"/>
         </div>
         <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="serif-text text-3xl sm:text-4xl md:text-6xl text-white mb-8">
-                Ready to automate every conversation?
+            <h2 class="serif-text text-3xl sm:text-4xl md:text-6xl text-white mb-6">
+                Start running your business on chat
             </h2>
+            <p class="text-base sm:text-lg text-slate-300 mb-8">
+                Automate conversations. Recover revenue. Respond instantly.
+            </p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://client.mercuri.cx/auth/signup" target="_blank" class="w-full sm:w-auto bg-white text-slate-900 px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-colors text-center">
-                    Get started for free
+                <a href="https://client.mercuri.cx/auth/signup" target="_blank" class="w-full sm:w-auto bg-white text-slate-900 px-10 py-4 rounded-xl font-semibold text-lg hover:bg-slate-100 transition-colors text-center">
+                    Start Free
                 </a>
-                <a href="pricing.html" class="w-full sm:w-auto bg-white/10 text-white backdrop-blur-sm border border-white/20 px-10 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-colors">
-                    Pricing
+                <a href="#final-cta" class="w-full sm:w-auto bg-white/10 text-white backdrop-blur-sm border border-white/20 px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-colors">
+                    Talk to Sales
                 </a>
             </div>
-            <p class="mt-8 text-slate-400 text-sm">No credit card required • 14-day free trial • Cancel anytime</p>
         </div>
     </section>
 
