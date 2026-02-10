@@ -125,11 +125,112 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    const initWhatsAppWidget = () => {
+        if (document.getElementById('whatsapp-widget')) return;
+
+        const phoneRaw = '+91 89714 76855';
+        const message = 'I have a question about Mercuri';
+        const phone = phoneRaw.replace(/[^\d]/g, '');
+        if (!phone) return;
+
+        const styleId = 'whatsapp-widget-styles';
+        if (!document.getElementById(styleId)) {
+            const style = document.createElement('style');
+            style.id = styleId;
+            style.textContent = `
+                .whatsapp-widget {
+                    position: fixed;
+                    right: 20px;
+                    bottom: 20px;
+                    z-index: 9999;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #25D366;
+                    color: #fff;
+                    border-radius: 999px;
+                    width: 52px;
+                    height: 52px;
+                    padding: 0;
+                    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.28);
+                    font-weight: 700;
+                    font-size: 12px;
+                    text-decoration: none;
+                    transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+                }
+                .whatsapp-widget:hover {
+                    transform: translateY(-2px) scale(1.02);
+                    box-shadow: 0 14px 26px rgba(37, 211, 102, 0.38);
+                }
+                .whatsapp-widget:focus-visible {
+                    outline: 2px solid #111827;
+                    outline-offset: 3px;
+                }
+                .whatsapp-widget__icon {
+                    width: 24px;
+                    height: 24px;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    line-height: 1;
+                }
+                .whatsapp-widget__icon svg {
+                    width: 22px;
+                    height: 22px;
+                    display: block;
+                    fill: #fff;
+                }
+                .whatsapp-widget__icon img {
+                    width: 24px;
+                    height: 24px;
+                    display: block;
+                }
+                .whatsapp-widget__label {
+                    position: absolute;
+                    width: 1px;
+                    height: 1px;
+                    padding: 0;
+                    margin: -1px;
+                    overflow: hidden;
+                    clip: rect(0, 0, 0, 0);
+                    white-space: nowrap;
+                    border: 0;
+                }
+                @media (max-width: 640px) {
+                    .whatsapp-widget {
+                        right: 16px;
+                        bottom: 16px;
+                        width: 48px;
+                        height: 48px;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        }
+
+        const link = document.createElement('a');
+        link.id = 'whatsapp-widget';
+        link.className = 'whatsapp-widget';
+        link.href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        link.setAttribute('aria-label', 'Chat with Mercuri on WhatsApp');
+        link.innerHTML = `
+            <span class="whatsapp-widget__icon" aria-hidden="true">
+                <img alt="" src="assets/images/whatsapp.png"/>
+            </span>
+            <span class="whatsapp-widget__label">Chat on WhatsApp</span>
+        `;
+
+        document.body.appendChild(link);
+    };
+
     ensureFavicon();
     initMetaPixel();
     setupMetaPixelConversions();
     ensureChatAnimationStyles();
     initChatTyping();
+    initWhatsAppWidget();
 
     const applyMobileFullWidthButtons = (root = document) => {
         const candidates = root.querySelectorAll('a, button');
