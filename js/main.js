@@ -23,6 +23,51 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    const initTikTokPixel = () => {
+        if (window.ttq) return;
+
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t;
+            var ttq = w[t] = w[t] || [];
+            ttq.methods = ["page", "track", "identify", "instances", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie", "holdConsent", "revokeConsent", "grantConsent"];
+            ttq.setAndDefer = function (obj, method) {
+                obj[method] = function () {
+                    obj.push([method].concat(Array.prototype.slice.call(arguments, 0)));
+                };
+            };
+            for (var i = 0; i < ttq.methods.length; i++) {
+                ttq.setAndDefer(ttq, ttq.methods[i]);
+            }
+            ttq.instance = function (id) {
+                var instance = ttq._i[id] || [];
+                for (var i = 0; i < ttq.methods.length; i++) {
+                    ttq.setAndDefer(instance, ttq.methods[i]);
+                }
+                return instance;
+            };
+            ttq.load = function (id, config) {
+                var src = "https://analytics.tiktok.com/i18n/pixel/events.js";
+                var partner = config && config.partner;
+                ttq._i = ttq._i || {};
+                ttq._i[id] = [];
+                ttq._i[id]._u = src;
+                ttq._t = ttq._t || {};
+                ttq._t[id] = +new Date();
+                ttq._o = ttq._o || {};
+                ttq._o[id] = config || {};
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.async = true;
+                script.src = src + "?sdkid=" + id + "&lib=" + t;
+                var firstScript = document.getElementsByTagName("script")[0];
+                firstScript.parentNode.insertBefore(script, firstScript);
+            };
+
+            ttq.load('D6JD1URC77U61H03N0BG');
+            ttq.page();
+        }(window, document, 'ttq');
+    };
+
     const setupMetaPixelConversions = () => {
         document.addEventListener('click', (event) => {
             const link = event.target.closest && event.target.closest('a');
@@ -227,6 +272,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     ensureFavicon();
     initMetaPixel();
+    initTikTokPixel();
     setupMetaPixelConversions();
     ensureChatAnimationStyles();
     initChatTyping();
