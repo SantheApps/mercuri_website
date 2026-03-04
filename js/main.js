@@ -417,7 +417,12 @@ document.addEventListener('DOMContentLoaded', function() {
     loadComponent('reviews-placeholder', 'components/reviews.html', () => {
         applyMobileFullWidthButtons(document.getElementById('reviews-placeholder'));
     });
+    loadComponent('marketing-dashboard-mock-placeholder', 'components/marketing-dashboard-mock.html');
     loadComponent('marketing-placeholder', 'components/marketing.html', () => {
         applyMobileFullWidthButtons(document.getElementById('marketing-placeholder'));
+        loadComponent('marketing-dashboard-mock-placeholder', 'components/marketing-dashboard-mock.html');
+    });
+    loadComponent('chat-preview-placeholder', 'components/chat-preview.html', () => {
+        initChatTyping();
     });
 });

@@ -41,6 +41,8 @@ mercuri-website/
 
 ## 🎨 Design System
 
+For the current page design standards and reusable class recipes, see `DESIGN_GUIDELINES.md`.
+
 ### Color Palette
 
 - **Primary Blue**: `#0d59f2`
