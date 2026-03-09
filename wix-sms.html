@@ -44,6 +44,15 @@
             font-family: 'Instrument Serif', serif;
         }
     </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VTDYSN0C3J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VTDYSN0C3J');
+</script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-charcoal dark:text-slate-200 transition-colors duration-300">
     <div id="header-placeholder"></div>
@@ -302,6 +311,52 @@
         </section>
 
         <div id="reviews-placeholder"></div>
+
+        <section class="py-16 sm:py-20 px-6 bg-white dark:bg-slate-900/40 border-y border-gray-100 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-10 items-start">
+                    <div>
+                        <p class="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-3">Lead Magnet</p>
+                        <h2 class="serif-text text-3xl sm:text-4xl text-slate-900 dark:text-white mb-4">Get SMS Best Practices</h2>
+                        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 mb-6">Share your details and we will email you our SMS best-practices playbook for service businesses.</p>
+                        <ul class="space-y-3 text-slate-700 dark:text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                                <span>Ideal send windows and reminder cadence benchmarks</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                                <span>Template copy examples for confirmations and follow-ups</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary text-base">check_circle</span>
+                                <span>Compliance checklist for consent and opt-out handling</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-background-light dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6">
+                        <form id="sms-best-practices-form" class="space-y-4" data-endpoint="https://mercuri-leads.vercel.app/api/lead-magnet/sms-best-practices">
+                            <div>
+                                <label for="lead-name" class="block text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">Name</label>
+                                <input id="lead-name" name="name" type="text" required class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none" placeholder="Jane Doe">
+                            </div>
+                            <div>
+                                <label for="lead-email" class="block text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">Email</label>
+                                <input id="lead-email" name="email" type="email" required class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none" placeholder="jane@company.com">
+                            </div>
+                            <div>
+                                <label for="lead-website" class="block text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">Website</label>
+                                <input id="lead-website" name="website" type="url" required class="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 px-4 py-3 text-sm text-slate-900 dark:text-slate-100 focus:ring-2 focus:ring-primary/30 focus:border-primary outline-none" placeholder="https://yourwebsite.com">
+                            </div>
+                            <input type="hidden" name="source_page" value="wix-sms">
+                            <button type="submit" class="w-full sm:w-auto bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all text-center">Email Me the Playbook</button>
+                            <p id="sms-best-practices-status" class="text-sm text-slate-500 dark:text-slate-400" aria-live="polite"></p>
+                        </form>
+                        <p class="text-xs text-slate-500 dark:text-slate-400 mt-4">By submitting, you agree to receive the SMS best-practices guide and related product emails.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <section class="py-16 sm:py-20 px-6 bg-primary/15">
             <div class="max-w-5xl mx-auto text-center">
