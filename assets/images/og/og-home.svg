@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Mercuri homepage social preview</title>
+  <desc id="desc">Mercuri SMS and WhatsApp booking automation social image</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1010" cy="120" r="170" fill="#fed7aa" opacity="0.7"/>
+  <circle cx="180" cy="540" r="220" fill="#ffedd5" opacity="0.8"/>
+  <rect x="72" y="76" width="160" height="58" rx="29" fill="#1a1a1a"/>
+  <text x="152" y="113" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" text-anchor="middle">Mercuri</text>
+  <text x="72" y="250" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">SMS &amp; WhatsApp</text>
+  <text x="72" y="332" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">Booking Automation</text>
+  <text x="72" y="402" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="30">AI agents that help service businesses reply faster, recover revenue, and confirm bookings.</text>
+  <rect x="72" y="470" width="330" height="68" rx="20" fill="#eb973d"/>
+  <text x="237" y="513" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" text-anchor="middle">mercuri.cx</text>
+</svg>

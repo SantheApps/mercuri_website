@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f8fafc"/>
+  <rect x="76" y="84" width="1048" height="462" rx="30" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="116" y="170" fill="#eb973d" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">LEGAL</text>
+  <text x="116" y="266" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">Privacy and terms</text>
+  <text x="116" y="346" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-weight="700">for Mercuri customers</text>
+  <text x="116" y="426" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="30">Policies covering the use of Mercuri websites, products, APIs, and related services.</text>
+  <text x="116" y="506" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">mercuri.cx</text>
+</svg>

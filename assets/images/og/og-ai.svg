@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f172a"/>
+  <circle cx="1030" cy="140" r="150" fill="#ea580c" opacity="0.5"/>
+  <circle cx="180" cy="560" r="180" fill="#334155" opacity="0.8"/>
+  <text x="84" y="150" fill="#fdba74" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">AI AGENT</text>
+  <text x="84" y="246" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">24/7 replies for</text>
+  <text x="84" y="326" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">SMS and WhatsApp</text>
+  <text x="84" y="408" fill="#cbd5e1" font-family="Arial, Helvetica, sans-serif" font-size="30">Instant answers, lead qualification, and booking recovery even while your team is offline.</text>
+  <text x="84" y="500" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">mercuri.cx/ai.html</text>
+</svg>

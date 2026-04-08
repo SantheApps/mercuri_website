@@ -131,20 +131,30 @@ Edit the CSS variables in `css/styles.css`:
 
 ## 📦 Dependencies
 
-All dependencies are loaded via CDN:
+Build-time dependencies:
 
-- Tailwind CSS: `https://cdn.tailwindcss.com`
-- Google Fonts (Manrope): `https://fonts.googleapis.com`
-- Material Icons: `https://fonts.googleapis.com/icon`
+- Tailwind CSS
+- `@tailwindcss/forms`
+- `@tailwindcss/typography`
+
+Runtime dependencies loaded from Google:
+
+- Google Fonts
+- Material Icons
 
 ## 🚀 Deployment
 
 ### GitHub Pages
 
-1. Push code to GitHub repository
-2. Go to Settings → Pages
-3. Select branch and root directory
-4. Save and wait for deployment
+1. Run `npm install` once locally
+2. Run `npm run build:css` whenever Tailwind classes change
+3. Commit the generated `css/tailwind.css` file
+4. Push code to GitHub repository
+5. Go to Settings → Pages
+6. Select branch and root directory
+7. Set the custom domain to `mercuri.cx` and enable `Enforce HTTPS`
+8. Point DNS so both `mercuri.cx` and `www.mercuri.cx` resolve to GitHub Pages, then configure your DNS provider to redirect `www` to the apex domain if you want a single canonical host
+9. Save and wait for deployment
 
 ### Netlify
 

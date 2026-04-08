@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f8fafc"/>
+  <circle cx="1010" cy="144" r="150" fill="#d1fae5"/>
+  <text x="88" y="150" fill="#eb973d" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700">WIX BOOKINGS</text>
+  <text x="88" y="246" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">Automate appointment</text>
+  <text x="88" y="324" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700">reminders over SMS</text>
+  <text x="88" y="406" fill="#475569" font-family="Arial, Helvetica, sans-serif" font-size="30">Reduce no-shows, confirm bookings, and keep your Wix calendar full.</text>
+  <text x="88" y="498" fill="#111827" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">mercuri.cx/wix-sms.html</text>
+</svg>

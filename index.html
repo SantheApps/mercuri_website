@@ -6,43 +6,104 @@
   <title>
    Mercuri - SMS &amp; WhatsApp Booking Automation
   </title>
-  <meta content="https://mercuri.cx/assets/images/Mercuri%20logo%20300px.png" property="og:image"/>
-  <meta content="Mercuri logo" property="og:image:alt"/>
+  <meta content="Mercuri helps service businesses automate SMS and WhatsApp conversations to recover revenue, confirm bookings, and respond faster with AI agents." name="description"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://mercuri.cx/" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Mercuri - SMS &amp; WhatsApp Booking Automation" property="og:title"/>
+  <meta content="Mercuri helps service businesses automate SMS and WhatsApp conversations to recover revenue, confirm bookings, and respond faster with AI agents." property="og:description"/>
+  <meta content="https://mercuri.cx/" property="og:url"/>
+  <meta content="https://mercuri.cx/assets/images/og/og-home.svg" property="og:image"/>
+  <meta content="Mercuri homepage preview showing SMS and WhatsApp booking automation" property="og:image:alt"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
   <meta content="summary_large_image" name="twitter:card"/>
-  <meta content="https://mercuri.cx/assets/images/Mercuri%20logo%20300px.png" name="twitter:image"/>
-  <meta content="Mercuri logo" name="twitter:image:alt"/>
+  <meta content="Mercuri - SMS &amp; WhatsApp Booking Automation" name="twitter:title"/>
+  <meta content="Mercuri helps service businesses automate SMS and WhatsApp conversations to recover revenue, confirm bookings, and respond faster with AI agents." name="twitter:description"/>
+  <meta content="https://mercuri.cx/assets/images/og/og-home.svg" name="twitter:image"/>
+  <meta content="Mercuri homepage preview showing SMS and WhatsApp booking automation" name="twitter:image:alt"/>
   <link href="assets/images/Mercuri logo 32px.png" rel="icon" sizes="32x32" type="image/png"/>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography">
+  <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@graph": [
+       {
+         "@type": "Organization",
+         "@id": "https://mercuri.cx/#organization",
+         "name": "Mercuri",
+         "url": "https://mercuri.cx/",
+         "logo": "https://mercuri.cx/assets/images/Mercuri%20logo%20300px.png"
+       },
+       {
+         "@type": "WebSite",
+         "@id": "https://mercuri.cx/#website",
+         "url": "https://mercuri.cx/",
+         "name": "Mercuri",
+         "publisher": {
+           "@id": "https://mercuri.cx/#organization"
+         }
+       },
+       {
+         "@type": "WebPage",
+         "@id": "https://mercuri.cx/#webpage",
+         "url": "https://mercuri.cx/",
+         "name": "Mercuri - SMS & WhatsApp Booking Automation",
+         "description": "Mercuri helps service businesses automate SMS and WhatsApp conversations to recover revenue, confirm bookings, and respond faster with AI agents.",
+         "isPartOf": {
+           "@id": "https://mercuri.cx/#website"
+         },
+         "about": {
+           "@id": "https://mercuri.cx/#organization"
+         }
+       }
+     ]
+   }
   </script>
+  <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "SoftwareApplication",
+     "name": "Mercuri",
+     "applicationCategory": "BusinessApplication",
+     "operatingSystem": "Web",
+     "url": "https://mercuri.cx/",
+     "description": "Mercuri helps service businesses automate SMS and WhatsApp conversations to recover revenue, confirm bookings, and respond faster with AI agents.",
+     "offers": [
+       {
+         "@type": "Offer",
+         "price": "0",
+         "priceCurrency": "USD",
+         "url": "https://mercuri.cx/pricing.html",
+         "name": "Free"
+       },
+       {
+         "@type": "Offer",
+         "price": "29",
+         "priceCurrency": "USD",
+         "url": "https://mercuri.cx/pricing.html",
+         "name": "Growth"
+       },
+       {
+         "@type": "Offer",
+         "price": "99",
+         "priceCurrency": "USD",
+         "url": "https://mercuri.cx/pricing.html",
+         "name": "Pro"
+       }
+     ],
+     "publisher": {
+       "@type": "Organization",
+       "name": "Mercuri",
+       "url": "https://mercuri.cx/"
+     }
+   }
+  </script>
+  <link href="css/tailwind.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com" rel="preconnect">
    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-   <script>
-    tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#EB973D", // Vibrant orange accent
-                        "background-light": "#fdfdfb", // Off-white/Cream background
-                        "background-dark": "#0f172a", // Deep slate for dark mode
-                        "charcoal": "#1a1a1a",
-                    },
-                    fontFamily: {
-                        display: ["Instrument Serif", "serif"],
-                        sans: ["Inter", "sans-serif"],
-                    },
-                    borderRadius: {
-                        DEFAULT: "0.5rem",
-                        "xl": "1rem",
-                        "2xl": "1.5rem",
-                    },
-                },
-            },
-        };
-   </script>
    <style>
     body {
             font-family: 'Inter', sans-serif;
@@ -126,11 +187,11 @@
       <!-- Logos -->
       <div class="flex -space-x-3">
        <!-- Pipedrive -->
-       <img alt="Pipedrive" class="w-9 h-9 rounded-full bg-white p-1.5 border border-gray-200 shadow-sm grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" src="https://play-lh.googleusercontent.com/XAKratCqSJUb3ZmItve16p8RjiF0ZvN_czysEoqtGET7i-tsdJEozbnOYRM6jQNHEg=w240-h480-rw" title="Pipedrive"/>
+       <img alt="Pipedrive" class="w-9 h-9 rounded-full bg-white p-1.5 border border-gray-200 shadow-sm grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" src="assets/images/pipedrive_logo.png" title="Pipedrive"/>
        <!-- Shopify -->
-       <img alt="Shopify" class="w-9 h-9 rounded-full bg-white p-1.5 border border-gray-200 shadow-sm grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" src="https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-shopping-bag-full-color-66166b2e55d67988b56b4bd28b63c271e2b9713358cb723070a92bde17ad7d63.svg" title="Shopify"/>
+       <img alt="Shopify" class="w-9 h-9 rounded-full bg-white p-1.5 border border-gray-200 shadow-sm grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" src="assets/images/logos/shopify.svg" title="Shopify"/>
        <!-- Wix -->
-       <img alt="Wix" class="w-9 h-9 rounded-full bg-white p-1.5 border border-gray-200 shadow-sm grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg" title="Wix"/>
+       <img alt="Wix" class="w-9 h-9 rounded-full bg-white p-1.5 border border-gray-200 shadow-sm grayscale hover:grayscale-0 hover:scale-105 transition-all duration-200" src="assets/images/logos/wix.svg" title="Wix"/>
       </div>
       <!-- Trust text -->
       <div class="text-sm">
@@ -929,7 +990,7 @@
   </section>
   <section class="py-16 sm:py-20 lg:py-24 px-6 relative overflow-hidden bg-slate-900 dark:bg-slate-950">
    <div class="absolute inset-0 opacity-10">
-    <img alt="Abstract tech background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5PKnlzpNYd3DxwryQxNMPBWSBgFLivPIKkEs2Yp_UhZKIJ9SLKYxT4maYToJAXHomXpHGiQVDCF8nqTCYnPwi_f7arZYBAmcO1k3HKNxNwRYH5_aMwqYIJJwcfMYBjQV2oDL-c7GuT5D5fEfqZOfDjmGTEJif2hVtg-HXoZd9ohWtr_YNNuO_2aw5INk_GbjJa1KzVqSknoGZiC9k2CcbdwNJl6erkkwbTlQzcwgKahQ0xqD2vg-WIkNyCZ-YhgpV3Ly2UX8NyYef"/>
+    <img alt="Abstract tech background" class="w-full h-full object-cover" src="assets/images/backgrounds/abstract-tech.svg"/>
    </div>
    <div class="max-w-4xl mx-auto text-center relative z-10">
     <h2 class="text-3xl sm:text-4xl md:text-6xl serif-text text-white italic mb-8">
@@ -961,14 +1022,14 @@
     <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center opacity-70 dark:opacity-50 hover:opacity-100 transition-opacity">
      <!-- Shopify -->
      <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
-      <img alt="Shopify Logo" class="h-8 w-8" src="https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-shopping-bag-full-color-66166b2e55d67988b56b4bd28b63c271e2b9713358cb723070a92bde17ad7d63.svg"/>
+      <img alt="Shopify Logo" class="h-8 w-8" src="assets/images/logos/shopify.svg"/>
       <span class="text-xl font-bold tracking-tight">
        Shopify
       </span>
      </div>
      <!-- Wix -->
      <div class="flex items-center gap-2 grayscale hover:grayscale-0 transition-all cursor-default">
-      <img alt="Wix Logo" class="h-8 w-8" src="https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg"/>
+      <img alt="Wix Logo" class="h-8 w-8" src="assets/images/logos/wix.svg"/>
       <span class="text-xl font-bold tracking-tight uppercase">
        Wix
       </span>
