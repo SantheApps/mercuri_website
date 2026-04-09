@@ -1,3 +1,40 @@
+<style>
+    .site-footer .site-footer-grid {
+        display: grid;
+        row-gap: 2.5rem;
+    }
+
+    .site-footer .site-footer-grid > :first-child {
+        grid-column: 1 / -1;
+    }
+
+    .site-footer h5 {
+        margin-bottom: 1rem;
+    }
+
+    .site-footer ul {
+        line-height: 1.4;
+    }
+
+    @media (min-width: 768px) {
+        .site-footer .site-footer-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            column-gap: 3rem;
+            row-gap: 1.75rem;
+        }
+    }
+
+    @media (min-width: 1100px) {
+        .site-footer .site-footer-grid {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            row-gap: 1.5rem;
+        }
+
+        .site-footer .site-footer-grid > :first-child {
+            grid-column: span 2 / span 2;
+        }
+    }
+</style>
 <footer class="site-footer bg-background-light dark:bg-background-dark border-t border-gray-100 dark:border-slate-800 pt-16 pb-8">
     <div class="max-w-7xl mx-auto px-6">
         <div class="site-footer-grid grid md:grid-cols-7 gap-12 mb-16">
@@ -62,6 +99,7 @@
             <div>
                 <h5 class="font-bold mb-6 dark:text-white">Compare</h5>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
+                    <li><a class="hover:text-primary" href="klaviyo-alternatives.html">Klaviyo Alternatives</a></li>
                     <li><a class="hover:text-primary" href="mercuri-vs-klaviyo.html">Mercuri vs Klaviyo</a></li>
                 </ul>
             </div>
