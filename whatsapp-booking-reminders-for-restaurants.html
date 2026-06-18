@@ -376,240 +376,220 @@
     </div>
   </div>
 </section>
-<!-- Mock admin dashboard-->
-   <section class="py-20 px-6 bg-slate-50 dark:bg-slate-950">
-  <div class="max-w-7xl mx-auto">
 
-    <!-- Section Header -->
-    <div class="text-center max-w-4xl mx-auto mb-14">
-      <p class="text-primary text-sm font-bold uppercase tracking-[0.25em] mb-4">
-        Administrator Campaign View
+    
+    <!-- mockup dashboard -->
+    <section class="py-20 px-6 bg-background-light">
+  <div class="max-w-6xl mx-auto">
+
+    <div class="text-center mb-12">
+      <p class="text-xs font-bold tracking-[0.25em] uppercase text-primary mb-3">
+        Reservation Reminder Workflow
       </p>
 
-      <h2 class="serif-text text-4xl md:text-5xl text-slate-900 dark:text-white mb-4">
-        Recover lost revenue inside the Mercuri Console
+      <h2 class="serif-text text-4xl md:text-5xl text-slate-900 mb-4">
+        Reservation reminders running automatically
       </h2>
 
-      <p class="text-lg text-slate-600 dark:text-slate-400">
-        While guests are busy on WhatsApp, your restaurant team gets a live operational view of booking reminders, confirmations, and recovered reservations.
+      <p class="max-w-2xl mx-auto text-slate-600">
+        Mercuri syncs upcoming reservations, sends WhatsApp reminders,
+        handles guest confirmations, and keeps your team informed without
+        manual follow-up.
       </p>
     </div>
 
-    <!-- Browser Window -->
-    <div class="max-w-6xl mx-auto rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl overflow-hidden">
+    <!-- Mockup -->
+    <div class="relative">
 
-      <!-- Browser Top Bar -->
-      <div class="h-10 border-b border-slate-200 dark:border-slate-800 flex items-center px-5 relative">
-        <div class="flex gap-2">
-          <div class="w-3 h-3 rounded-full bg-red-400"></div>
-          <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-          <div class="w-3 h-3 rounded-full bg-green-400"></div>
-        </div>
-
-        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <span class="text-xs text-slate-500 font-mono">
-            https://app.mercuri.cx/booking-reminders/restaurants
-          </span>
-        </div>
+      <!-- Glow -->
+      <div
+        class="absolute inset-0 bg-primary/10 blur-3xl rounded-[40px] scale-95">
       </div>
 
-      <!-- Dashboard Content -->
-      <div class="p-8">
+      <div
+        class="relative bg-white rounded-[28px] border border-slate-200 overflow-hidden shadow-[0_30px_80px_rgba(15,23,42,0.12)]">
 
-        <!-- Header -->
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-8">
-          <div class="flex items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
-              <span class="material-symbols-outlined text-primary">restaurant</span>
-            </div>
+        <!-- Browser Top -->
+        <div
+          class="h-14 border-b border-slate-200 flex items-center px-6 bg-slate-50">
 
-            <div>
-              <h3 class="serif-text text-3xl text-slate-900 dark:text-white">
-                Friday Dinner Reservations
+          <div class="flex gap-2">
+            <span class="w-3 h-3 rounded-full bg-red-400"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+            <span class="w-3 h-3 rounded-full bg-green-400"></span>
+          </div>
+
+          <div
+            class="mx-auto text-xs text-slate-500 font-medium hidden md:block">
+            reservations.mercuri.cx/reminders
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="grid lg:grid-cols-2 gap-8 p-8">
+
+          <!-- Left -->
+          <div>
+
+            <div
+              class="rounded-2xl border border-slate-200 bg-slate-50 p-5 mb-6">
+
+              <p
+                class="text-[11px] uppercase tracking-[0.2em] text-primary font-bold mb-3">
+                Upcoming Reservation
+              </p>
+
+              <h3 class="font-semibold text-slate-900 mb-2">
+                Friday Dinner Reservation
               </h3>
-              <p class="text-sm text-slate-500">
-                Live Segment:
-                <span class="font-semibold text-slate-700 dark:text-slate-300">
-                  Unconfirmed Guests (27)
+
+              <div class="space-y-2 text-sm text-slate-600">
+                <p>Guest: Marcus Vance</p>
+                <p>Party Size: 4 guests</p>
+                <p>Time: 7:45 PM</p>
+                <p>Table: Patio Seating</p>
+              </div>
+            </div>
+
+            <!-- WhatsApp Message -->
+            <div
+              class="rounded-2xl border border-slate-200 p-5 bg-white shadow-sm">
+
+              <p
+                class="text-[11px] uppercase tracking-[0.2em] text-slate-400 font-bold mb-3">
+                WhatsApp Reminder
+              </p>
+
+              <div
+                class="bg-[#efeae2] rounded-xl p-4 text-sm leading-relaxed text-slate-700">
+
+                Hi Marcus 👋
+
+                <br><br>
+
+                Just a reminder about your reservation for
+                <strong>Friday at 7:45 PM</strong>.
+
+                <br><br>
+
+                Reply:
+                <strong>YES</strong> to confirm or
+                <strong>RESCHEDULE</strong> if you need another time.
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Right -->
+          <div>
+
+            <div
+              class="rounded-2xl border border-slate-200 bg-white p-5 mb-5">
+
+              <div class="flex items-center justify-between mb-4">
+
+                <h3 class="font-semibold text-slate-900">
+                  Recent Activity
+                </h3>
+
+                <span
+                  class="bg-green-100 text-green-700 text-xs px-3 py-1 rounded-full font-medium">
+                  Live
                 </span>
-              </p>
-            </div>
-          </div>
 
-          <div class="flex gap-3">
-            <span class="px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-semibold">
-              ● Live Campaign Mode
-            </span>
-
-            <span class="px-4 py-2 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 text-sm font-semibold">
-              WhatsApp Integrated
-            </span>
-          </div>
-        </div>
-
-        <div class="border-t border-slate-200 dark:border-slate-800 mb-8"></div>
-
-        <!-- KPI Cards -->
-        <div class="grid md:grid-cols-3 gap-5 mb-8">
-
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-            <p class="text-xs uppercase tracking-[0.15em] text-slate-400 font-bold mb-2">
-              Reminder Replies
-            </p>
-
-            <p class="serif-text text-5xl text-slate-900 dark:text-white">
-              42
-            </p>
-
-            <p class="text-primary text-sm font-semibold mt-2">
-              ↯ 98% automated response rate
-            </p>
-          </div>
-
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-            <p class="text-xs uppercase tracking-[0.15em] text-slate-400 font-bold mb-2">
-              Bookings Confirmed
-            </p>
-
-            <p class="serif-text text-5xl text-slate-900 dark:text-white">
-              31
-            </p>
-
-            <p class="text-green-600 text-sm font-semibold mt-2">
-              ✓ 74% confirmation rate
-            </p>
-          </div>
-
-          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
-            <p class="text-xs uppercase tracking-[0.15em] text-slate-400 font-bold mb-2">
-              Revenue Recovered
-            </p>
-
-            <p class="serif-text text-5xl text-slate-900 dark:text-white">
-              $4.8k
-            </p>
-
-            <p class="text-primary text-sm font-semibold mt-2">
-              ↯ 18x campaign ROI secured
-            </p>
-          </div>
-
-        </div>
-
-        <!-- Bottom Dashboard Area -->
-        <div class="grid lg:grid-cols-3 gap-6">
-
-          <!-- AI Message Panel -->
-          <div class="lg:col-span-2 rounded-3xl border border-slate-200 dark:border-slate-800 p-6 bg-slate-50 dark:bg-slate-900/50">
-
-            <p class="text-xs uppercase tracking-[0.15em] text-slate-400 font-bold mb-4">
-              Mercuri AI Engine • Sent Message
-            </p>
-
-            <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 shadow-sm">
-              <p class="text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-                Hi Sarah 👋 Your table for <strong>4 guests</strong> at
-                <strong>Olive Kitchen</strong> is reserved for tomorrow at
-                <strong>7:30 PM</strong>. Reply
-                <strong>YES</strong> to confirm or message us if you'd like to
-                update your reservation.
-              </p>
-
-              <p class="mt-4 text-primary font-semibold text-sm">
-                ↯ Action: Reservation confirmed instantly
-              </p>
-            </div>
-
-            <!-- Mini Stats -->
-            <div class="grid grid-cols-3 gap-4 mt-5">
-              <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 text-center">
-                <p class="text-3xl font-bold text-slate-900 dark:text-white">98%</p>
-                <p class="text-xs text-slate-500 mt-1">Deliverability</p>
               </div>
 
-              <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 text-center">
-                <p class="text-3xl font-bold text-green-600">74%</p>
-                <p class="text-xs text-slate-500 mt-1">Confirmation Rate</p>
-              </div>
+              <div class="space-y-3">
 
-              <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 text-center">
-                <p class="text-3xl font-bold text-slate-600">2.3%</p>
-                <p class="text-xs text-slate-500 mt-1">No-show Rate</p>
+                <div
+                  class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+
+                  <div>
+                    <p class="font-medium text-sm">
+                      Marcus Vance
+                    </p>
+                    <p class="text-xs text-slate-500">
+                      Confirmed reservation
+                    </p>
+                  </div>
+
+                  <span
+                    class="text-xs bg-green-50 text-green-700 px-2 py-1 rounded">
+                    Confirmed
+                  </span>
+                </div>
+
+                <div
+                  class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+
+                  <div>
+                    <p class="font-medium text-sm">
+                      Sarah Lee
+                    </p>
+                    <p class="text-xs text-slate-500">
+                      Reminder delivered
+                    </p>
+                  </div>
+
+                  <span
+                    class="text-xs bg-blue-50 text-blue-700 px-2 py-1 rounded">
+                    Delivered
+                  </span>
+                </div>
+
+                <div
+                  class="flex items-center justify-between border border-slate-100 rounded-xl p-3">
+
+                  <div>
+                    <p class="font-medium text-sm">
+                      Alex Brown
+                    </p>
+                    <p class="text-xs text-slate-500">
+                      Awaiting response
+                    </p>
+                  </div>
+
+                  <span
+                    class="text-xs bg-orange-50 text-orange-700 px-2 py-1 rounded">
+                    Pending
+                  </span>
+                </div>
+
               </div>
             </div>
 
-          </div>
+            <!-- Integration Card -->
+            <div
+              class="rounded-2xl bg-charcoal text-white p-5">
 
-          <!-- Response Queue -->
-          <div class="rounded-3xl border border-slate-200 dark:border-slate-800 p-6 bg-slate-50 dark:bg-slate-900/50">
+              <p
+                class="text-[11px] uppercase tracking-[0.2em] text-primary font-bold mb-3">
+                Reservation Sync
+              </p>
 
-            <div class="flex items-center justify-between mb-5">
-              <h4 class="font-semibold text-slate-900 dark:text-white">
-                Awaiting Response
+              <h4 class="font-semibold mb-2">
+                Connected to your reservation system
               </h4>
 
-              <span class="text-xs uppercase tracking-[0.1em] text-slate-400">
-                Updated Live
-              </span>
-            </div>
-
-            <div class="space-y-4">
-
-              <div class="flex items-center justify-between rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
-                <div>
-                  <p class="font-semibold text-slate-900 dark:text-white">
-                    Maya Patel
-                  </p>
-                  <p class="text-xs text-slate-500">
-                    Table for 2 • 7:00 PM
-                  </p>
-                </div>
-
-                <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
-                  Confirmed
-                </span>
-              </div>
-
-              <div class="flex items-center justify-between rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
-                <div>
-                  <p class="font-semibold text-slate-900 dark:text-white">
-                    Jordan Lee
-                  </p>
-                  <p class="text-xs text-slate-500">
-                    Family Dinner • 8:00 PM
-                  </p>
-                </div>
-
-                <span class="px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
-                  Confirmed
-                </span>
-              </div>
-
-              <div class="flex items-center justify-between rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
-                <div>
-                  <p class="font-semibold text-slate-900 dark:text-white">
-                    Alex Brown
-                  </p>
-                  <p class="text-xs text-slate-500">
-                    Birthday Booking • 6:30 PM
-                  </p>
-                </div>
-
-                <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-bold">
-                  Reminder Sent
-                </span>
-              </div>
-
+              <p class="text-sm text-slate-300">
+                Upcoming bookings are automatically synced so reminders
+                are sent without staff manually reviewing reservation lists.
+              </p>
             </div>
 
           </div>
 
         </div>
-
       </div>
+
     </div>
+
   </div>
 </section>
+    
+    
+    
     <!-- Conversational system block-->
     <section class="py-16 sm:py-20 lg:py-24 px-6">
   <div class="max-w-7xl mx-auto">
