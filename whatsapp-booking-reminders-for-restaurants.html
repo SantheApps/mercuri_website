@@ -379,237 +379,236 @@
 
     
     <!-- mockup dashboard -->
-   <section class="py-20 sm:py-24 px-6 bg-slate-50/50">
-  <div class="max-w-7xl mx-auto">
+   <section class="py-20 sm:py-24 px-6 bg-white dark:bg-slate-900/40 border-y border-gray-100 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto">
 
-    <!-- Section Heading -->
-    <div class="text-center max-w-4xl mx-auto mb-16">
-      <p class="text-xs font-bold uppercase tracking-[0.3em] text-primary mb-4">
-        Reservation Reminder Workflow
-      </p>
+        <!-- Heading -->
+        <div class="text-center max-w-4xl mx-auto mb-16">
+            <p class="text-xs font-bold tracking-[0.3em] text-primary uppercase mb-4">
+                Reservation Reminder Workflow
+            </p>
 
-      <h2 class="serif-text text-4xl sm:text-5xl lg:text-6xl leading-tight text-slate-900 mb-6">
-        Automated reminders your guests actually respond to
-      </h2>
+            <h2 class="serif-text text-4xl md:text-5xl text-slate-900 dark:text-white leading-tight mb-6">
+                Automated reminders your guests actually respond to
+            </h2>
 
-      <p class="text-lg text-slate-600 max-w-3xl mx-auto">
-        Mercuri detects new reservations, sends WhatsApp reminders with one-tap
-        actions, and captures guest responses automatically.
-      </p>
+            <p class="text-lg text-slate-600 dark:text-slate-400">
+                Mercuri detects new reservations, sends WhatsApp reminders with one-tap actions,
+                and captures guest responses automatically.
+            </p>
+        </div>
+
+        <!-- Workflow Canvas -->
+        <div class="relative">
+
+            <!-- Glow -->
+            <div class="absolute inset-0 bg-primary/5 blur-3xl rounded-[3rem]"></div>
+
+            <div class="relative bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-[32px] shadow-[0_30px_80px_rgba(0,0,0,0.08)] overflow-hidden">
+
+                <!-- Browser Bar -->
+                <div class="h-14 border-b border-slate-200 dark:border-slate-800 flex items-center px-6">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                    </div>
+
+                    <div class="mx-auto text-xs text-slate-500">
+                        reservations.mercuri.cx/reminders
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="p-10">
+
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+                        <!-- LEFT : FLOW -->
+                        <div>
+
+                            <div class="mb-5">
+                                <p class="text-xs uppercase tracking-[0.25em] text-primary font-bold">
+                                    Mercuri Flow
+                                </p>
+                            </div>
+
+                            <div class="space-y-5">
+
+                                <div class="bg-green-50 border border-green-200 rounded-2xl p-5">
+                                    <div class="text-xs uppercase font-bold text-green-700 mb-1">
+                                        Trigger
+                                    </div>
+                                    <div class="font-semibold text-slate-900">
+                                        Reservation Created
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-center">
+                                    <div class="w-px h-8 bg-slate-300"></div>
+                                </div>
+
+                                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                                    <div class="text-xs uppercase font-bold text-primary mb-1">
+                                        Action
+                                    </div>
+                                    <div class="font-semibold text-slate-900">
+                                        Send WhatsApp Reminder
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-center">
+                                    <div class="w-px h-8 bg-slate-300"></div>
+                                </div>
+
+                                <div class="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm">
+                                    <div class="text-xs uppercase font-bold text-slate-500 mb-1">
+                                        Wait Condition
+                                    </div>
+                                    <div class="font-semibold text-slate-900">
+                                        Guest Response
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-center">
+                                    <div class="w-px h-8 bg-slate-300"></div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4">
+
+                                    <div class="border border-green-200 bg-green-50 rounded-2xl p-4 text-center">
+                                        <div class="text-sm font-semibold text-green-700">
+                                            Confirm
+                                        </div>
+                                    </div>
+
+                                    <div class="border border-orange-200 bg-orange-50 rounded-2xl p-4 text-center">
+                                        <div class="text-sm font-semibold text-orange-700">
+                                            Reschedule
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- RIGHT : WHATSAPP PREVIEW -->
+                        <div>
+
+                            <div class="mb-5">
+                                <p class="text-xs uppercase tracking-[0.25em] text-primary font-bold">
+                                    Guest Experience
+                                </p>
+                            </div>
+
+                            <div class="bg-white border border-slate-200 rounded-[28px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.10)]">
+
+                                <!-- Header -->
+                                <div class="px-5 py-4 bg-slate-50 border-b border-slate-200">
+                                    <div class="font-semibold text-slate-900">
+                                        Mercuri
+                                    </div>
+                                    <div class="text-xs text-slate-500">
+                                        Business Account
+                                    </div>
+                                </div>
+
+                                <!-- Message -->
+                                <div class="p-5">
+
+                                    <div class="bg-[#F5F7FB] rounded-2xl p-5 mb-4">
+                                        <p class="mb-4 text-slate-800">
+                                            Hi John 👋
+                                        </p>
+
+                                        <p class="mb-4 text-slate-800">
+                                            Thank you for booking with us.
+                                        </p>
+
+                                        <p class="text-slate-800 mb-2">
+                                            📅 25/06/26 · 3:00 PM
+                                        </p>
+
+                                        <p class="text-slate-800 mb-5">
+                                            👥 Guests: 4
+                                        </p>
+
+                                        <p class="text-slate-700">
+                                            Please confirm your reservation using the options below.
+                                        </p>
+                                    </div>
+
+                                    <div class="space-y-2">
+
+                                        <button class="w-full py-3 rounded-xl border border-slate-200 bg-white font-medium text-green-700 hover:bg-green-50 transition">
+                                            ↩ Confirm
+                                        </button>
+
+                                        <button class="w-full py-3 rounded-xl border border-slate-200 bg-white font-medium text-orange-600 hover:bg-orange-50 transition">
+                                            ↩ Reschedule
+                                        </button>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="mt-12 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl p-8">
+
+            <div class="grid md:grid-cols-5 gap-6">
+
+                <div>
+                    <h4 class="font-semibold mb-2">1. Reservation Created</h4>
+                    <p class="text-sm text-slate-500">
+                        Guest books a table.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-2">2. Mercuri Detects</h4>
+                    <p class="text-sm text-slate-500">
+                        Workflow starts automatically.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-2">3. Reminder Sent</h4>
+                    <p class="text-sm text-slate-500">
+                        WhatsApp message delivered.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-2">4. Guest Responds</h4>
+                    <p class="text-sm text-slate-500">
+                        Confirm or reschedule.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-semibold mb-2">5. Booking Updated</h4>
+                    <p class="text-sm text-slate-500">
+                        Reservation status stays synced.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
-
-    <!-- Main Visual -->
-    <div class="relative bg-white rounded-[2rem] border border-slate-200 shadow-xl overflow-hidden">
-
-      <!-- Browser Bar -->
-      <div class="h-14 border-b border-slate-200 flex items-center justify-center relative">
-        <div class="absolute left-6 flex gap-2">
-          <span class="w-3 h-3 rounded-full bg-red-400"></span>
-          <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
-          <span class="w-3 h-3 rounded-full bg-green-400"></span>
-        </div>
-
-        <span class="text-sm text-slate-500">
-          reservations.mercuri.cx/reminders
-        </span>
-      </div>
-
-      <div class="grid lg:grid-cols-[1.5fr_0.8fr] gap-10 p-10">
-
-        <!-- LEFT SIDE -->
-        <div>
-
-          <!-- Workflow Canvas -->
-          <div class="bg-slate-50 border border-slate-200 rounded-3xl p-8 min-h-[520px] relative">
-
-            <!-- Trigger -->
-            <div class="w-72 mx-auto bg-green-50 border border-green-200 rounded-2xl p-4 text-center">
-              <p class="text-green-600 text-xs font-bold uppercase mb-1">
-                Trigger
-              </p>
-              <h3 class="font-semibold text-slate-900">
-                Reservation Created
-              </h3>
-              <p class="text-sm text-slate-500 mt-1">
-                When a table reservation is made
-              </p>
-            </div>
-
-            <!-- Connector -->
-            <div class="h-16 w-px bg-slate-300 mx-auto"></div>
-
-            <!-- WhatsApp Action -->
-            <div class="max-w-md mx-auto bg-white border-2 border-blue-200 rounded-2xl p-5 shadow-sm">
-
-              <div class="flex items-center gap-2 mb-4">
-                <span class="text-blue-500 font-bold text-sm">
-                  ACTION
-                </span>
-                <span class="text-slate-900 font-semibold">
-                  WhatsApp Reminder
-                </span>
-              </div>
-
-              <div class="flex gap-2 mb-4">
-                <span class="px-3 py-1 text-xs rounded-lg border">
-                  Confirm
-                </span>
-
-                <span class="px-3 py-1 text-xs rounded-lg border">
-                  Reschedule
-                </span>
-              </div>
-
-              <div class="bg-slate-50 rounded-xl p-4 text-sm text-slate-700">
-                Hi {{guest_name}} 👋
-
-                <br><br>
-
-                Thank you for booking with us.
-
-                <br><br>
-
-                📅 {{date}}
-                <br>
-                🕒 {{time}}
-                <br>
-                👥 {{party_size}}
-
-                <br><br>
-
-                Please confirm your reservation using the options below.
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="flex items-center justify-center">
-
-          <!-- Phone -->
-          <div class="w-[320px] rounded-[3rem] border-[10px] border-slate-900 bg-white shadow-2xl overflow-hidden">
-
-            <!-- Phone Top -->
-            <div class="bg-slate-100 h-16 flex items-center px-5">
-              <div>
-                <h3 class="font-semibold">Mercuri</h3>
-                <p class="text-xs text-slate-500">
-                  Business Account
-                </p>
-              </div>
-            </div>
-
-            <!-- Chat Area -->
-            <div class="bg-[#efeae2] p-5 min-h-[540px]">
-
-              <div class="bg-white rounded-xl p-4 shadow-sm">
-
-                <p class="text-lg mb-4">
-                  Hi John 👋
-                </p>
-
-                <p class="mb-4">
-                  Thank you for booking with us
-                </p>
-
-                <p class="mb-4">
-                  📅 25/06/26 3:00 PM
-                  <br>
-                  👥 Guests: 4
-                </p>
-
-                <p class="mb-4">
-                  Please confirm your reservation using the options below.
-                </p>
-
-                <p>
-                  If your plans have changed, you can request a new time by selecting <strong>Reschedule</strong>.
-                </p>
-
-              </div>
-
-              <!-- Buttons -->
-              <div class="bg-white border-t mt-1 py-3 text-center text-green-600 font-medium">
-                ↩ Confirm
-              </div>
-
-              <div class="bg-white border-t py-3 text-center text-green-600 font-medium">
-                ↩ Reschedule
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Bottom Process Steps -->
-
-    <div class="mt-12 bg-white border border-slate-200 rounded-3xl shadow-sm p-8">
-
-      <div class="grid md:grid-cols-5 gap-6">
-
-        <div>
-          <h3 class="font-semibold mb-2">
-            1. Reservation Created
-          </h3>
-
-          <p class="text-sm text-slate-500">
-            New booking enters your reservation system.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="font-semibold mb-2">
-            2. Mercuri Detects
-          </h3>
-
-          <p class="text-sm text-slate-500">
-            Reservation event triggers the workflow.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="font-semibold mb-2">
-            3. Reminder Sent
-          </h3>
-
-          <p class="text-sm text-slate-500">
-            WhatsApp confirmation request is delivered automatically.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="font-semibold mb-2">
-            4. Guest Responds
-          </h3>
-
-          <p class="text-sm text-slate-500">
-            Guest confirms or requests a new time.
-          </p>
-        </div>
-
-        <div>
-          <h3 class="font-semibold mb-2">
-            5. Team Updated
-          </h3>
-
-          <p class="text-sm text-slate-500">
-            Reservation status stays synchronized.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
 </section>
     
     
