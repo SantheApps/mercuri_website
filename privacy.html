@@ -89,14 +89,14 @@
 
       <h2 id="google-user-data">5. Connected Email Accounts (Gmail and Outlook)</h2>
       <p>Mercuri sends your email campaigns and one-to-one emails from your own mailbox rather than from a shared sending domain. To do this you connect your Google Workspace or Gmail account, or your Microsoft 365 or Outlook account, using OAuth. You never give us your email password, and you can disconnect at any time.</p>
-      <p><strong>What we access (Google user data).</strong> When you connect a Google account we request these Gmail permissions:</p>
-      <!-- ponytail: scope names must match the OAuth consent screen exactly; update if the app requests different scopes -->
+      <p><strong>What we access (Google user data).</strong> Connecting a mailbox is optional. If you choose to connect one, Mercuri asks Google or Microsoft for permission to:</p>
+      <!-- ponytail: functional descriptions, not scope IDs. The consent screen is the source of truth; keep this list matching it. -->
       <ul>
-        <li><strong>Send email on your behalf</strong> (gmail.send), so campaigns and one-to-one replies go out from your own address.</li>
-        <li><strong>Read email</strong> (gmail.readonly), so replies to conversations that Mercuri started appear in your Mercuri inbox and your AI agent can respond to them. This permission technically allows an app to read any message in the mailbox. Mercuri only retrieves messages that belong to threads it sent or that customers sent in reply to those threads, and never scans, indexes, or stores the rest of your mail.</li>
-        <li><strong>Basic profile</strong> (your name and email address), to label the connected account.</li>
+        <li><strong>Send email on your behalf</strong>, so campaigns and one-to-one replies go out from your own address.</li>
+        <li><strong>Read email</strong>, so replies to conversations that Mercuri started appear in your Mercuri inbox and your AI agent can respond to them. Where a permission would technically allow broader access to the mailbox, Mercuri only retrieves messages belonging to threads it sent or that customers sent in reply to those threads. It does not scan, index, or store the rest of your mail.</li>
+        <li><strong>See your basic profile</strong> (your name and email address), to label the connected account.</li>
       </ul>
-      <p>Microsoft accounts use the equivalent Outlook permissions: send mail, read mail, and basic profile.</p>
+      <p>The exact permissions requested are shown on the Google or Microsoft consent screen before you approve them, and you can review or revoke them at any time.</p>
       <p><strong>What we do with it.</strong> We use mailbox data only to provide the features you can see in Mercuri: sending, receiving, threading, and AI-assisted replies for the conversations you run through the platform. We store the OAuth tokens needed to keep the connection alive, the messages that belong to Mercuri conversations, and delivery metadata. We do not use mailbox data for advertising, sell it to data brokers, use it for credit decisions or retargeting, or share it with third parties except the sub-processors needed to run the service (Section 8).</p>
       <p><strong>No AI model training.</strong> Mercuri does not use data obtained through Google Workspace APIs, or through Microsoft's APIs, to develop, improve, or train generalized or non-personalized artificial intelligence or machine-learning models. Mailbox data is used only to power the AI features you configure for your own account, such as drafting a reply within a specific conversation.</p>
       <p><strong>Human access.</strong> Mercuri staff do not read your mailbox data except with your explicit permission to resolve a support issue, where required for security or abuse investigation, or where required by law.</p>
@@ -115,10 +115,10 @@
       <h2>8. Who We Share Information With</h2>
       <p>We share personal information only with the following categories of recipients, and only as needed to run the service:</p>
       <ul>
-          <li><strong>Messaging networks:</strong> our SMS provider and carriers; Meta for WhatsApp; Google and Microsoft for email sent through your connected mailbox.</li>
+          <li><strong>Messaging networks:</strong> our SMS provider and the carriers it delivers through; Meta for WhatsApp; Google or Microsoft where you have connected a mailbox.</li>
           <li><strong>AI model providers</strong> for AI agent replies and message drafting.</li>
           <li><strong>Cloud hosting, database, search, and monitoring providers.</strong></li>
-          <li><strong>Transactional email provider</strong> for Mercuri's own account emails (password resets, invoices, alerts).</li>
+          <li><strong>Email service providers</strong> that deliver email on our behalf, both your campaign email where it is not sent through a connected mailbox, and Mercuri's own account emails (password resets, invoices, alerts).</li>
           <li><strong>Payment processors</strong> for subscriptions and message credits.</li>
           <li><strong>Analytics providers</strong> on our website, such as Google Analytics.</li>
           <li><strong>Integrations you connect</strong> (CRM, booking, e-commerce, calendar), which receive and send data according to your configuration.</li>
