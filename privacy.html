@@ -40,15 +40,18 @@
     fbq('track', 'PageView');
 
     document.addEventListener('DOMContentLoaded', function () {
-      var fbclid = new URLSearchParams(location.search).get('fbclid');
-      document.querySelectorAll('a[href*="client.mercuri.cx/auth/signup"]').forEach(function (a) {
-        // carry the ad click id across to the app domain so the signup can be attributed
-        if (fbclid) {
-          var u = new URL(a.href);
-          u.searchParams.set('fbclid', fbclid);
-          a.href = u.toString();
+      // carry the ad click id AND the campaign params across to the app domain, so a
+      // signup can be attributed back to the ad that paid for it. fbclid alone only
+      // tells Meta; the utm_* keys are what GA4 and the backend can read.
+      var CARRY = ['fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'ttclid'];
+      var src = new URLSearchParams(location.search);
+      document.querySelectorAll('a[href*="client.mercuri.cx/auth/"]').forEach(function (a) {
+        var u = new URL(a.href);
+        CARRY.forEach(function (k) { if (src.get(k)) u.searchParams.set(k, src.get(k)); });
+        a.href = u.toString();
+        if (u.pathname.indexOf('/auth/signup') === 0) {
+          a.addEventListener('click', function () { fbq('trackCustom', 'SignupClick'); });
         }
-        a.addEventListener('click', function () { fbq('trackCustom', 'SignupClick'); });
       });
     });
   }
