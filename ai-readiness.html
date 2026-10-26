@@ -25,6 +25,38 @@
     gtag('js', new Date());
     gtag('config', 'G-VTDYSN0C3J');
   </script>
+  <!-- Meta Pixel -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+  if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+    fbq('init', '1625917745253902');
+    fbq('track', 'PageView');
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // carry the ad click id AND the campaign params across to the app domain, so a
+      // signup can be attributed back to the ad that paid for it. fbclid alone only
+      // tells Meta; the utm_* keys are what GA4 and the backend can read.
+      var CARRY = ['fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'ttclid'];
+      var src = new URLSearchParams(location.search);
+      document.querySelectorAll('a[href*="client.mercuri.cx/auth/"]').forEach(function (a) {
+        var u = new URL(a.href);
+        CARRY.forEach(function (k) { if (src.get(k)) u.searchParams.set(k, src.get(k)); });
+        a.href = u.toString();
+        if (u.pathname.indexOf('/auth/signup') === 0) {
+          a.addEventListener('click', function () { fbq('trackCustom', 'SignupClick'); });
+        }
+      });
+    });
+  }
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1625917745253902&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel -->
 </head>
 <body class="bg-white text-ink font-sans antialiased">
 
@@ -32,7 +64,7 @@
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-line">
     <nav class="mx-auto max-w-7xl px-5 h-16 flex items-center">
       <a href="/" class="flex items-center gap-2 font-bold tracking-tight">
-        <span class="w-7 h-7 rounded bg-ink text-white grid place-items-center text-sm font-bold">M</span>
+        <img src="assets/images/Mercuri logo 192px.png" alt="" class="w-7 h-7">
         Mercuri
       </a>
       <div class="ml-auto flex items-center gap-2">
@@ -125,12 +157,12 @@
 
   <footer class="border-t border-line">
     <div class="mx-auto max-w-6xl px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
-      <p class="flex items-center gap-2 font-bold text-ink"><span class="w-5 h-5 rounded bg-ink text-white grid place-items-center text-[10px] font-bold">M</span> Mercuri</p>
+      <p class="flex items-center gap-2 font-bold text-ink"><img src="assets/images/Mercuri logo 192px.png" alt="" class="w-5 h-5"> Mercuri</p>
       <div class="flex gap-6">
         <a href="/#features" class="hover:text-ink">Features</a>
         <a href="/#platform" class="hover:text-ink">AI Agents</a>
-        <a href="https://mercuri.cx/privacy.html" class="hover:text-ink">Privacy</a>
-        <a href="https://mercuri.cx/terms.html" class="hover:text-ink">Terms</a>
+        <a href="privacy.html" class="hover:text-ink">Privacy</a>
+        <a href="terms.html" class="hover:text-ink">Terms</a>
       </div>
       <p>© 2026 Mercuri</p>
     </div>
