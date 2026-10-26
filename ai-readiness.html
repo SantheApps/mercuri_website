@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Readiness Check for studios — Mercuri</title>
+  <meta name="description" content="Answer 8 quick questions and get a free AI readiness score for your yoga, fitness or wellness studio, with a personalised report on where AI can save you time." />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+  <link rel="canonical" href="https://mercuri.cx/ai-readiness.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mercuri.cx/ai-readiness.html" />
+  <meta property="og:title" content="How AI-ready is your studio? Free 2-minute check" />
+  <meta property="og:description" content="Get a readiness score and a personalised report on where AI can answer, book and bring members back for you." />
+  <meta property="og:image" content="https://mercuri.cx/assets/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="css/v2.css" rel="stylesheet" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VTDYSN0C3J"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VTDYSN0C3J');
+  </script>
+</head>
+<body class="bg-white text-ink font-sans antialiased">
+
+  <!-- Nav -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-line">
+    <nav class="mx-auto max-w-7xl px-5 h-16 flex items-center">
+      <a href="/" class="flex items-center gap-2 font-bold tracking-tight">
+        <span class="w-7 h-7 rounded bg-ink text-white grid place-items-center text-sm font-bold">M</span>
+        Mercuri
+      </a>
+      <div class="ml-auto flex items-center gap-2">
+        <a href="https://client.mercuri.cx/auth/signin" class="hidden sm:block text-[15px] font-medium text-ink hover:bg-band rounded-md px-3 py-1.5">Log in</a>
+        <a href="https://client.mercuri.cx/auth/signup" class="rounded-lg bg-blue text-white text-[15px] font-medium px-4 py-2 hover:bg-blue-dark transition-colors">Open Mercuri</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="mx-auto max-w-2xl px-5 pt-14 pb-24 min-h-[70vh]">
+
+    <!-- Intro -->
+    <section data-step="intro">
+      <p class="inline-block rounded-full border border-line bg-band px-3.5 py-1 text-[13px] font-medium text-muted">Free · 2 minutes</p>
+      <h1 tabindex="-1" class="mt-6 text-[2rem] sm:text-[3rem] font-bold tracking-[-0.03em] leading-[1.06] outline-none">How AI-ready is your studio?</h1>
+      <p class="mt-4 text-lg text-muted">Answer 8 quick questions. Get a readiness score and a personalised report on where AI can answer, book and bring members back for you.</p>
+      <form id="intro-form" class="mt-8 space-y-4">
+        <label class="block">
+          <span class="text-sm font-medium">What kind of business do you run?</span>
+          <input name="businessType" required maxlength="200" placeholder="e.g. Hot yoga studio, Pilates, CrossFit box" class="mt-1.5 w-full rounded-xl border border-line px-4 py-3 text-[15px] focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue-light" />
+        </label>
+        <label class="block">
+          <span class="text-sm font-medium">Website <span class="text-muted font-normal">(optional)</span></span>
+          <input name="website" maxlength="200" placeholder="yourstudio.com" class="mt-1.5 w-full rounded-xl border border-line px-4 py-3 text-[15px] focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue-light" />
+        </label>
+        <button class="rounded-lg bg-blue text-white text-[15px] font-medium px-5 py-2.5 hover:bg-blue-dark transition-colors">Start the check</button>
+      </form>
+    </section>
+
+    <!-- One question at a time -->
+    <section data-step="quiz" hidden>
+      <div class="h-1.5 rounded-full bg-band overflow-hidden"><div id="progress" class="h-full bg-blue transition-all duration-300" style="width:0"></div></div>
+      <p id="q-count" class="mt-6 text-sm font-medium text-muted"></p>
+      <h2 id="q-text" tabindex="-1" class="mt-2 text-2xl sm:text-[2rem] font-bold tracking-[-0.02em] leading-tight outline-none"></h2>
+      <div id="q-options" class="mt-6 grid gap-2.5"></div>
+      <button id="q-back" type="button" class="mt-6 text-[15px] font-medium text-muted hover:text-ink">&larr; Back</button>
+    </section>
+
+    <!-- Score teaser + email gate -->
+    <section data-step="gate" hidden>
+      <p class="text-sm font-medium text-muted">Your AI readiness score</p>
+      <h2 tabindex="-1" class="mt-2 flex items-baseline gap-3 outline-none">
+        <span id="g-score" class="text-[4.5rem] font-bold tracking-[-0.03em] leading-none"></span>
+        <span id="g-band" class="rounded-full px-3 py-1 text-sm font-semibold"></span>
+      </h2>
+      <p id="g-gaps" class="mt-4 text-lg"></p>
+      <form id="email-form" class="mt-8 rounded-2xl border border-line bg-band p-6">
+        <p class="font-semibold">Get your full report</p>
+        <p class="mt-1 text-[15px] text-muted">Your biggest gaps, what to fix first, and one quick win for this week.</p>
+        <div class="mt-4 flex flex-col sm:flex-row gap-2.5">
+          <label class="flex-1"><span class="sr-only">Email</span>
+            <input name="email" type="email" required maxlength="200" autocomplete="email" placeholder="you@yourstudio.com" class="w-full rounded-xl border border-line bg-white px-4 py-3 text-[15px] focus:border-blue focus:outline-none focus:ring-2 focus:ring-blue-light" />
+          </label>
+          <button id="email-btn" class="rounded-lg bg-blue text-white text-[15px] font-medium px-5 py-3 hover:bg-blue-dark transition-colors disabled:opacity-60">Show my report</button>
+        </div>
+        <p id="email-error" role="alert" class="mt-3 text-sm text-[#d44c47]"></p>
+        <p class="mt-3 text-xs text-muted">We'll save your results and may follow up about Mercuri. <a href="privacy.html" class="underline">Privacy</a></p>
+      </form>
+    </section>
+
+    <!-- Full report -->
+    <section data-step="report" hidden>
+      <p class="text-sm font-medium text-muted">Your AI readiness report</p>
+      <h2 tabindex="-1" class="mt-2 flex items-baseline gap-3 outline-none">
+        <span id="r-score" class="text-[4.5rem] font-bold tracking-[-0.03em] leading-none"></span>
+        <span id="r-band" class="rounded-full px-3 py-1 text-sm font-semibold"></span>
+      </h2>
+      <p id="r-summary" class="mt-6 text-lg leading-relaxed"></p>
+
+      <h3 class="mt-12 text-xl font-bold">Biggest gaps</h3>
+      <ol id="r-gaps" class="mt-4 space-y-3"></ol>
+
+      <h3 class="mt-12 text-xl font-bold">What to do about them</h3>
+      <div id="r-suggestions" class="mt-4 grid gap-3"></div>
+
+      <div class="mt-12 rounded-2xl bg-blue-light p-6">
+        <p class="text-sm font-semibold text-blue">Quick win this week</p>
+        <p id="r-quickwin" class="mt-2 text-[15px] leading-relaxed"></p>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-2xl font-bold tracking-[-0.02em]">Close these gaps with Mercuri</p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <a href="https://client.mercuri.cx/auth/signup" class="rounded-lg bg-blue text-white text-[15px] font-medium px-5 py-2.5 hover:bg-blue-dark transition-colors">Get Mercuri free</a>
+          <a href="mailto:karthik@mercuri.cx?subject=AI%20readiness%20report" class="rounded-lg bg-blue-light text-blue text-[15px] font-medium px-5 py-2.5 hover:bg-[#d3eafd] transition-colors">Request a demo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line">
+    <div class="mx-auto max-w-6xl px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
+      <p class="flex items-center gap-2 font-bold text-ink"><span class="w-5 h-5 rounded bg-ink text-white grid place-items-center text-[10px] font-bold">M</span> Mercuri</p>
+      <div class="flex gap-6">
+        <a href="/#features" class="hover:text-ink">Features</a>
+        <a href="/#platform" class="hover:text-ink">AI Agents</a>
+        <a href="https://mercuri.cx/privacy.html" class="hover:text-ink">Privacy</a>
+        <a href="https://mercuri.cx/terms.html" class="hover:text-ink">Terms</a>
+      </div>
+      <p>© 2026 Mercuri</p>
+    </div>
+  </footer>
+
+  <script src="ai-readiness-api/readiness.js"></script>
+  <script>
+    // ponytail: set to the Vercel project's URL after the first deploy
+    const API_URL = location.hostname === 'localhost'
+      ? 'http://localhost:3000/api/assess'
+      : 'https://mercuri-ai-readiness.vercel.app/api/assess';
+    const BAND_STYLE = { Starting: 'background:#ffe2dd;color:#d44c47', Emerging: 'background:#fdecc8;color:#cb912f', Ready: 'background:#dbeddb;color:#448361' };
+
+    const state = { businessType: '', website: '', answers: {}, i: 0 };
+    const $ = (id) => document.getElementById(id);
+    const el = (tag, cls, text) => { const n = document.createElement(tag); n.className = cls; n.textContent = text; return n; };
+
+    function show(step) {
+      document.querySelectorAll('[data-step]').forEach((s) => (s.hidden = s.dataset.step !== step));
+      document.querySelector(`[data-step="${step}"] [tabindex="-1"]`).focus();
+      window.scrollTo(0, 0);
+    }
+
+    function renderQuestion() {
+      const qn = READINESS_QUESTIONS[state.i];
+      $('progress').style.width = `${(state.i / READINESS_QUESTIONS.length) * 100}%`;
+      $('q-count').textContent = `Question ${state.i + 1} of ${READINESS_QUESTIONS.length}`;
+      $('q-text').textContent = qn.q;
+      $('q-options').replaceChildren(...qn.options.map((o) => {
+        const b = el('button', 'text-left rounded-xl border px-4 py-3.5 text-[15px] font-medium hover:border-blue hover:bg-blue-light transition-colors', o.label);
+        b.type = 'button';
+        b.classList.add(state.answers[qn.id] === o.id ? 'border-blue' : 'border-line');
+        b.onclick = () => {
+          state.answers[qn.id] = o.id;
+          if (++state.i < READINESS_QUESTIONS.length) return renderQuestion(), $('q-text').focus();
+          showGate();
+        };
+        return b;
+      }));
+    }
+
+    function setScore(prefix, r) {
+      $(prefix + '-score').textContent = r.score;
+      $(prefix + '-band').textContent = r.band;
+      $(prefix + '-band').style.cssText = BAND_STYLE[r.band];
+    }
+
+    function showGate() {
+      const r = readinessScore(state.answers);
+      setScore('g', r);
+      $('g-gaps').textContent = r.gaps
+        ? `We found ${r.gaps} area${r.gaps > 1 ? 's' : ''} where AI could save you time or win back members.`
+        : "You're ahead of most studios. Your report has a few ways to go further.";
+      gtag('event', 'ai_readiness_completed', { score: r.score });
+      show('gate');
+    }
+
+    $('intro-form').onsubmit = (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      state.businessType = f.get('businessType').trim();
+      state.website = f.get('website').trim();
+      state.i = 0;
+      renderQuestion();
+      show('quiz');
+    };
+
+    $('q-back').onclick = () => {
+      if (state.i === 0) return show('intro');
+      state.i--;
+      renderQuestion();
+    };
+
+    $('email-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const btn = $('email-btn');
+      btn.disabled = true;
+      btn.textContent = 'Writing your report…';
+      $('email-error').textContent = '';
+      try {
+        const res = await fetch(API_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: new FormData(e.target).get('email'), businessType: state.businessType, website: state.website, answers: state.answers }),
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error);
+        renderReport(data);
+        gtag('event', 'generate_lead', { method: 'ai_readiness' });
+        if (window.fbq) fbq('track', 'Lead');
+      } catch (err) {
+        $('email-error').textContent = err.message || 'Something went wrong. Try again.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Show my report';
+      }
+    };
+
+    // LLM output is rendered with textContent only, never innerHTML.
+    function renderReport({ report, ...r }) {
+      setScore('r', r);
+      $('r-summary').textContent = report.summary;
+      $('r-gaps').replaceChildren(...(report.gaps || []).map((g, i) => {
+        const li = el('li', 'rounded-xl border border-line p-4');
+        li.append(el('p', 'font-semibold', `${i + 1}. ${g.title}`), el('p', 'mt-1 text-[15px] text-muted', g.why));
+        return li;
+      }));
+      $('r-suggestions').replaceChildren(...(report.suggestions || []).map((s) => {
+        const d = el('div', 'rounded-xl border border-line p-4');
+        d.append(el('p', 'font-semibold', s.title), el('p', 'mt-1 text-[15px] text-muted', s.action), el('p', 'mt-3 inline-block rounded-full bg-band px-3 py-1 text-[13px] font-medium', `Mercuri: ${s.mercuriFeature}`));
+        return d;
+      }));
+      $('r-quickwin').textContent = report.quickWin;
+      show('report');
+    }
+  </script>
+</body>
+</html>
