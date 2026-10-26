@@ -1,619 +1,523 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mercuri — Email & SMS marketing for yoga and wellness studios</title>
-  <meta name="description" content="Mercuri answers your members by email, SMS and WhatsApp confirming classes, filling waitlists and winning back lapsed members automatically. Built for yoga and wellness studios." />
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
-  <link rel="canonical" href="https://mercuri.cx/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mercuri.cx/" />
-  <meta property="og:title" content="Mercuri — Email & SMS marketing for yoga and wellness studios" />
-  <meta property="og:description" content="Your members message while you teach. Mercuri replies — confirming classes, clearing waitlists and winning back lapsed members over email, SMS and WhatsApp." />
-  <meta property="og:image" content="https://mercuri.cx/assets/og-image.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Mercuri — Email & SMS marketing for yoga and wellness studios" />
-  <meta name="twitter:description" content="Your members message while you teach. Mercuri replies — confirming classes, clearing waitlists and winning back lapsed members." />
-  <meta name="twitter:image" content="https://mercuri.cx/assets/og-image.png" />
-  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="css/v2.css" rel="stylesheet" />
-  <style>
-    html { scroll-behavior: smooth; }
-    body { overflow-x: hidden; }
-    .bubble { border-radius: 0.75rem; }
-    .bubble-in { border-bottom-left-radius: 0.25rem; }
-    .bubble-out { border-bottom-right-radius: 0.25rem; }
-    @media (prefers-reduced-motion: no-preference) {
-      .rise { opacity: 0; transform: translateY(12px); transition: opacity .5s ease, transform .5s ease; }
-      .rise.in { opacity: 1; transform: none; }
-    }
-  </style>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VTDYSN0C3J"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-VTDYSN0C3J');
+<html class="scroll-smooth" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Mercuri - Your AI employee for local businesses
+  </title>
+  <meta content="Mercuri is an AI employee for studios, salons and clinics: it answers every customer on WhatsApp, SMS and email, books appointments, cuts no-shows and grows your Google reviews." name="description"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://mercuri.cx/" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Mercuri - Your AI employee for local businesses" property="og:title"/>
+  <meta content="Mercuri is an AI employee for studios, salons and clinics: it answers every customer on WhatsApp, SMS and email, books appointments, cuts no-shows and grows your Google reviews." property="og:description"/>
+  <meta content="https://mercuri.cx/" property="og:url"/>
+  <meta content="https://mercuri.cx/assets/images/og/og-home.svg" property="og:image"/>
+  <meta content="Mercuri homepage preview showing email, SMS and WhatsApp marketing in one platform" property="og:image:alt"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Mercuri - Your AI employee for local businesses" name="twitter:title"/>
+  <meta content="Mercuri is an AI employee for studios, salons and clinics: it answers every customer on WhatsApp, SMS and email, books appointments, cuts no-shows and grows your Google reviews." name="twitter:description"/>
+  <meta content="https://mercuri.cx/assets/images/og/og-home.svg" name="twitter:image"/>
+  <meta content="Mercuri homepage preview showing email, SMS and WhatsApp marketing in one platform" name="twitter:image:alt"/>
+  <link href="assets/images/Mercuri logo 32px.png" rel="icon" sizes="32x32" type="image/png"/>
+  <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@graph": [
+       {
+         "@type": "Organization",
+         "@id": "https://mercuri.cx/#organization",
+         "name": "Mercuri",
+         "url": "https://mercuri.cx/",
+         "logo": "https://mercuri.cx/assets/images/Mercuri%20logo%20300px.png"
+       },
+       {
+         "@type": "WebSite",
+         "@id": "https://mercuri.cx/#website",
+         "url": "https://mercuri.cx/",
+         "name": "Mercuri",
+         "publisher": {
+           "@id": "https://mercuri.cx/#organization"
+         }
+       },
+       {
+         "@type": "WebPage",
+         "@id": "https://mercuri.cx/#webpage",
+         "url": "https://mercuri.cx/",
+         "name": "Mercuri - Your AI employee for local businesses",
+         "description": "Mercuri is an AI employee for studios, salons and clinics: it answers every customer on WhatsApp, SMS and email, books appointments, cuts no-shows and grows your Google reviews.",
+         "isPartOf": {
+           "@id": "https://mercuri.cx/#website"
+         },
+         "about": {
+           "@id": "https://mercuri.cx/#organization"
+         }
+       }
+     ]
+   }
   </script>
-  <!-- Meta Pixel -->
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-  if (location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
-    fbq('init', '1625917745253902');
-    fbq('track', 'PageView');
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // carry the ad click id AND the campaign params across to the app domain, so a
-      // signup can be attributed back to the ad that paid for it. fbclid alone only
-      // tells Meta; the utm_* keys are what GA4 and the backend can read.
-      var CARRY = ['fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'ttclid'];
-      var src = new URLSearchParams(location.search);
-      document.querySelectorAll('a[href*="client.mercuri.cx/auth/"]').forEach(function (a) {
-        var u = new URL(a.href);
-        CARRY.forEach(function (k) { if (src.get(k)) u.searchParams.set(k, src.get(k)); });
-        a.href = u.toString();
-        if (u.pathname.indexOf('/auth/signup') === 0) {
-          a.addEventListener('click', function () { fbq('trackCustom', 'SignupClick'); });
+  <script type="application/ld+json">
+   {
+     "@context": "https://schema.org",
+     "@type": "SoftwareApplication",
+     "name": "Mercuri",
+     "applicationCategory": "BusinessApplication",
+     "operatingSystem": "Web",
+     "url": "https://mercuri.cx/",
+     "description": "Mercuri is an AI employee for studios, salons and clinics: it answers every customer on WhatsApp, SMS and email, books appointments, cuts no-shows and grows your Google reviews.",
+     "offers": [
+       {
+         "@type": "Offer",
+         "price": "0",
+         "priceCurrency": "USD",
+         "url": "https://mercuri.cx/pricing.html",
+         "name": "Free"
+       },
+       {
+         "@type": "Offer",
+         "price": "29",
+         "priceCurrency": "USD",
+         "url": "https://mercuri.cx/pricing.html",
+         "name": "Growth"
+       },
+       {
+         "@type": "Offer",
+         "price": "99",
+         "priceCurrency": "USD",
+         "url": "https://mercuri.cx/pricing.html",
+         "name": "Pro"
+       }
+     ],
+     "publisher": {
+       "@type": "Organization",
+       "name": "Mercuri",
+       "url": "https://mercuri.cx/"
+     }
+   }
+  </script>
+  <link href="css/tailwind.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+   <style>
+    body {
+            font-family: 'Inter', sans-serif;
         }
-      });
-    });
-  }
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=1625917745253902&ev=PageView&noscript=1"/></noscript>
-  <!-- End Meta Pixel -->
+
+        .serif-text {
+            font-family: 'Instrument Serif', serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+   </style>
+  </link>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VTDYSN0C3J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VTDYSN0C3J');
+</script>
 </head>
-<body class="bg-white text-ink font-sans antialiased">
-
-  <!-- Icon sprite -->
-  <svg class="hidden" xmlns="http://www.w3.org/2000/svg">
-    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
-    <symbol id="i-sms" viewBox="0 0 24 24"><path fill="currentColor" d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 11H7V9h2v2zm4 0h-2V9h2v2zm4 0h-2V9h2v2z"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></symbol>
-    <symbol id="i-gmail" viewBox="0 0 24 24"><path fill="currentColor" d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></symbol>
-    <symbol id="i-outlook" viewBox="0 0 24 24"><path fill="currentColor" d="M7.88 12.04q0 .45-.11.87-.1.41-.33.74-.22.33-.58.52-.37.2-.87.2t-.85-.2q-.35-.21-.57-.55-.22-.33-.33-.75-.1-.42-.1-.86t.1-.87q.1-.43.34-.76.22-.34.59-.54.36-.2.87-.2t.86.2q.35.21.57.55.22.34.31.77.1.43.1.88zM24 12v9.38q0 .46-.33.8-.33.32-.8.32H7.13q-.46 0-.8-.33-.32-.33-.32-.8V18H1q-.41 0-.7-.3-.3-.29-.3-.7V7q0-.41.3-.7Q.58 6 1 6h6.5V2.55q0-.44.3-.75.3-.3.75-.3h12.9q.44 0 .75.3.3.3.3.75V10.85l1.24.72h.01q.1.07.18.18.07.12.07.25zm-6-8.25v3h3v-3zm0 4.5v3h3v-3zm0 4.5v1.83l3.05-1.83zm-5.25-9v3h3.75v-3zm0 4.5v3h3.75v-3zm0 4.5v2.03l2.41 1.5 1.34-.8v-2.73zM9 3.75V6h2l.13.01.12.04v-2.3zM5.98 15.98q.9 0 1.6-.3.7-.32 1.19-.86.48-.55.73-1.28.25-.74.25-1.61 0-.83-.25-1.55-.24-.71-.71-1.24t-1.15-.83q-.68-.3-1.55-.3-.92 0-1.64.3-.71.3-1.2.85-.5.54-.75 1.3-.25.74-.25 1.63 0 .85.26 1.56.26.72.74 1.23.48.52 1.17.81.69.3 1.56.3zM7.5 21h12.39L12 16.08V17q0 .41-.3.7-.29.3-.7.3H7.5zm15-.13v-7.24l-5.9 3.54Z"/></symbol>
-    <symbol id="i-twilio" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C5.381-.008.008 5.352 0 11.971V12c0 6.64 5.359 12 12 12 6.64 0 12-5.36 12-12 0-6.641-5.36-12-12-12zm0 20.801c-4.846.015-8.786-3.904-8.801-8.75V12c-.014-4.846 3.904-8.786 8.75-8.801H12c4.847-.014 8.786 3.904 8.801 8.75V12c.015 4.847-3.904 8.786-8.75 8.801H12zm5.44-11.76c0 1.359-1.12 2.479-2.481 2.479-1.366-.007-2.472-1.113-2.479-2.479 0-1.361 1.12-2.481 2.479-2.481 1.361 0 2.481 1.12 2.481 2.481zm0 5.919c0 1.36-1.12 2.48-2.481 2.48-1.367-.008-2.473-1.114-2.479-2.48 0-1.359 1.12-2.479 2.479-2.479 1.361-.001 2.481 1.12 2.481 2.479zm-5.919 0c0 1.36-1.12 2.48-2.479 2.48-1.368-.007-2.475-1.113-2.481-2.48 0-1.359 1.12-2.479 2.481-2.479 1.358-.001 2.479 1.12 2.479 2.479zm0-5.919c0 1.359-1.12 2.479-2.479 2.479-1.367-.007-2.475-1.112-2.481-2.479 0-1.361 1.12-2.481 2.481-2.481 1.358 0 2.479 1.12 2.479 2.481z"/></symbol>
-    <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 0 0 1.384 2.126A5.868 5.868 0 0 0 4.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 0 0 2.126-1.384 5.86 5.86 0 0 0 1.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 0 0-1.384-2.126A5.847 5.847 0 0 0 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.9.419.418.679.816.896 1.378.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 0 1-.899 1.382 3.744 3.744 0 0 1-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 0 1-1.379-.899 3.644 3.644 0 0 1-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.854-.06l.045.03zm0 3.678a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 0 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></symbol>
-    <symbol id="i-meta" viewBox="0 0 24 24"><path fill="currentColor" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></symbol>
-  </svg>
-
-  <!-- Nav -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-line">
-    <nav class="mx-auto max-w-7xl px-5 h-16 flex items-center">
-      <a href="#" class="flex items-center gap-2 font-bold tracking-tight">
-        <img src="assets/images/Mercuri logo 192px.png" alt="" class="w-7 h-7">
-        Mercuri
-      </a>
-      <div class="hidden md:flex flex-1 items-center justify-center gap-1 text-[15px] font-medium text-ink">
-        <a href="#features" class="hover:bg-band rounded-md px-3 py-1.5">Features</a>
-        <a href="#platform" class="hover:bg-band rounded-md px-3 py-1.5">AI Agents</a>
-        <a href="#reviews" class="hover:bg-band rounded-md px-3 py-1.5">Reviews</a>
-        <a href="#pricing" class="hover:bg-band rounded-md px-3 py-1.5">Pricing</a>
-      </div>
-      <div class="ml-auto md:ml-0 flex items-center gap-2">
-        <a href="https://client.mercuri.cx/auth/signin" class="hidden sm:block text-[15px] font-medium text-ink hover:bg-band rounded-md px-3 py-1.5">Log in</a>
-        <a href="https://client.mercuri.cx/auth/signup" class="rounded-lg bg-blue text-white text-[15px] font-medium px-4 py-2 hover:bg-blue-dark transition-colors">Open Mercuri</a>
-      </div>
-    </nav>
+ <body class="bg-background-light dark:bg-background-dark text-charcoal dark:text-slate-200 transition-colors duration-300">
+  <!-- Header Component -->
+  <div id="header-placeholder">
+  </div>
+    <!-- HERO -->
+  <header class="pt-20 pb-16 sm:pt-28 sm:pb-20 px-6 border-b border-slate-100 dark:border-slate-800">
+   <div class="max-w-4xl mx-auto text-center">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">
+     For studios, salons and clinics
+    </p>
+    <h1 class="lg:-mx-16 text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white">
+     Meet your AI employee:
+     <span class="block mt-3 text-2xl sm:text-4xl lg:text-5xl leading-[1.15] text-slate-400 dark:text-slate-500">answers, books and brings customers back.</span>
+    </h1>
+    <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">
+     Turn every customer message into a booking with an AI employee that works 24/7, from the first question to the five-star review.
+    </p>
+    <div class="mt-10">
+     <a class="inline-block bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all" href="https://client.mercuri.cx/auth/signup" target="_blank">
+      Try it free for a month
+     </a>
+     <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">No credit card · <a class="font-semibold text-slate-600 dark:text-slate-300 hover:text-primary" href="https://calendly.com/karthikmanjunath/30min" target="_blank">or book a demo →</a></p>
+    </div>
+   </div>
+   <!-- Trust strip -->
+   <div class="max-w-5xl mx-auto mt-16 text-center">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-6">3,000+ businesses trust Mercuri</p>
+    <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 opacity-60 grayscale text-charcoal dark:text-white">
+     <span class="flex items-center gap-2 font-bold text-lg"><img alt="" class="h-6 w-6" src="assets/images/logos/wix.svg"/>Wix</span>
+     <span class="flex items-center gap-2 font-bold text-lg"><img alt="" class="h-6 w-6" src="assets/images/logos/shopify.svg"/>Shopify</span>
+     <span class="font-bold text-lg">Google</span>
+     <span class="font-bold text-lg">WhatsApp</span>
+     <span class="font-bold text-lg">HubSpot</span>
+     <span class="font-bold text-lg">Pipedrive</span>
+     <span class="flex items-center gap-2 font-bold text-lg"><img alt="" class="h-6 w-6" src="assets/images/logos/woocommerce.svg"/>WooCommerce</span>
+    </div>
+   </div>
   </header>
 
-  <!-- Hero -->
-  <section class="mx-auto max-w-6xl px-5 pt-14 pb-24 text-center">
-    <h1 class="mt-6 mx-auto max-w-5xl text-[2rem] sm:text-[3.25rem] md:text-[4.5rem] lg:text-[6rem] font-bold tracking-[-0.03em] leading-[1.04]">
-      Turn conversations into<br class="max-sm:hidden" />
-      <span id="hero-pill" class="inline-flex items-center gap-[0.22em] rounded-full px-[0.35em] transition-opacity duration-300" style="background:#ffdec4"><span id="hero-dot" class="w-[0.26em] h-[0.26em] rounded-full" style="background:#f76808"></span><span id="hero-word">full classes</span></span>
-    </h1>
-    <p class="mt-6 mx-auto max-w-2xl text-lg md:text-[1.375rem] leading-snug text-ink">
-      Your members message while you teach. Mercuri replies confirming classes,
-      clearing waitlists and winning back lapsed members over email, SMS and WhatsApp.
-    </p>
-    <div class="mt-8 flex items-center justify-center gap-3">
-      <a href="https://client.mercuri.cx/auth/signup" class="rounded-lg bg-blue text-white text-[15px] font-medium px-5 py-2.5 hover:bg-blue-dark transition-colors">Get Mercuri free</a>
-      <a href="mailto:karthik@mercuri.cx" class="rounded-lg bg-blue-light text-blue text-[15px] font-medium px-5 py-2.5 hover:bg-[#d3eafd] transition-colors">Request a demo</a>
+  <!-- OUTCOMES -->
+  <section class="relative overflow-hidden py-20 sm:py-28 px-6 bg-charcoal text-white">
+   <!-- warm glow -->
+   <div aria-hidden="true" class="pointer-events-none absolute -left-40 top-1/3 w-[36rem] h-[36rem] rounded-full bg-primary/20 blur-[120px]"></div>
+   <div class="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+    <!-- Left: heading + outcomes -->
+    <div>
+     <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08]">
+      An AI employee that keeps your calendar full
+     </h2>
+     <div class="mt-12 divide-y divide-white/15 border-b border-white/15">
+      <details class="group py-6" name="outcomes" open>
+       <summary class="cursor-pointer list-none text-xl font-bold text-slate-400 group-open:text-white transition-colors">Replies before they book somewhere else</summary>
+       <p class="mt-3 text-slate-300 leading-relaxed max-w-md">Your AI employee answers every enquiry in seconds, like your best front-desk person, even at 11pm.</p>
+      </details>
+      <details class="group py-6" name="outcomes">
+       <summary class="cursor-pointer list-none text-xl font-bold text-slate-400 group-open:text-white hover:text-white transition-colors">Turns questions into booked appointments</summary>
+       <p class="mt-3 text-slate-300 leading-relaxed max-w-md">It finds a free slot, holds it and confirms it, without you touching your phone.</p>
+      </details>
+      <details class="group py-6" name="outcomes">
+       <summary class="cursor-pointer list-none text-xl font-bold text-slate-400 group-open:text-white hover:text-white transition-colors">Makes sure customers show up</summary>
+       <p class="mt-3 text-slate-300 leading-relaxed max-w-md">Reminders customers confirm with one tap, and cancelled slots filled from the waitlist.</p>
+      </details>
+      <details class="group py-6" name="outcomes">
+       <summary class="cursor-pointer list-none text-xl font-bold text-slate-400 group-open:text-white hover:text-white transition-colors">Brings back customers you haven't seen in a while</summary>
+       <p class="mt-3 text-slate-300 leading-relaxed max-w-md">Spots regulars who've gone quiet and invites them back.</p>
+      </details>
+     </div>
+     <a class="mt-10 inline-flex items-center gap-2 text-lg font-bold text-white hover:text-primary transition-colors" href="https://calendly.com/karthikmanjunath/30min" target="_blank">Book a demo <span class="material-icons-outlined">arrow_forward</span></a>
     </div>
 
-    <!-- Product screenshot in browser frame -->
-    <div class="relative mt-16">
-      <!-- Peeking doodles, Notion-style -->
-      <svg viewBox="0 0 120 90" class="max-md:hidden absolute -top-[56px] right-16 w-28" fill="none" stroke="#191918" stroke-width="3" stroke-linecap="round" aria-hidden="true">
-        <path fill="#fff" d="M10 90 L10 42 C10 16 32 3 60 3 C88 3 110 16 110 42 L110 90" />
-        <path d="M70 6 q8 -6 14 -1" />
-        <circle cx="45" cy="38" r="3.5" fill="#191918" stroke="none" />
-        <circle cx="75" cy="38" r="3.5" fill="#191918" stroke="none" />
-      </svg>
-      <svg viewBox="0 0 90 120" class="max-md:hidden absolute top-[32%] -left-[52px] w-20" fill="none" stroke="#191918" stroke-width="3" stroke-linecap="round" aria-hidden="true">
-        <path fill="#fff" d="M90 16 L48 16 C22 16 10 36 10 60 C10 84 22 104 48 104 L90 104" />
-        <path d="M14 42 q-7 5 -4 14" />
-        <circle cx="34" cy="50" r="3.5" fill="#191918" stroke="none" />
-        <circle cx="34" cy="72" r="3.5" fill="#191918" stroke="none" />
-      </svg>
-      <svg viewBox="0 0 24 60" class="max-md:hidden absolute top-[37%] left-0 w-5 z-20" fill="#fff" stroke="#191918" stroke-width="3" stroke-linecap="round" aria-hidden="true">
-        <path d="M2 5 h8 a7 7 0 0 1 0 14 h-8" />
-        <path d="M2 36 h8 a7 7 0 0 1 0 14 h-8" />
-      </svg>
-      <div class="rise relative z-10 rounded-xl border border-line shadow-[0_30px_80px_rgba(0,0,0,0.14)] overflow-hidden text-left">
-      <div class="flex items-center gap-2 px-5 h-11 bg-band border-b border-line">
-        <span class="w-3 h-3 rounded-full bg-[#ec6a5e]"></span>
-        <span class="w-3 h-3 rounded-full bg-[#f4bf4f]"></span>
-        <span class="w-3 h-3 rounded-full bg-[#61c554]"></span>
-        <span class="ml-4 flex-1 max-w-sm rounded-md bg-white border border-line text-[13px] text-muted px-3 py-1">app.mercuri.cx</span>
+    <!-- Right: messages arriving around the clock -->
+    <div aria-hidden="true" class="relative mx-auto w-full max-w-[560px] sm:aspect-square text-[13px] max-sm:flex max-sm:flex-col max-sm:gap-5">
+     <!-- orbit rings -->
+     <svg class="max-sm:hidden absolute inset-0 w-full h-full" viewBox="0 0 560 560" fill="none">
+      <circle cx="280" cy="280" r="270" stroke="rgba(255,255,255,0.08)"/>
+      <circle cx="280" cy="280" r="205" stroke="rgba(255,255,255,0.10)"/>
+      <circle cx="280" cy="280" r="140" stroke="rgba(255,255,255,0.12)"/>
+      <path d="M118 175 C 150 250, 190 275, 230 280" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 6"/>
+      <path d="M445 150 C 430 220, 380 265, 330 275" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 6"/>
+      <path d="M405 430 C 380 370, 320 330, 290 310" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 6"/>
+      <path d="M130 420 C 170 370, 220 330, 250 310" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 6"/>
+      <circle cx="40" cy="310" r="5" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="520" cy="250" r="5" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="300" cy="18" r="5" fill="rgba(255,255,255,0.25)"/>
+      <circle cx="250" cy="545" r="5" fill="rgba(255,255,255,0.25)"/>
+     </svg>
+
+     <!-- 7:42 AM · WhatsApp -->
+     <div class="sm:absolute sm:left-[2%] sm:top-[12%] sm:w-[44%] max-sm:w-[85%]">
+      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span class="material-icons-outlined text-[15px] text-amber-300">wb_sunny</span>7:42 AM</p>
+      <div class="rounded-xl bg-white/10 border border-white/15 backdrop-blur p-3 shadow-xl">
+       <p class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-green-400"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>WhatsApp</p>
+       <p class="mt-1 text-white leading-snug">Can I switch to the 6pm class?</p>
       </div>
-      <div class="grid grid-cols-[210px_280px_1fr] max-md:grid-cols-1 bg-white h-[560px] overflow-hidden">
-        <!-- App sidebar (real nav) -->
-        <aside class="max-md:hidden flex flex-col border-r border-[#E5E7EB] bg-[#FAFAFA] p-3 text-[13px] text-[#3F3F46]">
-          <p class="flex items-center gap-2.5 px-2 py-1.5"><span class="w-8 h-8 rounded-md border border-[#E5E5E5] bg-white grid place-items-center text-[13px] font-bold shrink-0">M</span><span class="leading-tight min-w-0"><span class="block font-medium text-ink truncate">Moonrise Yoga</span><span class="block text-[11px] text-muted">Wix</span></span></p>
-          <div class="mt-4 space-y-0.5">
-            <p class="px-2.5 py-1.5 rounded-md">Getting Started</p>
-            <p class="px-2.5 py-1.5 rounded-md bg-[#F4F4F5] font-medium text-[#18181B] flex items-center">Conversations<span class="ml-auto px-1.5 py-0.5 text-[10px] font-medium text-white bg-black rounded">12</span></p>
-            <p class="px-2.5 py-1.5 rounded-md">Contacts</p>
-            <p class="px-2.5 py-1.5 rounded-md">Marketing</p>
-            <p class="px-2.5 py-1.5 rounded-md">Automations</p>
-            <p class="px-2.5 py-1.5 rounded-md flex items-center">Flows<span class="ml-auto px-1.5 py-0.5 text-[10px] font-medium text-white bg-black rounded">New</span></p>
-            <p class="px-2.5 py-1.5 rounded-md">AI Assistants</p>
-            <p class="px-2.5 py-1.5 rounded-md">Templates</p>
-            <p class="px-2.5 py-1.5 rounded-md">Message Logs</p>
-            <p class="px-2.5 py-1.5 rounded-md">Settings</p>
-          </div>
-          <p class="mt-auto flex items-center gap-2.5 border-t border-[#E5E7EB] px-2 pt-3"><span class="w-8 h-8 rounded-lg bg-[#F4F4F5] border border-[#E5E5E5] grid place-items-center text-[11px] font-semibold text-ink shrink-0">AR</span><span class="leading-tight min-w-0"><span class="block font-semibold text-ink truncate">Alex Rivera</span><span class="block text-[11px] text-muted truncate">alex@moonriseyoga.com</span></span></p>
-        </aside>
-        <!-- Conversation list -->
-        <div class="max-md:hidden border-r border-[#E5E5E5] p-4 text-[13px]">
-          <p class="text-[15px] font-semibold">Conversations</p>
-          <p class="mt-3 rounded-md border border-[#E5E5E5] px-3 py-2 text-muted text-[12px]">Search conversations...</p>
-          <div class="mt-3 space-y-2.5">
-            <div class="flex gap-3 items-center rounded-lg border border-[#EDECEA] bg-white p-3">
-              <span class="w-10 h-10 shrink-0 rounded-full bg-white border border-[#E5E5E5] grid place-items-center"><svg class="w-5 h-5 text-purple-500"><use href="#i-mail"/></svg></span>
-              <span class="min-w-0 flex-1"><span class="block font-semibold text-ink truncate leading-tight">Sarah Miller</span><span class="block text-[12px] text-muted truncate mt-0.5">Re: Freezing my membership</span></span>
-              <span class="text-right shrink-0 text-[11px] text-muted">1m</span>
-            </div>
-            <div class="flex gap-3 items-center rounded-lg border border-black/10 bg-[#F5F5F5]/70 p-3">
-              <span class="w-10 h-10 shrink-0 rounded-full bg-white border border-[#E5E5E5] grid place-items-center"><svg class="w-5 h-5 text-green-500"><use href="#i-wa"/></svg></span>
-              <span class="min-w-0 flex-1"><span class="block font-semibold text-ink truncate leading-tight">Priya Sharma</span><span class="block text-[12px] text-muted truncate mt-0.5">Can I switch to the 6pm class?</span></span>
-              <span class="text-right shrink-0"><span class="block text-[11px] text-muted">2m</span><span class="mt-1 inline-grid h-5 min-w-[20px] place-items-center rounded-full bg-[#EF4444] text-white text-[10px] font-semibold px-1">2</span></span>
-            </div>
-            <div class="flex gap-3 items-center rounded-lg border border-[#EDECEA] bg-white p-3">
-              <span class="w-10 h-10 shrink-0 rounded-full bg-white border border-[#E5E5E5] grid place-items-center"><svg class="w-5 h-5 text-blue-500"><use href="#i-sms"/></svg></span>
-              <span class="min-w-0 flex-1"><span class="block font-semibold text-ink truncate leading-tight">Jordan Kim</span><span class="block text-[12px] text-muted truncate mt-0.5">YES 🙌</span></span>
-              <span class="text-right shrink-0 text-[11px] text-muted">14m</span>
-            </div>
-            <div class="flex gap-3 items-center rounded-lg border border-[#EDECEA] bg-white p-3">
-              <span class="w-10 h-10 shrink-0 rounded-full bg-white border border-[#E5E5E5] grid place-items-center"><svg class="w-5 h-5 text-pink-500"><use href="#i-ig"/></svg></span>
-              <span class="min-w-0 flex-1"><span class="block font-semibold text-ink truncate leading-tight">Aisha Khan</span><span class="block text-[12px] text-muted truncate mt-0.5">Is the 7am class beginner friendly?</span></span>
-              <span class="text-right shrink-0 text-[11px] text-muted">28m</span>
-            </div>
-            <div class="flex gap-3 items-center rounded-lg border border-[#EDECEA] bg-white p-3">
-              <span class="w-10 h-10 shrink-0 rounded-full bg-white border border-[#E5E5E5] grid place-items-center"><svg class="w-5 h-5 text-blue-500"><use href="#i-sms"/></svg></span>
-              <span class="min-w-0 flex-1"><span class="block font-semibold text-ink truncate leading-tight">Maya Torres</span><span class="block text-[12px] text-muted truncate mt-0.5">Do you have mats to rent?</span></span>
-              <span class="text-right shrink-0 text-[11px] text-muted">3h</span>
-            </div>
-            <div class="flex gap-3 items-center rounded-lg border border-[#EDECEA] bg-white p-3">
-              <span class="w-10 h-10 shrink-0 rounded-full bg-white border border-[#E5E5E5] grid place-items-center"><svg class="w-5 h-5 text-green-500"><use href="#i-wa"/></svg></span>
-              <span class="min-w-0 flex-1"><span class="block font-semibold text-ink truncate leading-tight">Dev Patel</span><span class="block text-[12px] text-muted truncate mt-0.5">Booked for Saturday 9am 🙏</span></span>
-              <span class="text-right shrink-0 text-[11px] text-muted">1d</span>
-            </div>
-          </div>
-        </div>
-        <!-- Message thread -->
-        <div class="flex flex-col text-[13px]">
-          <div class="flex items-center gap-3 border-b border-[#E5E5E5] px-5 py-3">
-            <span class="w-10 h-10 rounded-full bg-[#F5F5F5] text-ink grid place-items-center text-[12px] font-semibold">PS</span>
-            <span><span class="block text-[15px] font-bold leading-tight">Priya Sharma</span><span class="block text-[11px] text-muted mt-0.5">+1 (512) 555-0198</span></span>
-            <span class="ml-auto flex items-center gap-2"><span class="rounded-md bg-[#F5F5F5] px-2.5 py-1.5 text-[12px] font-medium">open</span><span class="rounded-md border border-[#E5E5E5] px-2.5 py-1.5 text-[12px] font-medium text-muted">Actions ▾</span></span>
-          </div>
-          <div class="flex-1 bg-[#F5F5F4] p-5 space-y-3">
-            <div class="bubble bubble-out ml-auto max-w-[70%] w-fit bg-white shadow-sm px-3.5 py-2.5">
-              <p class="text-[11px] font-semibold text-orange-600">You</p>
-              <p class="mt-0.5 leading-snug">Hi Priya! You're booked for 7am Vinyasa Flow tomorrow. Still coming? 🧘</p>
-              <p class="mt-1 text-right text-[10px] text-muted">7:41 AM · ✓✓</p>
-            </div>
-            <div class="bubble bubble-in max-w-[70%] w-fit bg-white shadow-sm px-3.5 py-2.5">
-              <p class="text-[11px] font-semibold text-blue-600">Priya Sharma</p>
-              <p class="mt-0.5 leading-snug">Yes! Can I switch to the 6pm class?</p>
-              <p class="mt-1 text-right text-[10px] text-muted">7:42 AM</p>
-            </div>
-            <div class="bubble bubble-out ml-auto max-w-[70%] w-fit bg-white shadow-sm px-3.5 py-2.5">
-              <p class="text-[11px] font-semibold text-orange-600">You</p>
-              <p class="mt-0.5 leading-snug">Done — you're in the 6pm Vinyasa ✅ See you on the mat!</p>
-              <p class="mt-1 text-right text-[10px] text-muted">7:42 AM · ✓✓</p>
-            </div>
-            <div class="bubble bubble-in max-w-[70%] w-fit bg-white shadow-sm px-3.5 py-2.5">
-              <p class="text-[11px] font-semibold text-blue-600">Priya Sharma</p>
-              <p class="mt-0.5 leading-snug">Perfect, thank you! 🙏</p>
-              <p class="mt-1 text-right text-[10px] text-muted">7:43 AM</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-2.5 border-t border-[#E5E5E5] px-4 py-3">
-            <p class="flex-1 rounded-md border border-[#E5E5E5] px-3 py-2 text-[12px] text-muted">Type your message or drop files here...</p>
-            <span class="rounded-md bg-black text-white px-4 py-2 text-[12px] font-medium">Send</span>
-          </div>
-        </div>
+     </div>
+
+     <!-- 1:15 PM · Email -->
+     <div class="sm:absolute sm:right-[0%] sm:top-[4%] sm:w-[42%] max-sm:w-[85%] max-sm:self-end">
+      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span class="material-icons-outlined text-[15px] text-amber-300">light_mode</span>1:15 PM</p>
+      <div class="rounded-xl bg-white/10 border border-white/15 backdrop-blur p-3 shadow-xl">
+       <p class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-sky-300"><span class="w-1.5 h-1.5 rounded-full bg-sky-300"></span>Email</p>
+       <p class="mt-1 text-white leading-snug">Do you have a slot this Saturday?</p>
       </div>
+     </div>
+
+     <!-- center: AI reply -->
+     <div class="sm:absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[58%] max-sm:order-last max-sm:mt-2">
+      <div class="rounded-2xl bg-gradient-to-br from-[#3a2a17] to-[#241b12] border border-primary/40 shadow-[0_0_60px_rgba(235,151,61,0.35)] px-5 py-5">
+       <p class="flex items-center gap-2 text-[11px] font-bold text-primary"><span class="w-6 h-6 rounded-lg bg-primary grid place-items-center text-white"><span class="material-icons-outlined text-[15px]">bolt</span></span>Your AI employee</p>
+       <p class="mt-3 text-[17px] sm:text-lg font-medium text-white leading-snug">Yes! You're booked for Saturday at 2:30pm ✓</p>
+      </div>
+     </div>
+
+     <!-- 9:10 PM · SMS -->
+     <div class="sm:absolute sm:right-[2%] sm:bottom-[8%] sm:w-[44%] max-sm:w-[85%] max-sm:self-end">
+      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span class="material-icons-outlined text-[15px] text-indigo-300">bedtime</span>9:10 PM</p>
+      <div class="rounded-xl bg-white/10 border border-white/15 backdrop-blur p-3 shadow-xl">
+       <p class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-slate-300"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>SMS</p>
+       <p class="mt-1 text-white leading-snug">C to confirm my 4:15 tomorrow</p>
+      </div>
+     </div>
+
+     <!-- 11:48 PM · Instagram -->
+     <div class="sm:absolute sm:left-[0%] sm:bottom-[12%] sm:w-[40%] max-sm:w-[85%]">
+      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span class="material-icons-outlined text-[15px] text-indigo-300">dark_mode</span>11:48 PM</p>
+      <div class="rounded-xl bg-white/10 border border-white/15 backdrop-blur p-3 shadow-xl">
+       <p class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-pink-300"><span class="w-1.5 h-1.5 rounded-full bg-pink-300"></span>Instagram</p>
+       <p class="mt-1 text-white leading-snug">Any spots for a massage tomorrow?</p>
+      </div>
+     </div>
     </div>
-
-    </div>
-
-
+   </div>
   </section>
 
-  <!-- Features -->
-  <section id="features" class="mx-auto max-w-6xl px-5 pt-16 pb-12">
-    <h2 class="text-[2rem] md:text-[3.375rem] font-bold tracking-[-0.03em] leading-[1.1]">Everything a studio needs.</h2>
-    <div class="mt-10 grid md:grid-cols-6 gap-5">
-      <!-- Communication workflows -->
-      <div class="rise md:col-span-3 rounded-2xl bg-[#f9f9f8] overflow-hidden flex flex-col">
-        <div class="p-7 md:p-8 pb-0 md:pb-0 flex items-start justify-between gap-4">
-          <div>
-            <p class="text-sm text-muted font-medium">Communication workflows</p>
-            <h3 class="mt-1.5 text-[1.375rem] font-bold tracking-tight leading-snug">Set up a flow once. It follows up forever.</h3>
-          </div>
-          <a href="https://client.mercuri.cx/auth/signup" class="shrink-0 w-9 h-9 rounded-full bg-ink text-white grid place-items-center hover:bg-ink/80 transition-colors">&rarr;</a>
-        </div>
-        <div class="mt-auto pt-7 px-7 md:px-12">
-          <div class="bg-white rounded-t-xl border border-b-0 border-black/5 shadow-[0_8px_24px_rgba(0,0,0,0.07)] p-5 text-[12px]">
-            <div class="flex items-center gap-2 rounded-md border border-line px-3 py-2"><span class="w-5 h-5 rounded bg-[#ffdec4] grid place-items-center text-[10px]">&#9889;</span><span class="font-semibold">Trigger</span><span class="text-muted">New booking</span></div>
-            <div class="ml-5 h-3 border-l-2 border-line"></div>
-            <div class="flex items-center gap-2 rounded-md border border-line px-3 py-2"><span class="w-5 h-5 rounded bg-[#e6f3fe] grid place-items-center text-[10px]">&#9203;</span><span class="font-semibold">Wait</span><span class="text-muted">24 hours before class</span></div>
-            <div class="ml-5 h-3 border-l-2 border-line"></div>
-            <div class="flex items-center gap-2 rounded-md border border-line px-3 py-2"><span class="w-5 h-5 rounded bg-[#c9e7e2] grid place-items-center"><svg class="w-3 h-3 text-ink"><use href="#i-sms"/></svg></span><span class="font-semibold">Send SMS</span><span class="text-muted">Class reminder</span></div>
-          </div>
-        </div>
+  <!-- REVIEWS -->
+  <section class="py-20 sm:py-24 px-6">
+   <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Google reviews</p>
+     <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal dark:text-white mb-4">
+      An AI employee that grows your five-star reviews
+     </h2>
+     <p class="text-lg text-slate-600 dark:text-slate-400 mb-10">
+      Most happy customers never leave a review because nobody asks. Your AI employee asks every one of them, and makes sure no review goes unanswered.
+     </p>
+     <div class="grid sm:grid-cols-2 gap-8">
+      <div>
+       <span class="material-icons-outlined text-primary text-3xl mb-3 block">send</span>
+       <h3 class="font-bold text-charcoal dark:text-white mb-1.5">Asks for the review</h3>
+       <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A friendly request after every visit, by SMS or WhatsApp, with your Google review link.</p>
       </div>
-      <!-- Marketing campaigns -->
-      <div class="rise md:col-span-3 rounded-2xl bg-[#f9f9f8] overflow-hidden flex flex-col">
-        <div class="p-7 md:p-8 pb-0 md:pb-0 flex items-start justify-between gap-4">
-          <div>
-            <p class="text-sm text-muted font-medium">Marketing campaigns</p>
-            <h3 class="mt-1.5 text-[1.375rem] font-bold tracking-tight leading-snug">Send to a segment. Track it to the dollar.</h3>
-          </div>
-          <a href="https://client.mercuri.cx/auth/signup" class="shrink-0 w-9 h-9 rounded-full bg-ink text-white grid place-items-center hover:bg-ink/80 transition-colors">&rarr;</a>
-        </div>
-        <div class="mt-auto pt-7 px-7 md:px-12">
-          <div class="bg-white rounded-t-xl border border-b-0 border-black/5 shadow-[0_8px_24px_rgba(0,0,0,0.07)] p-5 text-[12px]">
-            <div class="flex items-center justify-between"><span class="font-semibold">Winback &mdash; lapsed members</span><span class="rounded-md bg-[#171717] text-white px-2 py-0.5 text-[10px] font-semibold">Sent</span></div>
-            <div class="mt-3 space-y-2">
-              <div><div class="flex justify-between text-muted"><span>Sent</span><span class="tabular-nums">312</span></div><div class="mt-1 h-1.5 rounded bg-[#e6f3fe]"><div class="h-1.5 rounded bg-blue" style="width:100%"></div></div></div>
-              <div><div class="flex justify-between text-muted"><span>Delivered</span><span class="tabular-nums">304</span></div><div class="mt-1 h-1.5 rounded bg-[#e6f3fe]"><div class="h-1.5 rounded bg-blue" style="width:97%"></div></div></div>
-              <div><div class="flex justify-between text-muted"><span>Read</span><span class="tabular-nums">268</span></div><div class="mt-1 h-1.5 rounded bg-[#e6f3fe]"><div class="h-1.5 rounded bg-blue" style="width:86%"></div></div></div>
-            </div>
-          </div>
-        </div>
+      <div>
+       <span class="material-icons-outlined text-primary text-3xl mb-3 block">visibility</span>
+       <h3 class="font-bold text-charcoal dark:text-white mb-1.5">Watches every review</h3>
+       <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Every new Google review lands in your inbox, right next to your customer messages.</p>
       </div>
-      <!-- Notifications & reminders -->
-      <div class="rise md:col-span-2 rounded-2xl bg-[#f9f9f8] overflow-hidden flex flex-col">
-        <div class="p-7 pb-0 flex items-start justify-between gap-4">
-          <div>
-            <p class="text-sm text-muted font-medium">Notifications &amp; reminders</p>
-            <h3 class="mt-1.5 text-[1.25rem] font-bold tracking-tight leading-snug">On time, every time.</h3>
-          </div>
-          <a href="https://client.mercuri.cx/auth/signup" class="shrink-0 w-9 h-9 rounded-full bg-ink text-white grid place-items-center hover:bg-ink/80 transition-colors">&rarr;</a>
-        </div>
-        <div class="mt-auto pt-6 px-7">
-          <div class="bg-[#F5F5F4] rounded-t-xl border border-b-0 border-black/5 shadow-[0_8px_24px_rgba(0,0,0,0.07)] p-4 text-[12px]">
-            <div class="bubble bubble-out ml-auto max-w-[95%] w-fit bg-white shadow-sm px-3 py-2">
-              <p class="text-[10px] font-semibold text-orange-600">You</p>
-              <p class="mt-0.5 leading-snug">Reminder: Hot Yoga tomorrow 6pm &mdash; reply C to confirm 🔥</p>
-              <p class="mt-1 text-right text-[9px] text-muted">6:00 PM &middot; &#10003;&#10003;</p>
-            </div>
-          </div>
-        </div>
+      <div>
+       <span class="material-icons-outlined text-primary text-3xl mb-3 block">edit_note</span>
+       <h3 class="font-bold text-charcoal dark:text-white mb-1.5">Writes the reply</h3>
+       <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Drafts a reply in your voice. You approve and post it in one click.</p>
       </div>
-      <!-- Multi-channel integration -->
-      <div class="rise md:col-span-2 rounded-2xl bg-[#f9f9f8] overflow-hidden flex flex-col">
-        <div class="p-7 pb-0 flex items-start justify-between gap-4">
-          <div>
-            <p class="text-sm text-muted font-medium">Multi-channel integration</p>
-            <h3 class="mt-1.5 text-[1.25rem] font-bold tracking-tight leading-snug">One list. Every channel.</h3>
-          </div>
-          <a href="https://client.mercuri.cx/auth/signup" class="shrink-0 w-9 h-9 rounded-full bg-ink text-white grid place-items-center hover:bg-ink/80 transition-colors">&rarr;</a>
-        </div>
-        <div class="mt-auto pt-6 px-7">
-          <div class="bg-white rounded-t-xl border border-b-0 border-black/5 shadow-[0_8px_24px_rgba(0,0,0,0.07)] p-4">
-            <div class="grid grid-cols-2 gap-2 text-[11px] font-medium text-center">
-              <div class="rounded-md border border-line py-2.5"><svg class="w-4 h-4 mx-auto text-purple-500"><use href="#i-mail"/></svg><p class="mt-1">Email</p></div>
-              <div class="rounded-md border border-line py-2.5"><svg class="w-4 h-4 mx-auto text-blue-500"><use href="#i-sms"/></svg><p class="mt-1">SMS</p></div>
-              <div class="rounded-md border border-line py-2.5"><svg class="w-4 h-4 mx-auto text-green-500"><use href="#i-wa"/></svg><p class="mt-1">WhatsApp</p></div>
-              <div class="rounded-md border border-line py-2.5"><svg class="w-4 h-4 mx-auto text-pink-500"><use href="#i-ig"/></svg><p class="mt-1">Instagram</p></div>
-            </div>
-          </div>
-        </div>
+      <div>
+       <span class="material-icons-outlined text-primary text-3xl mb-3 block">notifications_active</span>
+       <h3 class="font-bold text-charcoal dark:text-white mb-1.5">Flags the bad ones</h3>
+       <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Alerts you the moment a 1–2★ review lands, so you can make it right.</p>
       </div>
-      <!-- Shared inbox -->
-      <div class="rise md:col-span-2 rounded-2xl bg-[#f9f9f8] overflow-hidden flex flex-col">
-        <div class="p-7 pb-0 flex items-start justify-between gap-4">
-          <div>
-            <p class="text-sm text-muted font-medium">Shared inbox</p>
-            <h3 class="mt-1.5 text-[1.25rem] font-bold tracking-tight leading-snug">Every conversation, one place.</h3>
-          </div>
-          <a href="https://client.mercuri.cx/auth/signup" class="shrink-0 w-9 h-9 rounded-full bg-ink text-white grid place-items-center hover:bg-ink/80 transition-colors">&rarr;</a>
-        </div>
-        <div class="mt-auto pt-6 px-7">
-          <div class="bg-white rounded-t-xl border border-b-0 border-black/5 shadow-[0_8px_24px_rgba(0,0,0,0.07)] p-3 space-y-2 text-[11px]">
-            <div class="flex gap-2 items-center rounded-md border border-line p-2">
-              <span class="w-7 h-7 shrink-0 rounded-full bg-band grid place-items-center"><svg class="w-3.5 h-3.5 text-green-500"><use href="#i-wa"/></svg></span>
-              <span class="min-w-0"><span class="block font-semibold truncate">Priya Sharma</span><span class="block text-muted truncate">Can I switch to the 6pm class?</span></span>
-            </div>
-            <div class="flex gap-2 items-center rounded-md border border-line p-2">
-              <span class="w-7 h-7 shrink-0 rounded-full bg-band grid place-items-center"><svg class="w-3.5 h-3.5 text-purple-500"><use href="#i-mail"/></svg></span>
-              <span class="min-w-0"><span class="block font-semibold truncate">Sarah Miller</span><span class="block text-muted truncate">Re: Freezing my membership</span></span>
-            </div>
-          </div>
-        </div>
-      </div>
+     </div>
     </div>
+    <!-- Reviews inbox mock -->
+    <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl overflow-hidden text-[13px]">
+     <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
+      <span class="font-bold text-charcoal dark:text-white">Reviews</span>
+      <span class="text-slate-500"><span class="font-bold text-charcoal dark:text-white">4.8</span> <span class="text-amber-500">★</span> · 212 Google reviews</span>
+     </div>
+     <div class="p-5 space-y-4 bg-slate-50/60 dark:bg-slate-950/40">
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+       <div class="flex items-center gap-2">
+        <span class="text-amber-500">★★★★★</span>
+        <span class="font-semibold text-charcoal dark:text-white">Priya S.</span>
+        <span class="text-slate-400 text-[11px]">· today</span>
+       </div>
+       <p class="mt-2 text-slate-600 dark:text-slate-300 leading-snug">Lovely morning classes. The instructors really take time to correct your posture.</p>
+       <div class="mt-3 rounded-lg bg-primary/10 p-3">
+        <p class="text-[10px] font-bold text-primary mb-1">Mercuri AI · reply drafted</p>
+        <p class="text-charcoal dark:text-slate-200 leading-snug">Thank you, Priya! We love having you in the morning flow. See you on the mat soon 🙏</p>
+        <div class="mt-3 flex gap-2 text-[11px] font-semibold">
+         <span class="rounded-lg bg-charcoal text-white px-3 py-1.5">Post reply</span>
+         <span class="rounded-lg border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-charcoal dark:text-white">Edit</span>
+        </div>
+       </div>
+      </div>
+      <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
+       <div class="flex items-center gap-2">
+        <span class="text-amber-500">★★<span class="text-slate-300 dark:text-slate-600">★★★</span></span>
+        <span class="font-semibold text-charcoal dark:text-white">Rahul M.</span>
+        <span class="text-slate-400 text-[11px]">· 2h</span>
+        <span class="ml-auto text-[9px] font-bold uppercase tracking-wide text-red-700 bg-red-50 dark:bg-red-500/10 dark:text-red-400 rounded px-1.5 py-0.5">Alert sent</span>
+       </div>
+       <p class="mt-2 text-slate-600 dark:text-slate-300 leading-snug">Class started 15 minutes late and the studio was too warm.</p>
+      </div>
+      <div class="rounded-xl border border-dashed border-slate-300 dark:border-slate-700 p-4 flex items-center gap-3">
+       <span class="material-icons-outlined text-primary">send</span>
+       <span class="text-slate-600 dark:text-slate-300">Review request sent to <span class="font-semibold text-charcoal dark:text-white">Jordan K.</span> · 2h after their class</span>
+      </div>
+     </div>
+    </div>
+   </div>
   </section>
 
-  <!-- Delivery -->
-  <section class="mx-auto max-w-6xl px-5 pt-20 pb-12">
-    <h2 class="text-[2rem] md:text-[3.375rem] font-bold tracking-[-0.03em] leading-[1.1]">Real channels. No middlemen.</h2>
-    <p class="mt-3 text-muted">How every message gets delivered.</p>
-    <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-      <div class="rise rounded-2xl bg-[#f9f9f8] p-6">
-        <div class="flex items-center gap-3">
-          <span class="w-10 h-10 rounded-xl bg-white border border-black/5 grid place-items-center text-purple-500"><svg class="w-5 h-5"><use href="#i-mail"/></svg></span>
-          <span class="font-semibold text-[15px]">Email</span>
-        </div>
-        <div class="mt-4 flex flex-wrap gap-1.5">
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-white border border-line pl-2 pr-2.5 py-1 text-[12px] font-medium"><svg class="w-3.5 h-3.5 text-[#EA4335]"><use href="#i-gmail"/></svg>Gmail</span>
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-white border border-line pl-2 pr-2.5 py-1 text-[12px] font-medium"><svg class="w-3.5 h-3.5 text-[#0078D4]"><use href="#i-outlook"/></svg>Outlook</span>
-        </div>
-        <p class="mt-3 text-sm text-muted leading-relaxed">From your own inbox. Lands in Primary, replies come back to Mercuri.</p>
-      </div>
-      <div class="rise rounded-2xl bg-[#f9f9f8] p-6">
-        <div class="flex items-center gap-3">
-          <span class="w-10 h-10 rounded-xl bg-white border border-black/5 grid place-items-center text-blue-500"><svg class="w-5 h-5"><use href="#i-sms"/></svg></span>
-          <span class="font-semibold text-[15px]">SMS</span>
-        </div>
-        <div class="mt-4 flex flex-wrap gap-1.5">
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-white border border-line pl-2 pr-2.5 py-1 text-[12px] font-medium"><svg class="w-3.5 h-3.5 text-[#F22F46]"><use href="#i-twilio"/></svg>Twilio</span>
-        </div>
-        <p class="mt-3 text-sm text-muted leading-relaxed">Carrier-grade delivery on your own number. STOP and HELP handled for you.</p>
-      </div>
-      <div class="rise rounded-2xl bg-[#f9f9f8] p-6">
-        <div class="flex items-center gap-3">
-          <span class="w-10 h-10 rounded-xl bg-white border border-black/5 grid place-items-center text-green-500"><svg class="w-5 h-5"><use href="#i-wa"/></svg></span>
-          <span class="font-semibold text-[15px]">WhatsApp</span>
-        </div>
-        <div class="mt-4 flex flex-wrap gap-1.5">
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-white border border-line pl-2 pr-2.5 py-1 text-[12px] font-medium"><svg class="w-3.5 h-3.5 text-[#0081FB]"><use href="#i-meta"/></svg>Meta &middot; direct</span>
-        </div>
-        <p class="mt-3 text-sm text-muted leading-relaxed">Official WhatsApp Business Platform. No reseller in between.</p>
-      </div>
-      <div class="rise rounded-2xl bg-[#f9f9f8] p-6">
-        <div class="flex items-center gap-3">
-          <span class="w-10 h-10 rounded-xl bg-white border border-black/5 grid place-items-center text-pink-500"><svg class="w-5 h-5"><use href="#i-ig"/></svg></span>
-          <span class="font-semibold text-[15px]">Instagram</span>
-        </div>
-        <div class="mt-4 flex flex-wrap gap-1.5">
-          <span class="inline-flex items-center gap-1.5 rounded-full bg-white border border-line pl-2 pr-2.5 py-1 text-[12px] font-medium"><svg class="w-3.5 h-3.5 text-[#0081FB]"><use href="#i-meta"/></svg>Meta &middot; direct</span>
-        </div>
-        <p class="mt-3 text-sm text-muted leading-relaxed">DMs from your own handle. Official Messaging API, no reseller in between.</p>
-      </div>
+
+  <!-- INDUSTRIES -->
+  <!-- Photos: Unsplash (free license). Sources: photo-1787647089633-37e49ee2e054 (studio), photo-1580618672591-eb180b1a973f (salon), photo-1649751361457-01d3a696c7e6 (clinic), photo-1771813156445-1d70dc259856 (restaurant) -->
+  <section class="py-20 sm:py-24 px-6 bg-slate-100/70 dark:bg-slate-900/40" id="industries">
+   <div class="max-w-6xl mx-auto">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+     <h2 class="text-3xl sm:text-5xl font-bold tracking-tight leading-[1.1] text-charcoal dark:text-white mb-4">Trained for your kind of business. Built to fill your calendar.</h2>
+     <p class="text-lg text-slate-600 dark:text-slate-400">Every business books differently. See how your AI employee answers, books and follows up the way your customers expect.</p>
     </div>
-    <p class="mt-4 text-[13px] text-muted">Connecting Gmail or Outlook asks only to send email as you and read replies to Mercuri conversations. Nothing else in your mailbox is read or stored. <a href="privacy.html#google-user-data" class="underline underline-offset-2 hover:text-ink">How we handle Google data</a></p>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+     <a class="group rounded-xl overflow-hidden bg-charcoal shadow-sm hover:shadow-xl transition-shadow" href="https://client.mercuri.cx/auth/signup" target="_blank">
+      <div class="px-5 pt-5 pb-4">
+       <h3 class="font-bold text-xl text-white">Studios</h3>
+       <p class="mt-3 text-right text-sm font-semibold text-white/90">Get started <span class="inline-block group-hover:translate-x-1 transition-transform">→</span></p>
+      </div>
+      <div class="h-1 bg-gradient-to-r from-primary to-amber-300"></div>
+      <img alt="Yoga class in a bright studio" loading="lazy" class="w-full aspect-[4/3] object-cover" src="assets/images/industries/studio.jpg"/>
+     </a>
+     <a class="group rounded-xl overflow-hidden bg-charcoal shadow-sm hover:shadow-xl transition-shadow" href="https://client.mercuri.cx/auth/signup" target="_blank">
+      <div class="px-5 pt-5 pb-4">
+       <h3 class="font-bold text-xl text-white">Salons &amp; Spas</h3>
+       <p class="mt-3 text-right text-sm font-semibold text-white/90">Get started <span class="inline-block group-hover:translate-x-1 transition-transform">→</span></p>
+      </div>
+      <div class="h-1 bg-gradient-to-r from-primary to-amber-300"></div>
+      <img alt="Stylist blow-drying a client's hair in a salon" loading="lazy" class="w-full aspect-[4/3] object-cover" src="assets/images/industries/salon.jpg"/>
+     </a>
+     <a class="group rounded-xl overflow-hidden bg-charcoal shadow-sm hover:shadow-xl transition-shadow" href="https://client.mercuri.cx/auth/signup" target="_blank">
+      <div class="px-5 pt-5 pb-4">
+       <h3 class="font-bold text-xl text-white">Clinics</h3>
+       <p class="mt-3 text-right text-sm font-semibold text-white/90">Get started <span class="inline-block group-hover:translate-x-1 transition-transform">→</span></p>
+      </div>
+      <div class="h-1 bg-gradient-to-r from-primary to-amber-300"></div>
+      <img alt="Physiotherapist treating a patient's knee" loading="lazy" class="w-full aspect-[4/3] object-cover" src="assets/images/industries/clinic.jpg"/>
+     </a>
+     <a class="group rounded-xl overflow-hidden bg-charcoal shadow-sm hover:shadow-xl transition-shadow" href="whatsapp-booking-reminders-for-restaurants.html">
+      <div class="px-5 pt-5 pb-4">
+       <h3 class="font-bold text-xl text-white">Restaurants</h3>
+       <p class="mt-3 text-right text-sm font-semibold text-white/90">Learn more <span class="inline-block group-hover:translate-x-1 transition-transform">→</span></p>
+      </div>
+      <div class="h-1 bg-gradient-to-r from-primary to-amber-300"></div>
+      <img alt="Diners at tables in a warm restaurant" loading="lazy" class="w-full aspect-[4/3] object-cover" src="assets/images/industries/restaurant.jpg"/>
+     </a>
+    </div>
+   </div>
   </section>
 
-  <!-- Chapter 2: bento -->
-  <section id="platform" class="mx-auto max-w-6xl px-5 pt-20 pb-12">
-    <h2 class="text-[2rem] md:text-[3.375rem] font-bold tracking-[-0.03em] leading-[1.1]">AI where your members are.</h2>
-    <div class="mt-10 grid md:grid-cols-2 gap-5">
-      <!-- Card: SMS waitlist -->
-      <div class="rise rounded-2xl bg-[#f9f9f8] overflow-hidden flex flex-col">
-        <div class="p-7 md:p-8 pb-0 md:pb-0 flex items-start justify-between gap-4">
-          <div>
-            <p class="text-sm text-muted font-medium">Fill classes</p>
-            <h3 class="mt-1.5 text-[1.375rem] font-bold tracking-tight leading-snug">Clear the waitlist the second a spot opens.</h3>
-          </div>
-          <a href="https://client.mercuri.cx/auth/signup" class="shrink-0 w-9 h-9 rounded-full bg-ink text-white grid place-items-center hover:bg-ink/80 transition-colors">→</a>
-        </div>
-        <div class="mt-auto pt-7 px-7 md:px-10">
-          <div class="bg-[#F5F5F4] rounded-t-xl border border-b-0 border-black/5 shadow-[0_8px_24px_rgba(0,0,0,0.07)] p-4">
-            <div class="space-y-2.5 text-[12px]">
-              <div class="bubble bubble-out ml-auto max-w-[85%] w-fit bg-white shadow-sm px-3 py-2">
-                <p class="text-[10px] font-semibold text-orange-600">You</p>
-                <p class="mt-0.5 leading-snug">A spot just opened in tonight's 6pm Hot Yoga 🔥 Reply YES to take it — first come, first served.</p>
-                <p class="mt-1 text-right text-[9px] text-muted">5:12 PM · ✓✓</p>
-              </div>
-              <div class="bubble bubble-in max-w-[60%] w-fit bg-white shadow-sm px-3 py-2">
-                <p class="text-[10px] font-semibold text-blue-600">Jordan Kim</p>
-                <p class="mt-0.5 leading-snug">YES 🙌</p>
-                <p class="mt-1 text-right text-[9px] text-muted">5:13 PM</p>
-              </div>
-            </div>
-            <div class="mt-3 rounded-md bg-white shadow-sm px-3 py-2 flex items-center justify-between">
-              <span class="text-[11px] font-medium text-muted">Waitlist cleared</span>
-              <span class="text-[12px] font-semibold">+$24.00</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card: Email win-back -->
-      <div class="rise rounded-2xl bg-[#f9f9f8] overflow-hidden flex flex-col">
-        <div class="p-7 md:p-8 pb-0 md:pb-0 flex items-start justify-between gap-4">
-          <div>
-            <p class="text-sm text-muted font-medium">Win back members</p>
-            <h3 class="mt-1.5 text-[1.375rem] font-bold tracking-tight leading-snug">Bring lapsed members back to the mat.</h3>
-          </div>
-          <a href="https://client.mercuri.cx/auth/signup" class="shrink-0 w-9 h-9 rounded-full bg-ink text-white grid place-items-center hover:bg-ink/80 transition-colors">→</a>
-        </div>
-        <div class="mt-auto pt-7 px-7 md:px-10">
-          <div class="bg-white rounded-t-xl border border-b-0 border-black/5 shadow-[0_8px_24px_rgba(0,0,0,0.07)] p-5">
-            <p class="text-sm font-bold tracking-tight">Campaigns</p>
-            <p class="mt-0.5 text-[11px] text-muted">Manage and track your campaign performance</p>
-            <div class="mt-4 text-[11px]">
-              <div class="grid grid-cols-[1fr_3.75rem_3.75rem_5rem] gap-3 pb-2 border-b border-[#E5E5E5] text-[10px] text-muted font-medium">
-                <span>Campaign Name</span><span class="text-right">Contacts</span><span class="text-right">Delivered</span><span class="text-right">Status</span>
-              </div>
-              <div class="grid grid-cols-[1fr_3.75rem_3.75rem_5rem] gap-3 items-center py-2.5 border-b border-[#F0EFED]">
-                <span class="font-medium truncate">Winback — lapsed members</span><span class="text-right tabular-nums">312</span><span class="text-right tabular-nums">304</span><span class="text-right"><span class="inline-block rounded-md bg-[#171717] text-white px-2 py-0.5 text-[10px] font-semibold">Sent</span></span>
-              </div>
-              <div class="grid grid-cols-[1fr_3.75rem_3.75rem_5rem] gap-3 items-center py-2.5 border-b border-[#F0EFED]">
-                <span class="font-medium truncate">Hot Yoga waitlist blast</span><span class="text-right tabular-nums">48</span><span class="text-right tabular-nums">48</span><span class="text-right"><span class="inline-block rounded-md bg-[#171717] text-white px-2 py-0.5 text-[10px] font-semibold">Sent</span></span>
-              </div>
-              <div class="grid grid-cols-[1fr_3.75rem_3.75rem_5rem] gap-3 items-center py-2.5">
-                <span class="font-medium truncate">New fall schedule</span><span class="text-right tabular-nums">1,204</span><span class="text-right tabular-nums">—</span><span class="text-right"><span class="inline-block rounded-md bg-[#F5F5F5] px-2 py-0.5 text-[10px] font-semibold">Processing</span></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card: AI agent (full width) -->
-      <div class="rise md:col-span-2 rounded-2xl bg-[#f9f9f8] overflow-hidden">
-        <div class="grid md:grid-cols-2 gap-6 items-end">
-          <div class="p-7 md:p-8 md:pb-10">
-            <p class="text-sm text-muted font-medium">Automate busywork</p>
-            <h3 class="mt-1.5 text-[1.375rem] font-bold tracking-tight leading-snug">An AI agent that replies 24/7 — like your best employee.</h3>
-            <p class="mt-3 text-sm text-muted leading-relaxed">Trained on your schedule, pricing and policies, it answers questions, books classes and manages waitlists in your studio's voice — handing off to a human whenever you want. Every reply logged and revenue-attributed.</p>
-            <p class="mt-5 text-sm text-ink font-medium">"This is a huge asset for my business — customer service is 110%."<span class="text-muted font-normal"> — Charles Grace, Iron Lion Gym</span></p>
-            <a href="https://client.mercuri.cx/auth/signup" class="mt-6 inline-grid w-9 h-9 rounded-full bg-ink text-white place-items-center hover:bg-ink/80 transition-colors">→</a>
-          </div>
-          <div class="px-7 md:px-0 md:pr-10 pt-2 md:pt-8">
-            <div class="bg-[#E5DDD5] rounded-t-xl border border-b-0 border-black/5 shadow-[0_8px_24px_rgba(0,0,0,0.07)] p-4">
-              <div class="space-y-2.5 text-[12px]">
-                <div class="bubble bubble-out ml-auto max-w-[85%] w-fit bg-white shadow-sm px-3 py-2">
-                  <p class="text-[10px] font-semibold text-orange-600">You</p>
-                  <p class="mt-0.5 leading-snug">Hi Priya! You're booked for 7am Vinyasa Flow tomorrow. Still coming? 🧘</p>
-                  <p class="mt-1 text-right text-[9px] text-muted">7:41 AM · ✓✓</p>
-                </div>
-                <div class="bubble bubble-in max-w-[75%] w-fit bg-white shadow-sm px-3 py-2">
-                  <p class="text-[10px] font-semibold text-blue-600">Priya Sharma</p>
-                  <p class="mt-0.5 leading-snug">Yes! Can I switch to the 6pm class?</p>
-                  <p class="mt-1 text-right text-[9px] text-muted">7:42 AM</p>
-                </div>
-                <div class="bubble bubble-out ml-auto max-w-[85%] w-fit bg-white shadow-sm px-3 py-2">
-                  <p class="text-[10px] font-semibold text-orange-600">You</p>
-                  <p class="mt-0.5 leading-snug">Done — you're in the 6pm Vinyasa ✅ See you on the mat!</p>
-                  <p class="mt-1 text-right text-[9px] text-muted">7:42 AM · ✓✓</p>
-                </div>
-              </div>
-              <p class="mt-3 inline-block rounded-md bg-white/80 px-2 py-1 text-[11px] font-medium text-muted">AI agent · replied in 4 seconds</p>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- TESTIMONIALS -->
+  <section class="py-20 sm:py-24 px-6 bg-slate-100/70 dark:bg-slate-900/40">
+   <div class="max-w-6xl mx-auto">
+    <h2 class="text-center text-3xl sm:text-5xl font-bold tracking-tight leading-[1.1] text-charcoal dark:text-white mb-14">What owners are saying about Mercuri</h2>
+    <div class="grid md:grid-cols-3 gap-5">
+     <figure class="rounded-2xl bg-charcoal text-white p-8 flex flex-col">
+      <span class="text-5xl leading-none font-serif text-primary">“</span>
+      <blockquote class="mt-2 text-lg leading-relaxed flex-1">Great app with probably the best customer service I have experienced. They get on and guide you, making everything simple, easy and short. This is a huge asset for my business.</blockquote>
+      <figcaption class="mt-8 flex items-center gap-3">
+       <img alt="" class="w-11 h-11 rounded-full object-cover" src="assets/images/Charlie Grace Profile.png"/>
+       <span><span class="block font-bold">Charles Grace</span><span class="block text-sm text-slate-400">Owner, Iron Lion Gym</span></span>
+      </figcaption>
+     </figure>
+     <figure class="rounded-2xl bg-charcoal text-white p-8 flex flex-col">
+      <span class="text-5xl leading-none font-serif text-primary">“</span>
+      <blockquote class="mt-2 text-lg leading-relaxed flex-1">Mercuri's integration with Wix made our WhatsApp blasts simple and effective. Easy setup, great templates, and smooth automation. Perfect for reaching customers fast!</blockquote>
+      <figcaption class="mt-8 flex items-center gap-3">
+       <img alt="" class="w-11 h-11 rounded-full object-cover" src="assets/images/Shruti Seth Profile.png"/>
+       <span><span class="block font-bold">Shruti Seth</span><span class="block text-sm text-slate-400">Osteopath &amp; physiotherapist</span></span>
+      </figcaption>
+     </figure>
+     <figure class="rounded-2xl bg-charcoal text-white p-8 flex flex-col">
+      <span class="text-5xl leading-none font-serif text-primary">“</span>
+      <blockquote class="mt-2 text-lg leading-relaxed flex-1">After checking many products in the Wix market, this product is by far the best of its kind for sending utility text messages, while the support is AMAZING. LOVED IT!</blockquote>
+      <figcaption class="mt-8 flex items-center gap-3">
+       <img alt="" class="w-11 h-11 rounded-full object-cover bg-slate-700" src="assets/images/avatars/amihai.svg"/>
+       <span><span class="block font-bold">Amihai</span><span class="block text-sm text-slate-400">Founder, Grayish</span></span>
+      </figcaption>
+     </figure>
     </div>
+    <div class="mt-12 text-center">
+     <a class="inline-block bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all" href="https://client.mercuri.cx/auth/signup" target="_blank">Try it free for a month</a>
+    </div>
+   </div>
   </section>
 
-  <!-- Reviews -->
-  <section id="reviews" class="mx-auto max-w-6xl px-5 pb-24">
-    <p class="mt-16 text-left text-xs font-semibold text-muted uppercase tracking-[0.2em]">Trusted by 3,000+ businesses</p>
-    <h2 class="text-[2rem] md:text-[3.375rem] font-bold tracking-[-0.03em] leading-[1.1]">Don't Take it From Us, Take From Our Clients</h2>
-    <div class="mt-10 grid md:grid-cols-3 gap-5 items-start">
-      <div class="rise rounded-2xl bg-[#f9f9f8] p-7">
-        <p class="text-[15px] leading-relaxed">"Great app with probably the best customer service I have experienced. They get on and guide you, making everything simple, easy and short. This is a huge asset for my business — customer service is 110%."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <img src="assets/charles-grace.png" alt="Charles Grace" class="w-10 h-10 rounded-full object-cover border border-line" />
-          <span class="min-w-0"><span class="block text-sm font-bold">Charles Grace</span><span class="block text-xs text-muted">Owner, Iron Lion Gym</span></span>
-        </div>
-      </div>
-      <div class="rise rounded-2xl bg-[#f9f9f8] p-7">
-        <p class="mt-3 text-[15px] leading-relaxed">"Mercuri's integration with Wix made our WhatsApp blasts simple and effective. Easy setup, great templates, and smooth automation. Perfect for reaching customers fast! Highly recommend — great team."</p>
-        <div class="mt-6 flex items-center gap-3">
-          <img src="assets/shruti-seth.png" alt="Shruti Seth" class="w-10 h-10 rounded-full object-cover border border-line" />
-          <span class="min-w-0"><span class="block text-sm font-bold">Shruti Seth</span><span class="block text-xs text-muted">Osteopath &amp; physiotherapist</span></span>
-        </div>
-      </div>
-      <div class="rise rounded-2xl bg-[#f9f9f8] p-7">
-        <p class="text-[15px] leading-relaxed">"After checking many products in the Wix market — this product is by far the best of its kind for sending utility text messages, while the support is AMAZING. LOVED IT!"</p>
-        <div class="mt-6 flex items-center gap-3">
-          <img src="assets/amihai.svg" alt="Amihai" class="w-10 h-10 rounded-full object-cover border border-line" />
-          <span class="min-w-0"><span class="block text-sm font-bold">Amihai</span><span class="block text-xs text-muted">Founder, Grayish</span></span>
-        </div>
-      </div>
+  <!-- DIFFERENCE -->
+  <section class="py-20 sm:py-28 px-6 bg-charcoal text-white">
+   <div class="max-w-6xl mx-auto">
+    <div class="text-center max-w-4xl mx-auto mb-14">
+     <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">The Mercuri difference</p>
+     <h2 class="text-3xl sm:text-5xl font-bold tracking-tight leading-[1.1]">From missed messages to a calendar that fills itself</h2>
+     <p class="mt-5 text-lg text-slate-300">Slow replies, no-shows and forgotten follow-ups cost you bookings. Mercuri answers faster, fills more slots and keeps customers coming back.</p>
     </div>
+    <div class="rounded-2xl border border-white/10 overflow-hidden">
+     <div class="hidden md:grid grid-cols-[1fr_1.5fr_1.5fr] text-lg font-bold">
+      <span class="px-6 py-5"></span>
+      <span class="px-6 py-5 text-center border-l border-white/10">Before Mercuri</span>
+      <span class="px-6 py-5 text-center bg-white/5 border-l border-white/10">With your AI employee</span>
+     </div>
+     <div class="divide-y divide-white/10 border-t border-white/10">
+      <div class="grid md:grid-cols-[1fr_1.5fr_1.5fr]">
+       <span class="px-6 pt-5 md:py-5 flex items-center gap-3 text-sm text-slate-300"><span class="material-icons-outlined text-xl">bedtime</span>After-hours coverage</span>
+       <span class="px-6 py-2 md:py-5 flex gap-3 md:border-l border-white/10"><span class="text-red-400 font-bold">✗</span>Messages wait until you're free</span>
+       <span class="px-6 pb-5 md:py-5 flex gap-3 font-semibold md:bg-white/5 md:border-l border-white/10"><span class="text-primary font-bold">✓</span>Every message answered, day and night</span>
+      </div>
+      <div class="grid md:grid-cols-[1fr_1.5fr_1.5fr]">
+       <span class="px-6 pt-5 md:py-5 flex items-center gap-3 text-sm text-slate-300"><span class="material-icons-outlined text-xl">schedule</span>Response time</span>
+       <span class="px-6 py-2 md:py-5 flex gap-3 md:border-l border-white/10"><span class="text-red-400 font-bold">✗</span>Hours, so they book somewhere else</span>
+       <span class="px-6 pb-5 md:py-5 flex gap-3 font-semibold md:bg-white/5 md:border-l border-white/10"><span class="text-primary font-bold">✓</span>Seconds, while they're still deciding</span>
+      </div>
+      <div class="grid md:grid-cols-[1fr_1.5fr_1.5fr]">
+       <span class="px-6 pt-5 md:py-5 flex items-center gap-3 text-sm text-slate-300"><span class="material-icons-outlined text-xl">layers</span>Tools</span>
+       <span class="px-6 py-2 md:py-5 flex gap-3 md:border-l border-white/10"><span class="text-red-400 font-bold">✗</span>Texts, WhatsApp, email and reviews in four apps</span>
+       <span class="px-6 pb-5 md:py-5 flex gap-3 font-semibold md:bg-white/5 md:border-l border-white/10"><span class="text-primary font-bold">✓</span>One inbox for every customer</span>
+      </div>
+      <div class="grid md:grid-cols-[1fr_1.5fr_1.5fr]">
+       <span class="px-6 pt-5 md:py-5 flex items-center gap-3 text-sm text-slate-300"><span class="material-icons-outlined text-xl">event_busy</span>No-shows</span>
+       <span class="px-6 py-2 md:py-5 flex gap-3 md:border-l border-white/10"><span class="text-red-400 font-bold">✗</span>Empty slots nobody warned you about</span>
+       <span class="px-6 pb-5 md:py-5 flex gap-3 font-semibold md:bg-white/5 md:border-l border-white/10"><span class="text-primary font-bold">✓</span>Reminders customers confirm with one tap</span>
+      </div>
+      <div class="grid md:grid-cols-[1fr_1.5fr_1.5fr]">
+       <span class="px-6 pt-5 md:py-5 flex items-center gap-3 text-sm text-slate-300"><span class="material-icons-outlined text-xl">star_outline</span>Reviews</span>
+       <span class="px-6 py-2 md:py-5 flex gap-3 md:border-l border-white/10"><span class="text-red-400 font-bold">✗</span>Happy customers never leave one</span>
+       <span class="px-6 pb-5 md:py-5 flex gap-3 font-semibold md:bg-white/5 md:border-l border-white/10"><span class="text-primary font-bold">✓</span>A review request after every visit</span>
+      </div>
+      <div class="grid md:grid-cols-[1fr_1.5fr_1.5fr]">
+       <span class="px-6 pt-5 md:py-5 flex items-center gap-3 text-sm text-slate-300"><span class="material-icons-outlined text-xl">group</span>Repeat customers</span>
+       <span class="px-6 py-2 md:py-5 flex gap-3 md:border-l border-white/10"><span class="text-red-400 font-bold">✗</span>Regulars quietly drift away</span>
+       <span class="px-6 pb-5 md:py-5 flex gap-3 font-semibold md:bg-white/5 md:border-l border-white/10"><span class="text-primary font-bold">✓</span>Win-back messages, running on their own</span>
+      </div>
+     </div>
+    </div>
+   </div>
   </section>
 
-  <!-- Pricing -->
-  <section id="pricing" class="mx-auto max-w-6xl px-5 pb-24">
-    <h2 class="text-[2rem] md:text-[3.375rem] font-bold tracking-[-0.03em] leading-[1.1]">One plan. Free to try.</h2>
-    <div class="rise mt-10 rounded-2xl bg-[#f9f9f8] p-7 md:p-10">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <p class="text-blue font-semibold text-lg">One Unlimited Plan</p>
-          <p class="mt-1.5 text-muted leading-relaxed">Every channel, every member, your whole team — nothing gated, unlimited messages.</p>
-          <ul class="mt-6 grid sm:grid-cols-2 gap-x-6 gap-y-2.5 text-sm">
-            <li class="flex gap-2"><span class="text-muted">✓</span> Email, SMS, WhatsApp &amp; Instagram</li>
-            <li class="flex gap-2"><span class="text-muted">✓</span> AI Agents</li>
-            <li class="flex gap-2"><span class="text-muted">✓</span> Campaigns &amp; Automations</li>
-            <li class="flex gap-2"><span class="text-muted">✓</span> Unlimited Phone Numbers</li>
-            <li class="flex gap-2"><span class="text-muted">✓</span> Your whole team included</li>
-            <li class="flex gap-2"><span class="text-muted">✓</span> Bring Your Own Number</li>
-          </ul>
-          <p class="mt-5 text-sm text-muted">Email goes live today. SMS needs carrier approval — we file the registration for you, and it switches on the moment it clears.</p>
-        </div>
-        <div class="w-full md:max-w-[320px] md:ml-auto rounded-xl bg-white border border-black/5 shadow-[0_8px_24px_rgba(0,0,0,0.06)] p-7 text-center">
-          <p class="text-5xl font-bold tracking-[-0.03em]">$99<span class="text-lg text-muted font-medium tracking-normal"> /month</span></p>
-          <p class="mt-2 text-sm text-muted">billed monthly · cancel anytime</p>
-          <a href="https://client.mercuri.cx/auth/signup" class="mt-5 block w-full rounded-lg bg-blue text-white text-[15px] font-medium px-6 py-2.5 hover:bg-blue-dark transition-colors">Try it free</a>
-          <p class="mt-3 text-xs text-muted">1-month free trial · No credit card required</p>
-        </div>
-      </div>
-    </div>
+  <!-- CTA BANNER -->
+  <section class="px-6 pt-20 sm:pt-24">
+   <div class="max-w-6xl mx-auto rounded-3xl bg-charcoal text-white px-8 py-12 sm:px-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-[1.15] max-w-2xl">Ready to stop losing bookings to missed messages?</h2>
+    <a class="shrink-0 self-start md:self-auto bg-white text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all" href="https://client.mercuri.cx/auth/signup" target="_blank">Try it free for a month</a>
+   </div>
   </section>
 
-  <!-- CTA (Notion-style end cap) -->
-  <section id="cta" class="border-t border-line">
-    <div class="mx-auto max-w-6xl px-5 py-24 text-center">
-      <img src="assets/images/Mercuri logo 192px.png" alt="" class="inline-block w-10 h-10">
-      <h2 class="mt-5 text-[2rem] md:text-[2.625rem] font-bold tracking-[-0.02em]">Try Mercuri today</h2>
-      <p class="mt-3 text-muted">Get started for free.<br />Your first email campaign can go out today.</p>
-      <div class="mt-7">
-        <a href="https://client.mercuri.cx/auth/signup" class="inline-block rounded-lg bg-blue text-white text-[15px] font-medium px-5 py-2.5 hover:bg-blue-dark transition-colors">Try Mercuri free</a>
-      </div>
-      <p class="mt-4 text-sm text-muted">One month free. Every channel, every member, your whole team — nothing gated, unlimited messages.</p>
+  <!-- WITHOUT HIRING -->
+  <section class="py-20 sm:py-24 px-6">
+   <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+    <div class="md:border-r md:border-slate-200 md:dark:border-slate-800 md:pr-16">
+     <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-[1.15] text-charcoal dark:text-white">Fill your calendar, without hiring</h2>
+     <p class="mt-5 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">Your AI employee answers instantly, books appointments and follows up on its own. It learns your services and policies, replies in your voice, and hands over to you whenever a customer needs a human.</p>
+     <a class="mt-8 inline-block bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all" href="https://client.mercuri.cx/auth/signup" target="_blank">Try it free for a month</a>
     </div>
+    <div>
+     <p class="text-6xl font-bold tracking-tight text-charcoal dark:text-white">$99<span class="text-xl text-slate-400 font-medium"> /month</span></p>
+     <p class="mt-3 text-slate-600 dark:text-slate-400">Everything included: WhatsApp, SMS, email and Instagram, Google reviews, automations and AI.</p>
+     <p class="mt-2 text-sm text-slate-500">Month to month · first month free · no credit card</p>
+    </div>
+   </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-line">
-    <div class="mx-auto max-w-6xl px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
-      <p class="flex items-center gap-2 font-bold text-ink"><img src="assets/images/Mercuri logo 192px.png" alt="" class="w-5 h-5"> Mercuri</p>
-      <div class="flex gap-6">
-        <a href="#features" class="hover:text-ink">Features</a>
-        <a href="#platform" class="hover:text-ink">AI Agents</a>
-        <a href="privacy.html" class="hover:text-ink">Privacy</a>
-        <a href="terms.html" class="hover:text-ink">Terms</a>
-      </div>
-      <p>© 2026 Mercuri</p>
-    </div>
-  </footer>
-
-  <script>
-    // ponytail: IntersectionObserver only — no animation lib
-    const io = new IntersectionObserver(
-      (es) => es.forEach((e) => e.isIntersecting && e.target.classList.add('in')),
-      { threshold: 0.15 }
-    );
-    document.querySelectorAll('.rise').forEach((el) => io.observe(el));
-
-    // Rotating hero word, Notion-style
-    const words = [
-      { w: 'full classes',     bg: '#ffdec4', dot: '#f76808' },
-      { w: 'filled waitlists', bg: '#eaddfb', dot: '#9065f0' },
-      { w: 'repeat members',   bg: '#c9e7e2', dot: '#2f8378' },
-    ];
-    let wi = 0;
-    const pill = document.getElementById('hero-pill');
-    const dot = document.getElementById('hero-dot');
-    const word = document.getElementById('hero-word');
-    setInterval(() => {
-      pill.style.opacity = 0;
-      setTimeout(() => {
-        wi = (wi + 1) % words.length;
-        word.textContent = words[wi].w;
-        pill.style.background = words[wi].bg;
-        dot.style.background = words[wi].dot;
-        pill.style.opacity = 1;
-      }, 300);
-    }, 2800);
+  <!-- Footer Component -->
+  <div id="footer-placeholder">
+  </div>
+  <!-- Load Components Script -->
+  <script src="js/main.js">
+  </script>
+   <script>
+    // Carry the ad click id and campaign params across to the app domain so signups can be attributed.
+    // Rewritten at click time because the header is injected after load by js/main.js.
+    var CARRY = ['fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'ttclid'];
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[href*="client.mercuri.cx/auth/"]');
+      if (!a) return;
+      var src = new URLSearchParams(location.search), u = new URL(a.href);
+      CARRY.forEach(function (k) { if (src.get(k)) u.searchParams.set(k, src.get(k)); });
+      a.href = u.toString();
+      if (u.pathname.indexOf('/auth/signup') === 0 && window.fbq) fbq('trackCustom', 'SignupClick');
+    }, true);
   </script>
 </body>
 </html>
