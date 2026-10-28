@@ -4,12 +4,12 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Free AI Readiness Check for local businesses - Mercuri</title>
-  <meta content="Answer 9 quick questions and get a free AI readiness score for your studio, salon or clinic, plus a personal report on where an AI employee can save you time." name="description"/>
+  <meta content="Enter your website and get a free AI readiness score for your studio, salon or clinic, a report on what to fix first, and answers to your questions from our AI advisor." name="description"/>
   <meta content="index, follow" name="robots"/>
   <link href="https://mercuri.cx/ai-readiness.html" rel="canonical"/>
   <meta content="website" property="og:type"/>
   <meta content="Free AI Readiness Check for local businesses - Mercuri" property="og:title"/>
-  <meta content="Answer 9 quick questions and get a free AI readiness score for your studio, salon or clinic, plus a personal report on where an AI employee can save you time." property="og:description"/>
+  <meta content="Enter your website and get a free AI readiness score for your studio, salon or clinic, a report on what to fix first, and answers to your questions from our AI advisor." property="og:description"/>
   <meta content="https://mercuri.cx/ai-readiness.html" property="og:url"/>
   <meta content="https://mercuri.cx/assets/images/og/og-home.svg" property="og:image"/>
   <meta content="Mercuri homepage preview showing email, SMS and WhatsApp marketing in one platform" property="og:image:alt"/>
@@ -17,7 +17,7 @@
   <meta content="630" property="og:image:height"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="Free AI Readiness Check for local businesses - Mercuri" name="twitter:title"/>
-  <meta content="Answer 9 quick questions and get a free AI readiness score for your studio, salon or clinic, plus a personal report on where an AI employee can save you time." name="twitter:description"/>
+  <meta content="Enter your website and get a free AI readiness score for your studio, salon or clinic, a report on what to fix first, and answers to your questions from our AI advisor." name="twitter:description"/>
   <meta content="https://mercuri.cx/assets/images/og/og-home.svg" name="twitter:image"/>
   <meta content="Mercuri homepage preview showing email, SMS and WhatsApp marketing in one platform" name="twitter:image:alt"/>
   <link href="assets/images/Mercuri logo 32px.png" rel="icon" sizes="32x32" type="image/png"/>
@@ -63,106 +63,113 @@
   </div>
 
   <main class="px-6 pt-20 pb-24 sm:pt-28 min-h-[70vh]">
-   <div class="max-w-2xl mx-auto">
 
-    <!-- Intro -->
-    <section data-step="intro">
-     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Free AI readiness check</p>
-     <h1 tabindex="-1" class="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white outline-none">How ready is your business for an AI employee?</h1>
-     <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">Answer 9 quick questions. Get a readiness score and a personal report on where AI can answer, book and bring customers back for you.</p>
-     <form id="intro-form" class="mt-10 space-y-6" novalidate>
-      <fieldset>
-       <legend class="text-sm font-semibold text-charcoal dark:text-white">What kind of business do you run?</legend>
-       <div id="types" class="mt-3 flex flex-wrap gap-2.5"></div>
-      </fieldset>
-      <label class="block">
-       <span class="text-sm font-semibold text-charcoal dark:text-white">Website <span class="font-normal text-slate-500">(optional)</span></span>
-       <input name="website" maxlength="200" placeholder="yourbusiness.com" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
-      </label>
-      <p id="intro-error" role="alert" class="text-sm text-red-600"></p>
-      <button class="inline-block bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all">Start the check</button>
-      <p class="text-sm text-slate-500 dark:text-slate-400">Takes about 2 minutes · Free</p>
-     </form>
-    </section>
+   <!-- Intro: one input -->
+   <section data-step="intro" class="max-w-3xl mx-auto text-center">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Free AI readiness check</p>
+    <h1 tabindex="-1" class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white outline-none">How ready is your business for an AI employee?</h1>
+    <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">Enter your website. We'll read it, score how easy you are to reach and book, and show you what to fix first.</p>
+    <form id="site-form" class="mt-10 max-w-xl mx-auto flex flex-col sm:flex-row gap-3 sm:gap-0 sm:rounded-full sm:border sm:border-slate-200 sm:dark:border-slate-700 sm:bg-white sm:dark:bg-slate-900 sm:p-1.5 sm:shadow-sm" novalidate>
+     <label class="flex-1"><span class="sr-only">Your website</span>
+      <input name="website" inputmode="url" autocomplete="url" maxlength="200" placeholder="yourbusiness.com" class="w-full rounded-full border border-slate-200 dark:border-slate-700 sm:border-0 bg-white dark:bg-slate-900 px-6 py-4 text-lg focus:ring-2 focus:ring-primary sm:focus:ring-0"/>
+     </label>
+     <button class="bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all">Analyse my site</button>
+    </form>
+    <p id="site-error" role="alert" class="mt-4 text-red-600"></p>
+    <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Free · about 15 seconds · no sign-up</p>
+   </section>
 
-    <!-- One question at a time -->
-    <section data-step="quiz" hidden>
-     <div class="h-1.5 rounded-full bg-slate-200 dark:bg-slate-800 overflow-hidden"><div id="progress" class="h-full bg-primary transition-all duration-300" style="width:0"></div></div>
-     <p id="q-count" class="mt-8 text-xs font-bold uppercase tracking-[0.2em] text-primary"></p>
-     <h2 id="q-text" tabindex="-1" class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight leading-tight text-charcoal dark:text-white outline-none"></h2>
-     <div id="q-options" class="mt-8 grid gap-3"></div>
-     <button id="q-back" type="button" class="mt-8 font-semibold text-slate-500 hover:text-primary">&larr; Back</button>
-    </section>
+   <!-- Analysing -->
+   <section data-step="loading" hidden class="max-w-xl mx-auto">
+    <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Analysing</p>
+    <h2 id="l-site" tabindex="-1" class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-charcoal dark:text-white break-all outline-none"></h2>
+    <ol id="l-steps" class="mt-10 space-y-4 text-lg" aria-live="polite"></ol>
+   </section>
 
-    <!-- Score teaser + email gate -->
-    <section data-step="gate" hidden>
-     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Your AI readiness score</p>
-     <h2 tabindex="-1" class="mt-4 flex items-baseline gap-4 outline-none">
-      <span id="g-score" class="text-7xl sm:text-8xl font-bold tracking-tight text-charcoal dark:text-white"></span>
-      <span id="g-band" class="rounded-full px-3.5 py-1 text-sm font-bold"></span>
-     </h2>
-     <p id="g-gaps" class="mt-4 text-lg sm:text-xl text-slate-600 dark:text-slate-400"></p>
-     <form id="email-form" class="mt-10 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm">
-      <p class="text-xl font-bold text-charcoal dark:text-white">Get your full report</p>
-      <p class="mt-2 text-slate-600 dark:text-slate-400">Your biggest gaps, what to fix first, and one quick win for this week.</p>
-      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+   <!-- Results + chat -->
+   <section data-step="results" hidden class="max-w-3xl mx-auto">
+    <div class="flex flex-wrap items-center justify-between gap-3">
+     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Your AI readiness report</p>
+     <button id="again" type="button" class="text-sm font-semibold text-slate-500 hover:text-primary">Analyse another site</button>
+    </div>
+    <h2 id="r-name" tabindex="-1" class="mt-3 text-3xl sm:text-5xl font-bold tracking-tight text-charcoal dark:text-white outline-none break-words"></h2>
+    <p id="r-meta" class="mt-2 text-slate-500 dark:text-slate-400 break-all"></p>
+
+    <div class="mt-10 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 grid sm:grid-cols-[auto_1fr] gap-6 sm:gap-10 items-center">
+     <div class="flex items-baseline gap-3">
+      <span id="r-score" class="text-7xl sm:text-8xl font-bold tracking-tight text-charcoal dark:text-white"></span>
+      <span id="r-band" class="rounded-full px-3.5 py-1 text-sm font-bold"></span>
+     </div>
+     <p id="r-summary" class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+    </div>
+
+    <h3 class="mt-14 text-2xl font-bold tracking-tight text-charcoal dark:text-white">What we found on your site</h3>
+    <ul id="r-signals" class="mt-5 grid sm:grid-cols-2 gap-3"></ul>
+    <p id="r-pages" class="mt-3 text-sm text-slate-500"></p>
+
+    <h3 class="mt-14 text-2xl font-bold tracking-tight text-charcoal dark:text-white">Top 3 fixes</h3>
+    <ol id="r-fixes" class="mt-5 grid gap-3"></ol>
+
+    <div class="mt-8 rounded-3xl bg-primary/10 p-6 sm:p-8">
+     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Quick win this week</p>
+     <p id="r-quickwin" class="mt-3 text-lg text-charcoal dark:text-white leading-relaxed"></p>
+    </div>
+
+    <!-- Chat -->
+    <div id="chat" class="mt-14 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 overflow-hidden">
+     <div class="px-6 sm:px-8 py-5 border-b border-slate-200 dark:border-slate-800 flex items-center gap-3">
+      <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+      <p class="font-bold text-charcoal dark:text-white">Ask about your results</p>
+     </div>
+     <form id="email-form" class="p-6 sm:p-8">
+      <p class="text-slate-600 dark:text-slate-400">Got questions about your report, or how to fix these gaps? Enter your email to chat with our AI advisor.</p>
+      <div class="mt-5 flex flex-col sm:flex-row gap-3">
        <label class="flex-1"><span class="sr-only">Email</span>
         <input name="email" type="email" required maxlength="200" autocomplete="email" placeholder="you@yourbusiness.com" class="w-full rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 px-5 py-3.5 focus:border-primary focus:ring-primary"/>
        </label>
-       <button id="email-btn" class="bg-charcoal dark:bg-primary text-white px-7 py-3.5 rounded-full font-bold hover:shadow-xl transition-all disabled:opacity-60">Show my report</button>
+       <button id="email-btn" class="bg-charcoal dark:bg-primary text-white px-7 py-3.5 rounded-full font-bold hover:shadow-xl transition-all disabled:opacity-60">Start chat</button>
       </div>
       <p id="email-error" role="alert" class="mt-3 text-sm text-red-600"></p>
       <p class="mt-3 text-xs text-slate-500">We'll save your results and may follow up about Mercuri. <a href="privacy.html" class="underline hover:text-primary">Privacy Policy</a></p>
      </form>
-    </section>
-
-    <!-- Full report -->
-    <section data-step="report" hidden>
-     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Your AI readiness report</p>
-     <h2 tabindex="-1" class="mt-4 flex items-baseline gap-4 outline-none">
-      <span id="r-score" class="text-7xl sm:text-8xl font-bold tracking-tight text-charcoal dark:text-white"></span>
-      <span id="r-band" class="rounded-full px-3.5 py-1 text-sm font-bold"></span>
-     </h2>
-     <p id="r-summary" class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed"></p>
-
-     <h3 class="mt-14 text-2xl font-bold tracking-tight text-charcoal dark:text-white">Your biggest gaps</h3>
-     <ol id="r-gaps" class="mt-5 space-y-3"></ol>
-
-     <h3 class="mt-14 text-2xl font-bold tracking-tight text-charcoal dark:text-white">What to do about them</h3>
-     <div id="r-suggestions" class="mt-5 grid gap-3"></div>
-
-     <div class="mt-14 rounded-3xl bg-primary/10 p-6 sm:p-8">
-      <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Quick win this week</p>
-      <p id="r-quickwin" class="mt-3 text-lg text-charcoal dark:text-white leading-relaxed"></p>
+     <div id="chat-live" hidden>
+      <div id="msgs" class="px-4 sm:px-8 py-6 space-y-3 max-h-[28rem] overflow-y-auto" aria-live="polite"></div>
+      <div id="chips" class="px-4 sm:px-8 pb-3 flex flex-wrap gap-2"></div>
+      <form id="ask-form" class="p-3 sm:p-4 border-t border-slate-200 dark:border-slate-800 flex gap-2">
+       <label class="flex-1"><span class="sr-only">Your question</span>
+        <input name="q" autocomplete="off" maxlength="1000" placeholder="Ask a question…" class="w-full rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 px-5 py-3 focus:border-primary focus:ring-primary"/>
+       </label>
+       <button id="ask-btn" class="bg-charcoal dark:bg-primary text-white px-6 py-3 rounded-full font-bold disabled:opacity-60">Send</button>
+      </form>
      </div>
+    </div>
 
-     <div class="mt-14 rounded-3xl bg-charcoal text-white p-8 sm:p-10 text-center">
-      <p class="text-3xl font-bold tracking-tight">Let your AI employee close these gaps</p>
-      <p class="mt-3 text-slate-300">It answers every customer, books them in and brings them back, on WhatsApp, SMS and email.</p>
-      <a class="mt-8 inline-block bg-white text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all" href="https://client.mercuri.cx/auth/signup" target="_blank">Try it free for a month</a>
-      <p class="mt-4 text-sm text-slate-400">No credit card · <a class="font-semibold text-slate-200 hover:text-primary" href="https://calendly.com/karthikmanjunath/30min" target="_blank">or book a demo →</a></p>
-     </div>
-    </section>
-   </div>
+    <div class="mt-14 rounded-3xl bg-charcoal text-white p-8 sm:p-10 text-center">
+     <p class="text-3xl font-bold tracking-tight">Let your AI employee close these gaps</p>
+     <p class="mt-3 text-slate-300">It answers every customer, books them in and brings them back, on WhatsApp, SMS, email and Instagram.</p>
+     <a class="mt-8 inline-block bg-white text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all" href="https://client.mercuri.cx/auth/signup" target="_blank">Try it free for a month</a>
+     <p class="mt-4 text-sm text-slate-400">No credit card · <a class="font-semibold text-slate-200 hover:text-primary" href="https://calendly.com/karthikmanjunath/30min" target="_blank">or book a demo →</a></p>
+    </div>
+   </section>
   </main>
 
   <div id="footer-placeholder">
   </div>
   <script src="js/main.js"></script>
-  <script src="ai-readiness-api/readiness.js"></script>
   <script>
     // ponytail: set to the Vercel project's URL after the first deploy
-    const API_URL = location.hostname === 'localhost'
-      ? 'http://localhost:3000/api/assess'
-      : 'https://mercuri-ai-readiness.vercel.app/api/assess';
+    const API = location.hostname === 'localhost' ? 'http://localhost:3000/api' : 'https://mercuri-ai-readiness.vercel.app/api';
     const BAND_CLASS = {
       Starting: 'bg-red-100 text-red-700 dark:bg-red-950 dark:text-red-300',
       Emerging: 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300',
       Ready: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300',
     };
-    const OPTION = 'text-left rounded-2xl border bg-white dark:bg-slate-900 px-5 py-4 font-medium text-charcoal dark:text-white hover:border-primary transition-colors';
+    const STEPS = ['Opening your website', 'Finding your contact and booking pages', 'Checking how customers can reach you', 'Writing your report'];
+    const CHIPS = ['How do I fix my biggest gap?', 'What would Mercuri cost me?', 'How does the AI employee work?'];
+    // Only these links in AI replies become clickable.
+    const SAFE_LINK = /^https:\/\/(client\.mercuri\.cx|mercuri\.cx|calendly\.com\/karthikmanjunath)\b/;
 
-    const state = { businessType: '', website: '', answers: {}, i: 0 };
+    const state = { analysis: null, email: '', messages: [] };
     const $ = (id) => document.getElementById(id);
     const el = (tag, cls, text) => { const n = document.createElement(tag); n.className = cls; if (text != null) n.textContent = text; return n; };
 
@@ -172,114 +179,153 @@
       window.scrollTo(0, 0);
     }
 
-    $('types').replaceChildren(...READINESS_BUSINESS_TYPES.map((t) => {
-      const b = el('button', 'rounded-full border px-5 py-2.5 font-semibold transition-colors', t.label);
-      b.type = 'button';
-      b.onclick = () => { state.businessType = t.id; $('intro-error').textContent = ''; paintTypes(); };
-      b.dataset.id = t.id;
-      return b;
-    }));
-    function paintTypes() {
-      $('types').querySelectorAll('button').forEach((b) => {
-        const on = b.dataset.id === state.businessType;
-        b.setAttribute('aria-pressed', on);
-        b.classList.toggle('bg-charcoal', on); b.classList.toggle('text-white', on); b.classList.toggle('border-charcoal', on);
-        b.classList.toggle('border-slate-200', !on); b.classList.toggle('dark:border-slate-700', !on); b.classList.toggle('hover:border-primary', !on);
-      });
+    async function post(path, body) {
+      const res = await fetch(API + path, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.error || 'Something went wrong. Try again.');
+      return data;
     }
-    paintTypes();
 
-    function renderQuestion() {
-      const qn = READINESS_QUESTIONS[state.i];
-      $('progress').style.width = `${(state.i / READINESS_QUESTIONS.length) * 100}%`;
-      $('q-count').textContent = `Question ${state.i + 1} of ${READINESS_QUESTIONS.length}`;
-      $('q-text').textContent = qn.q;
-      $('q-options').replaceChildren(...qn.options.map((o) => {
-        const b = el('button', OPTION, o.label);
+    // Loading checklist: steps tick over on a timer, the last one waits for the real response.
+    function startSteps() {
+      $('l-steps').replaceChildren(...STEPS.map((s) => {
+        const li = el('li', 'flex items-center gap-3 text-slate-400');
+        li.append(el('span', 'w-6 h-6 rounded-full border-2 border-slate-300 dark:border-slate-700 shrink-0'), el('span', '', s));
+        return li;
+      }));
+      let i = 0;
+      const tick = () => {
+        const items = $('l-steps').children;
+        if (i > 0) { items[i - 1].className = 'flex items-center gap-3 text-charcoal dark:text-white'; items[i - 1].firstChild.className = 'w-6 h-6 rounded-full bg-primary text-white grid place-items-center text-sm shrink-0'; items[i - 1].firstChild.textContent = '✓'; }
+        if (i < items.length) { items[i].className = 'flex items-center gap-3 text-charcoal dark:text-white font-semibold'; items[i].firstChild.className = 'w-6 h-6 rounded-full border-2 border-primary border-t-transparent animate-spin shrink-0'; }
+        i++;
+      };
+      tick();
+      return setInterval(() => i < STEPS.length && tick(), 2500);
+    }
+
+    $('site-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const website = new FormData(e.target).get('website').trim();
+      if (!website) return ($('site-error').textContent = 'Enter your website address.');
+      $('site-error').textContent = '';
+      $('l-site').textContent = website.replace(/^https?:\/\//, '').replace(/\/$/, '');
+      show('loading');
+      const timer = startSteps();
+      try {
+        const data = await post('/analyze', { website });
+        state.analysis = data;
+        renderResults(data);
+        if (window.gtag) gtag('event', 'ai_readiness_completed', { score: data.score });
+      } catch (err) {
+        $('site-error').textContent = err.message;
+        show('intro');
+      } finally {
+        clearInterval(timer);
+      }
+    };
+
+    $('again').onclick = () => show('intro');
+
+    function renderResults({ website, pagesRead, score, band, signals, report }) {
+      const host = new URL(website).hostname.replace(/^www\./, '');
+      $('r-name').textContent = report.businessName || host;
+      $('r-meta').textContent = [report.businessType, host].filter(Boolean).join(' · ');
+      $('r-score').textContent = score;
+      $('r-band').textContent = band;
+      $('r-band').className = 'rounded-full px-3.5 py-1 text-sm font-bold ' + BAND_CLASS[band];
+      $('r-summary').textContent = report.summary;
+      $('r-signals').replaceChildren(...signals.map((s) => {
+        const li = el('li', 'flex items-center gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 px-4 py-3');
+        li.append(
+          el('span', 'w-6 h-6 rounded-full grid place-items-center text-sm font-bold shrink-0 ' + (s.found ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300' : 'bg-slate-100 text-slate-400 dark:bg-slate-800'), s.found ? '✓' : '–'),
+          el('span', s.found ? 'font-medium text-charcoal dark:text-white' : 'text-slate-500', s.label + (s.detail ? ` (${s.detail})` : '')),
+        );
+        li.setAttribute('aria-label', `${s.label}: ${s.found ? 'found' : 'not found'}`);
+        return li;
+      }));
+      $('r-pages').textContent = `We read ${pagesRead.length} page${pagesRead.length > 1 ? 's' : ''}: ${pagesRead.join(', ')}. If something is missing, it may be on a page we didn't check.`;
+      $('r-fixes').replaceChildren(...(report.fixes || []).map((f, i) => {
+        const li = el('li', 'rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6');
+        li.append(el('p', 'font-bold text-lg text-charcoal dark:text-white', `${i + 1}. ${f.title}`), el('p', 'mt-1 text-slate-600 dark:text-slate-400', f.why), el('p', 'mt-4 inline-block rounded-full bg-primary/10 px-3.5 py-1 text-sm font-semibold text-primary', `Mercuri: ${f.mercuriFeature}`));
+        return li;
+      }));
+      $('r-quickwin').textContent = report.quickWin;
+      $('email-form').hidden = !!state.email;
+      $('chat-live').hidden = !state.email;
+      show('results');
+      if (state.email) { state.messages = []; $('msgs').replaceChildren(); send(); }
+    }
+
+    // Plain text with whitelisted links made clickable. Never innerHTML.
+    function bubble(role, text) {
+      const mine = role === 'user';
+      const d = el('div', 'max-w-[85%] rounded-2xl px-4 py-3 whitespace-pre-wrap leading-relaxed ' + (mine ? 'ml-auto bg-charcoal text-white rounded-br-md' : 'bg-slate-100 dark:bg-slate-800 text-charcoal dark:text-slate-100 rounded-bl-md'));
+      for (const part of text.split(/(https:\/\/[^\s)]+)/)) {
+        if (SAFE_LINK.test(part)) { const a = el('a', 'underline font-semibold', part.replace(/[.,]$/, '')); a.href = a.textContent; a.target = '_blank'; a.rel = 'noopener'; d.append(a); }
+        else d.append(part);
+      }
+      $('msgs').append(d);
+      $('msgs').scrollTop = $('msgs').scrollHeight;
+      return d;
+    }
+
+    function renderChips() {
+      const used = new Set(state.messages.map((m) => m.content));
+      $('chips').replaceChildren(...CHIPS.filter((c) => !used.has(c)).map((c) => {
+        const b = el('button', 'rounded-full border border-slate-200 dark:border-slate-700 px-4 py-2 text-sm font-medium hover:border-primary transition-colors', c);
         b.type = 'button';
-        b.classList.add(state.answers[qn.id] === o.id ? 'border-primary' : 'border-slate-200');
-        b.onclick = () => {
-          state.answers[qn.id] = o.id;
-          if (++state.i < READINESS_QUESTIONS.length) return renderQuestion(), $('q-text').focus();
-          showGate();
-        };
+        b.onclick = () => ask(c);
         return b;
       }));
     }
 
-    function setScore(prefix, r) {
-      $(prefix + '-score').textContent = r.score;
-      $(prefix + '-band').textContent = r.band;
-      $(prefix + '-band').className = 'rounded-full px-3.5 py-1 text-sm font-bold ' + BAND_CLASS[r.band];
+    async function send() {
+      const typing = bubble('assistant', '…');
+      $('ask-btn').disabled = true;
+      try {
+        const { report, ...rest } = state.analysis;
+        const { reply } = await post('/chat', { email: state.email, website: state.analysis.website, analysis: { ...rest, report }, messages: state.messages });
+        typing.remove();
+        bubble('assistant', reply);
+        state.messages.push({ role: 'assistant', content: reply });
+      } catch (err) {
+        typing.remove();
+        bubble('assistant', err.message);
+        if (state.messages.length) state.messages.pop();
+      } finally {
+        $('ask-btn').disabled = false;
+        renderChips();
+      }
     }
 
-    function showGate() {
-      const r = readinessScore(state.answers);
-      setScore('g', r);
-      $('g-gaps').textContent = r.gaps
-        ? `We found ${r.gaps} area${r.gaps > 1 ? 's' : ''} where an AI employee could save you time or win back customers.`
-        : "You're ahead of most businesses. Your report has a few ways to go further.";
-      if (window.gtag) gtag('event', 'ai_readiness_completed', { score: r.score });
-      show('gate');
+    function ask(q) {
+      if (!q.trim() || $('ask-btn').disabled) return;
+      bubble('user', q);
+      state.messages.push({ role: 'user', content: q });
+      $('chips').replaceChildren();
+      send();
     }
-
-    $('intro-form').onsubmit = (e) => {
-      e.preventDefault();
-      if (!state.businessType) return ($('intro-error').textContent = 'Pick the kind of business you run.');
-      state.website = new FormData(e.target).get('website').trim();
-      state.i = 0;
-      renderQuestion();
-      show('quiz');
-    };
-
-    $('q-back').onclick = () => {
-      if (state.i === 0) return show('intro');
-      state.i--;
-      renderQuestion();
-    };
 
     $('email-form').onsubmit = async (e) => {
       e.preventDefault();
-      const btn = $('email-btn');
-      btn.disabled = true;
-      btn.textContent = 'Writing your report…';
-      $('email-error').textContent = '';
-      try {
-        const res = await fetch(API_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: new FormData(e.target).get('email'), businessType: state.businessType, website: state.website, answers: state.answers }),
-        });
-        const data = await res.json();
-        if (!res.ok) throw new Error(data.error);
-        renderReport(data);
-        if (window.gtag) gtag('event', 'generate_lead', { method: 'ai_readiness' });
-        if (window.fbq) fbq('track', 'Lead');
-      } catch (err) {
-        $('email-error').textContent = err.message || 'Something went wrong. Try again.';
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Show my report';
-      }
+      const email = new FormData(e.target).get('email').trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return ($('email-error').textContent = 'Enter a valid email.');
+      state.email = email;
+      $('email-form').hidden = true;
+      $('chat-live').hidden = false;
+      if (window.gtag) gtag('event', 'generate_lead', { method: 'ai_readiness' });
+      if (window.fbq) fbq('track', 'Lead');
+      await send();
+      document.querySelector('#ask-form input').focus();
     };
 
-    // LLM output is rendered with textContent only, never innerHTML.
-    function renderReport({ report, ...r }) {
-      setScore('r', r);
-      $('r-summary').textContent = report.summary;
-      $('r-gaps').replaceChildren(...(report.gaps || []).map((g, i) => {
-        const li = el('li', 'rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5');
-        li.append(el('p', 'font-bold text-charcoal dark:text-white', `${i + 1}. ${g.title}`), el('p', 'mt-1 text-slate-600 dark:text-slate-400', g.why));
-        return li;
-      }));
-      $('r-suggestions').replaceChildren(...(report.suggestions || []).map((s) => {
-        const d = el('div', 'rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5');
-        d.append(el('p', 'font-bold text-charcoal dark:text-white', s.title), el('p', 'mt-1 text-slate-600 dark:text-slate-400', s.action), el('p', 'mt-4 inline-block rounded-full bg-primary/10 px-3.5 py-1 text-sm font-semibold text-primary', `Mercuri: ${s.mercuriFeature}`));
-        return d;
-      }));
-      $('r-quickwin').textContent = report.quickWin;
-      show('report');
-    }
+    $('ask-form').onsubmit = (e) => {
+      e.preventDefault();
+      const input = e.target.q;
+      ask(input.value);
+      input.value = '';
+    };
   </script>
   <script>
     // Same as index.html: carry ad click id and campaign params to the app domain.
