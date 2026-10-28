@@ -6,7 +6,7 @@ function validate(body) {
   const { email, website, analysis, messages } = body || {};
   if (typeof email !== 'string' || email.length > 200 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: 'Enter a valid email.' };
   if (typeof website !== 'string' || website.length > 300) return { error: 'Missing website.' };
-  if (!analysis || typeof analysis !== 'object' || JSON.stringify(analysis).length > 8000) return { error: 'Missing analysis.' };
+  if (!analysis || typeof analysis !== 'object' || JSON.stringify(analysis).length > 12000) return { error: 'Missing analysis.' };
   if (!Array.isArray(messages) || messages.length > MAX_TURNS) return { error: 'This chat is full. Book a demo to keep going.' };
   for (const m of messages) {
     if (!m || !['user', 'assistant'].includes(m.role) || typeof m.content !== 'string' || !m.content.trim() || m.content.length > 1500) return { error: 'Invalid message.' };
@@ -22,10 +22,11 @@ ${JSON.stringify(analysis)}
 ${MERCURI_FACTS}
 
 Rules:
-- Answer questions about their results, how to fix the gaps, and how Mercuri would help. Be specific to their business.
+- Answer questions about their results and how to fix the gaps. Be specific to their business and lead with practical advice they could act on with any tools.
+- Bring up Mercuri only when they ask about tools, automation, cost or Mercuri itself, or when it directly answers their question. At most one short mention per reply, never a hard sell.
 - Keep replies short: under 120 words, plain text, no markdown headings or tables. Short lists with "- " are fine.
 - Only state Mercuri features and prices listed above. If you're not sure, say so and suggest booking a demo.
-- When they seem interested, suggest the free month or a demo with the links above.
+- If they ask how to get started with Mercuri, point to the free month or a demo with the links above.
 - Politely decline anything unrelated to their business, customer communication or Mercuri.`;
 
 module.exports = async function handler(req, res) {
@@ -48,8 +49,8 @@ module.exports = async function handler(req, res) {
   }
 
   if (start) {
-    const { score, band, report = {} } = input.analysis;
-    await sendLead({ email: input.email, website: input.website, score, band, businessName: report.businessName, businessType: report.businessType });
+    const { score, band, answers, place, report = {} } = input.analysis;
+    await sendLead({ email: input.email, website: input.website, score, band, answers, googleRating: place?.rating ?? null, googleReviews: place?.reviewCount ?? null, businessName: report.businessName, businessType: report.businessType });
   }
 
   res.status(200).json({ reply });

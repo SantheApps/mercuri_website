@@ -4,12 +4,12 @@
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>Free AI Readiness Check for local businesses - Mercuri</title>
-  <meta content="Enter your website and get a free AI readiness score for your studio, salon or clinic, a report on what to fix first, and answers to your questions from our AI advisor." name="description"/>
+  <meta content="Enter your website and get a free AI readiness score for your studio, salon or clinic: we check your site and Google reviews, show what to fix first, and answer your questions." name="description"/>
   <meta content="index, follow" name="robots"/>
   <link href="https://mercuri.cx/ai-readiness.html" rel="canonical"/>
   <meta content="website" property="og:type"/>
   <meta content="Free AI Readiness Check for local businesses - Mercuri" property="og:title"/>
-  <meta content="Enter your website and get a free AI readiness score for your studio, salon or clinic, a report on what to fix first, and answers to your questions from our AI advisor." property="og:description"/>
+  <meta content="Enter your website and get a free AI readiness score for your studio, salon or clinic: we check your site and Google reviews, show what to fix first, and answer your questions." property="og:description"/>
   <meta content="https://mercuri.cx/ai-readiness.html" property="og:url"/>
   <meta content="https://mercuri.cx/assets/images/og/og-home.svg" property="og:image"/>
   <meta content="Mercuri homepage preview showing email, SMS and WhatsApp marketing in one platform" property="og:image:alt"/>
@@ -17,7 +17,7 @@
   <meta content="630" property="og:image:height"/>
   <meta content="summary_large_image" name="twitter:card"/>
   <meta content="Free AI Readiness Check for local businesses - Mercuri" name="twitter:title"/>
-  <meta content="Enter your website and get a free AI readiness score for your studio, salon or clinic, a report on what to fix first, and answers to your questions from our AI advisor." name="twitter:description"/>
+  <meta content="Enter your website and get a free AI readiness score for your studio, salon or clinic: we check your site and Google reviews, show what to fix first, and answer your questions." name="twitter:description"/>
   <meta content="https://mercuri.cx/assets/images/og/og-home.svg" name="twitter:image"/>
   <meta content="Mercuri homepage preview showing email, SMS and WhatsApp marketing in one platform" name="twitter:image:alt"/>
   <link href="assets/images/Mercuri logo 32px.png" rel="icon" sizes="32x32" type="image/png"/>
@@ -68,7 +68,7 @@
    <section data-step="intro" class="max-w-3xl mx-auto text-center">
     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Free AI readiness check</p>
     <h1 tabindex="-1" class="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white outline-none">How ready is your business for an AI employee?</h1>
-    <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">Enter your website. We'll read it, score how easy you are to reach and book, and show you what to fix first.</p>
+    <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-2xl mx-auto">Enter your website. We'll read it, check your Google reviews, and show you what to fix first.</p>
     <form id="site-form" class="mt-10 max-w-xl mx-auto flex flex-col sm:flex-row gap-3 sm:gap-0 sm:rounded-full sm:border sm:border-slate-200 sm:dark:border-slate-700 sm:bg-white sm:dark:bg-slate-900 sm:p-1.5 sm:shadow-sm" novalidate>
      <label class="flex-1"><span class="sr-only">Your website</span>
       <input name="website" inputmode="url" autocomplete="url" maxlength="200" placeholder="yourbusiness.com" class="w-full rounded-full border border-slate-200 dark:border-slate-700 sm:border-0 bg-white dark:bg-slate-900 px-6 py-4 text-lg focus:ring-2 focus:ring-primary sm:focus:ring-0"/>
@@ -76,14 +76,22 @@
      <button class="bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all">Analyse my site</button>
     </form>
     <p id="site-error" role="alert" class="mt-4 text-red-600"></p>
-    <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Free · about 15 seconds · no sign-up</p>
+    <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">Free · under a minute · no sign-up</p>
    </section>
 
-   <!-- Analysing -->
-   <section data-step="loading" hidden class="max-w-xl mx-auto">
+   <!-- Scanning: progress + questions -->
+   <section data-step="loading" hidden class="max-w-4xl mx-auto">
     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary">Analysing</p>
     <h2 id="l-site" tabindex="-1" class="mt-3 text-3xl sm:text-4xl font-bold tracking-tight text-charcoal dark:text-white break-all outline-none"></h2>
-    <ol id="l-steps" class="mt-10 space-y-4 text-lg" aria-live="polite"></ol>
+    <div class="mt-10 grid md:grid-cols-[1fr_1.4fr] gap-8 md:gap-12 items-start">
+     <ol id="l-steps" class="space-y-4" aria-live="polite"></ol>
+     <div id="q-card" class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm">
+      <p id="q-kicker" class="text-sm font-semibold text-slate-500 dark:text-slate-400"></p>
+      <h3 id="q-text" class="mt-2 text-2xl font-bold tracking-tight text-charcoal dark:text-white"></h3>
+      <div id="q-options" class="mt-6 grid gap-2.5"></div>
+      <button id="q-skip" type="button" class="mt-5 text-sm font-semibold text-slate-500 hover:text-primary">Skip →</button>
+     </div>
+    </div>
    </section>
 
    <!-- Results + chat -->
@@ -101,6 +109,11 @@
       <span id="r-band" class="rounded-full px-3.5 py-1 text-sm font-bold"></span>
      </div>
      <p id="r-summary" class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed"></p>
+    </div>
+
+    <div id="g-wrap" class="mt-14">
+     <h3 class="text-2xl font-bold tracking-tight text-charcoal dark:text-white">On Google</h3>
+     <div id="g-card" class="mt-5 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8"></div>
     </div>
 
     <h3 class="mt-14 text-2xl font-bold tracking-tight text-charcoal dark:text-white">What we found on your site</h3>
@@ -122,7 +135,7 @@
       <p class="font-bold text-charcoal dark:text-white">Ask about your results</p>
      </div>
      <form id="email-form" class="p-6 sm:p-8">
-      <p class="text-slate-600 dark:text-slate-400">Got questions about your report, or how to fix these gaps? Enter your email to chat with our AI advisor.</p>
+      <p class="text-slate-600 dark:text-slate-400">Got questions about your report, or where to start? Enter your email to chat with our AI advisor.</p>
       <div class="mt-5 flex flex-col sm:flex-row gap-3">
        <label class="flex-1"><span class="sr-only">Email</span>
         <input name="email" type="email" required maxlength="200" autocomplete="email" placeholder="you@yourbusiness.com" class="w-full rounded-full border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950 px-5 py-3.5 focus:border-primary focus:ring-primary"/>
@@ -145,8 +158,8 @@
     </div>
 
     <div class="mt-14 rounded-3xl bg-charcoal text-white p-8 sm:p-10 text-center">
-     <p class="text-3xl font-bold tracking-tight">Let your AI employee close these gaps</p>
-     <p class="mt-3 text-slate-300">It answers every customer, books them in and brings them back, on WhatsApp, SMS, email and Instagram.</p>
+     <p class="text-3xl font-bold tracking-tight">Want these fixed for you?</p>
+     <p class="mt-3 text-slate-300">Mercuri is an AI employee that answers every customer, books them in and brings them back, on WhatsApp, SMS, email and Instagram.</p>
      <a class="mt-8 inline-block bg-white text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all" href="https://client.mercuri.cx/auth/signup" target="_blank">Try it free for a month</a>
      <p class="mt-4 text-sm text-slate-400">No credit card · <a class="font-semibold text-slate-200 hover:text-primary" href="https://calendly.com/karthikmanjunath/30min" target="_blank">or book a demo →</a></p>
     </div>
@@ -156,6 +169,7 @@
   <div id="footer-placeholder">
   </div>
   <script src="js/main.js"></script>
+  <script src="ai-readiness-api/lib/questions.js"></script>
   <script>
     // ponytail: set to the Vercel project's URL after the first deploy
     const API = location.hostname === 'localhost' ? 'http://localhost:3000/api' : 'https://mercuri-ai-readiness.vercel.app/api';
@@ -164,14 +178,16 @@
       Emerging: 'bg-amber-100 text-amber-700 dark:bg-amber-950 dark:text-amber-300',
       Ready: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300',
     };
-    const STEPS = ['Opening your website', 'Finding your contact and booking pages', 'Checking how customers can reach you', 'Writing your report'];
-    const CHIPS = ['How do I fix my biggest gap?', 'What would Mercuri cost me?', 'How does the AI employee work?'];
+    const STEPS = ['Opening your website', 'Finding your contact and booking pages', 'Looking you up on Google', 'Writing your report'];
+    const CHIPS = ['How do I fix my biggest gap?', 'Where should I start this week?', 'Can any of this be automated?'];
     // Only these links in AI replies become clickable.
     const SAFE_LINK = /^https:\/\/(client\.mercuri\.cx|mercuri\.cx|calendly\.com\/karthikmanjunath)\b/;
+    const GOOGLE_LINK = /^https:\/\/(maps\.google\.com|www\.google\.com|google\.com)\//;
 
-    const state = { analysis: null, email: '', messages: [] };
+    let state = {};
     const $ = (id) => document.getElementById(id);
     const el = (tag, cls, text) => { const n = document.createElement(tag); n.className = cls; if (text != null) n.textContent = text; return n; };
+    const link = (href, cls, text) => { const a = el('a', cls, text); a.href = href; a.target = '_blank'; a.rel = 'noopener'; return a; };
 
     function show(step) {
       document.querySelectorAll('[data-step]').forEach((s) => (s.hidden = s.dataset.step !== step));
@@ -186,22 +202,65 @@
       return data;
     }
 
-    // Loading checklist: steps tick over on a timer, the last one waits for the real response.
-    function startSteps() {
+    // ---- Progress list: steps 0-2 tick on a timer until the scan returns; step 3 is the report.
+    function renderSteps() {
       $('l-steps').replaceChildren(...STEPS.map((s) => {
         const li = el('li', 'flex items-center gap-3 text-slate-400');
         li.append(el('span', 'w-6 h-6 rounded-full border-2 border-slate-300 dark:border-slate-700 shrink-0'), el('span', '', s));
         return li;
       }));
-      let i = 0;
-      const tick = () => {
-        const items = $('l-steps').children;
-        if (i > 0) { items[i - 1].className = 'flex items-center gap-3 text-charcoal dark:text-white'; items[i - 1].firstChild.className = 'w-6 h-6 rounded-full bg-primary text-white grid place-items-center text-sm shrink-0'; items[i - 1].firstChild.textContent = '✓'; }
-        if (i < items.length) { items[i].className = 'flex items-center gap-3 text-charcoal dark:text-white font-semibold'; items[i].firstChild.className = 'w-6 h-6 rounded-full border-2 border-primary border-t-transparent animate-spin shrink-0'; }
-        i++;
-      };
-      tick();
-      return setInterval(() => i < STEPS.length && tick(), 2500);
+    }
+    function setStep(i, status) {
+      const li = $('l-steps').children[i];
+      if (!li) return;
+      li.className = 'flex items-center gap-3 ' + (status === 'done' ? 'text-charcoal dark:text-white' : status === 'active' ? 'text-charcoal dark:text-white font-semibold' : 'text-slate-400');
+      li.firstChild.className = 'w-6 h-6 shrink-0 rounded-full ' + (status === 'done' ? 'bg-primary text-white grid place-items-center text-sm' : status === 'active' ? 'border-2 border-primary border-t-transparent animate-spin' : 'border-2 border-slate-300 dark:border-slate-700');
+      li.firstChild.textContent = status === 'done' ? '✓' : '';
+    }
+
+    // ---- Question card: one question at a time, each skippable. Resolves with the answers.
+    function askQuestions() {
+      return new Promise((resolve) => {
+        let i = 0;
+        const next = () => {
+          if (i >= READINESS_QUESTIONS.length) return resolve();
+          const qn = READINESS_QUESTIONS[i];
+          $('q-kicker').textContent = `While we look, a few quick questions · ${i + 1} of ${READINESS_QUESTIONS.length}`;
+          $('q-text').textContent = qn.q;
+          $('q-skip').hidden = false;
+          $('q-skip').onclick = () => { i++; next(); };
+          $('q-options').replaceChildren(...qn.options.map((o) => {
+            const b = el('button', 'text-left rounded-2xl border border-slate-200 dark:border-slate-700 px-5 py-3.5 font-medium text-charcoal dark:text-white hover:border-primary transition-colors', o.label);
+            b.type = 'button';
+            b.onclick = () => { state.answers[qn.id] = o.id; i++; next(); };
+            return b;
+          }));
+        };
+        next();
+      });
+    }
+
+    // Shown only when Google returned several listings and none clearly matches the website.
+    function pickPlace(candidates) {
+      return new Promise((resolve) => {
+        $('q-kicker').textContent = 'We found a few listings on Google';
+        $('q-text').textContent = 'Which one is you?';
+        $('q-skip').hidden = true;
+        $('q-options').replaceChildren(...candidates.map((c) => {
+          const b = el('button', 'text-left rounded-2xl border border-slate-200 dark:border-slate-700 px-5 py-3.5 hover:border-primary transition-colors');
+          b.type = 'button';
+          b.append(el('span', 'block font-semibold text-charcoal dark:text-white', c.name), el('span', 'block text-sm text-slate-500', c.address));
+          b.onclick = () => resolve(c.id);
+          return b;
+        }), Object.assign(el('button', 'text-left rounded-2xl border border-slate-200 dark:border-slate-700 px-5 py-3.5 font-medium text-slate-500 hover:border-primary transition-colors', 'None of these'), { type: 'button', onclick: () => resolve('none') }));
+      });
+    }
+
+    function waiting(text) {
+      $('q-kicker').textContent = '';
+      $('q-text').textContent = text;
+      $('q-options').replaceChildren();
+      $('q-skip').hidden = true;
     }
 
     $('site-form').onsubmit = async (e) => {
@@ -209,32 +268,88 @@
       const website = new FormData(e.target).get('website').trim();
       if (!website) return ($('site-error').textContent = 'Enter your website address.');
       $('site-error').textContent = '';
+      state = { answers: {}, email: state.email || '', messages: [] };
       $('l-site').textContent = website.replace(/^https?:\/\//, '').replace(/\/$/, '');
+      renderSteps();
       show('loading');
-      const timer = startSteps();
+
+      let tick = 0;
+      setStep(0, 'active');
+      const timer = setInterval(() => { if (tick < 2) { setStep(tick, 'done'); setStep(++tick, 'active'); } }, 2500);
+      const run = state;
+      const fail = (err) => { if (state !== run) return; state = { email: run.email }; $('site-error').textContent = err.message; show('intro'); };
+      const scanP = post('/scan', { website });
+      // A failed scan (bad address, site blocks bots) ends the flow right away instead of after the questions.
+      scanP.catch(fail).finally(() => clearInterval(timer));
+
       try {
-        const data = await post('/analyze', { website });
-        state.analysis = data;
-        renderResults(data);
-        if (window.gtag) gtag('event', 'ai_readiness_completed', { score: data.score });
+        await askQuestions();
+        if (state !== run) return;
+        waiting('Thanks, nearly there…');
+        const scan = await scanP;
+        [0, 1, 2].forEach((i) => setStep(i, 'done'));
+        let placeId;
+        if (scan.google.status === 'choose') placeId = await pickPlace(scan.google.candidates);
+        waiting('Writing your report…');
+        setStep(3, 'active');
+        const result = await post('/report', { scan, answers: state.answers, placeId });
+        setStep(3, 'done');
+        state.analysis = { website: scan.website, pagesRead: scan.pagesRead, signals: scan.signals, ...result };
+        renderResults(state.analysis);
+        if (window.gtag) gtag('event', 'ai_readiness_completed', { score: result.score });
       } catch (err) {
-        $('site-error').textContent = err.message;
-        show('intro');
-      } finally {
-        clearInterval(timer);
+        fail(err);
       }
     };
 
     $('again').onclick = () => show('intro');
 
-    function renderResults({ website, pagesRead, score, band, signals, report }) {
+    const stars = (r) => '★★★★★'.slice(0, Math.round(r || 0)) + '☆☆☆☆☆'.slice(0, 5 - Math.round(r || 0));
+
+    function renderGoogle({ googleStatus, place, report }) {
+      $('g-wrap').hidden = googleStatus === 'unavailable';
+      const card = $('g-card');
+      card.replaceChildren();
+      if (!place) {
+        card.append(el('p', 'font-semibold text-charcoal dark:text-white', "We couldn't find a Google listing for this business."),
+          el('p', 'mt-1 text-slate-600 dark:text-slate-400', report.googleTake || 'Most customers check Google before they book, so a claimed listing with reviews is worth setting up.'));
+        return;
+      }
+      const head = el('div', 'flex flex-wrap items-baseline gap-x-3 gap-y-1');
+      head.append(el('span', 'text-4xl font-bold text-charcoal dark:text-white', place.rating != null ? place.rating.toFixed(1) : '–'),
+        el('span', 'text-xl text-amber-500 tracking-wider', stars(place.rating)),
+        el('span', 'text-slate-500', `${place.reviewCount} Google review${place.reviewCount === 1 ? '' : 's'}`));
+      card.append(head);
+      if (report.googleTake) card.append(el('p', 'mt-3 text-slate-600 dark:text-slate-400', report.googleTake));
+      if (place.reviews.length) {
+        const list = el('ul', 'mt-6 grid gap-3');
+        for (const r of place.reviews) {
+          const li = el('li', 'rounded-2xl bg-slate-50 dark:bg-slate-800/60 p-4');
+          const who = el('p', 'text-sm');
+          who.append(GOOGLE_LINK.test(r.authorUri) ? link(r.authorUri, 'font-semibold text-charcoal dark:text-white hover:underline', r.author) : el('span', 'font-semibold text-charcoal dark:text-white', r.author),
+            el('span', 'ml-2 text-amber-500', stars(r.rating)), el('span', 'ml-2 text-slate-500', r.when));
+          li.append(who);
+          if (r.text) li.append(el('p', 'mt-2 text-slate-700 dark:text-slate-300 leading-relaxed', r.text));
+          list.append(li);
+        }
+        card.append(list);
+      }
+      const foot = el('p', 'mt-5 flex flex-wrap items-center justify-between gap-2 text-sm text-slate-500');
+      foot.append(el('span', '', 'Rating and reviews from Google Maps'));
+      if (GOOGLE_LINK.test(place.mapsUri)) foot.append(link(place.mapsUri, 'font-semibold hover:text-primary', 'View on Google Maps →'));
+      card.append(foot);
+    }
+
+    function renderResults(a) {
+      const { website, pagesRead, score, band, signals, report, place } = a;
       const host = new URL(website).hostname.replace(/^www\./, '');
-      $('r-name').textContent = report.businessName || host;
-      $('r-meta').textContent = [report.businessType, host].filter(Boolean).join(' · ');
+      $('r-name').textContent = report.businessName || place?.name || host;
+      $('r-meta').textContent = [report.businessType || place?.type, place?.address || host].filter(Boolean).join(' · ');
       $('r-score').textContent = score;
       $('r-band').textContent = band;
       $('r-band').className = 'rounded-full px-3.5 py-1 text-sm font-bold ' + BAND_CLASS[band];
       $('r-summary').textContent = report.summary;
+      renderGoogle(a);
       $('r-signals').replaceChildren(...signals.map((s) => {
         const li = el('li', 'flex items-center gap-3 rounded-2xl border border-slate-200 dark:border-slate-800 px-4 py-3');
         li.append(
@@ -247,14 +362,16 @@
       $('r-pages').textContent = `We read ${pagesRead.length} page${pagesRead.length > 1 ? 's' : ''}: ${pagesRead.join(', ')}. If something is missing, it may be on a page we didn't check.`;
       $('r-fixes').replaceChildren(...(report.fixes || []).map((f, i) => {
         const li = el('li', 'rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6');
-        li.append(el('p', 'font-bold text-lg text-charcoal dark:text-white', `${i + 1}. ${f.title}`), el('p', 'mt-1 text-slate-600 dark:text-slate-400', f.why), el('p', 'mt-4 inline-block rounded-full bg-primary/10 px-3.5 py-1 text-sm font-semibold text-primary', `Mercuri: ${f.mercuriFeature}`));
+        li.append(el('p', 'font-bold text-lg text-charcoal dark:text-white', `${i + 1}. ${f.title}`), el('p', 'mt-1 text-slate-600 dark:text-slate-400', f.why));
+        if (f.how) li.append(el('p', 'mt-3 text-charcoal dark:text-slate-200', f.how));
         return li;
       }));
       $('r-quickwin').textContent = report.quickWin;
       $('email-form').hidden = !!state.email;
       $('chat-live').hidden = !state.email;
+      $('msgs').replaceChildren();
       show('results');
-      if (state.email) { state.messages = []; $('msgs').replaceChildren(); send(); }
+      if (state.email) send();
     }
 
     // Plain text with whitelisted links made clickable. Never innerHTML.
@@ -262,7 +379,7 @@
       const mine = role === 'user';
       const d = el('div', 'max-w-[85%] rounded-2xl px-4 py-3 whitespace-pre-wrap leading-relaxed ' + (mine ? 'ml-auto bg-charcoal text-white rounded-br-md' : 'bg-slate-100 dark:bg-slate-800 text-charcoal dark:text-slate-100 rounded-bl-md'));
       for (const part of text.split(/(https:\/\/[^\s)]+)/)) {
-        if (SAFE_LINK.test(part)) { const a = el('a', 'underline font-semibold', part.replace(/[.,]$/, '')); a.href = a.textContent; a.target = '_blank'; a.rel = 'noopener'; d.append(a); }
+        if (SAFE_LINK.test(part)) { const href = part.replace(/[.,]$/, ''); d.append(link(href, 'underline font-semibold', href)); }
         else d.append(part);
       }
       $('msgs').append(d);
@@ -280,12 +397,17 @@
       }));
     }
 
+    // What the chat advisor knows. Review text stays out of it (shown word for word only, never summarised).
+    function chatContext() {
+      const { score, band, answers, signals, report, place, googleStatus } = state.analysis;
+      return { score, band, answers, signals, report, googleStatus, place: place && { name: place.name, type: place.type, rating: place.rating, reviewCount: place.reviewCount, hoursListed: place.hours.length > 0 } };
+    }
+
     async function send() {
       const typing = bubble('assistant', '…');
       $('ask-btn').disabled = true;
       try {
-        const { report, ...rest } = state.analysis;
-        const { reply } = await post('/chat', { email: state.email, website: state.analysis.website, analysis: { ...rest, report }, messages: state.messages });
+        const { reply } = await post('/chat', { email: state.email, website: state.analysis.website, analysis: chatContext(), messages: state.messages });
         typing.remove();
         bubble('assistant', reply);
         state.messages.push({ role: 'assistant', content: reply });

@@ -7,25 +7,25 @@ const UA = 'Mozilla/5.0 (compatible; MercuriReadinessBot/1.0; +https://mercuri.c
 // What we look for in the raw HTML. Each signal: label shown to the visitor, points toward the score, and patterns.
 // `vendors` maps a pattern to a product name so the report can say "Online booking (Fresha)".
 const SIGNALS = {
-  booking: { label: 'Online booking', pts: 25, vendors: {
+  booking: { label: 'Online booking', pts: 18, vendors: {
     'calendly.com': 'Calendly', 'acuityscheduling.com': 'Acuity', 'mindbodyonline.com': 'Mindbody', 'fresha.com': 'Fresha',
     'vagaro.com': 'Vagaro', 'booksy.com': 'Booksy', 'squareup.com/appointments': 'Square', 'setmore.com': 'Setmore',
     'simplybook.': 'SimplyBook', 'glofox.com': 'Glofox', 'janeapp.com': 'Jane', 'cliniko.com': 'Cliniko',
     'momence.com': 'Momence', 'walla.app': 'Walla', 'zenoti.com': 'Zenoti', 'wix-bookings': 'Wix Bookings', '/booking-calendar': 'Wix Bookings',
   }, patterns: [/\bbook (now|online|an? appointment|a class)\b/i] },
-  chat: { label: 'Live chat on the site', pts: 20, vendors: {
+  chat: { label: 'Live chat on the site', pts: 14, vendors: {
     'intercom': 'Intercom', 'tawk.to': 'Tawk.to', 'crisp.chat': 'Crisp', 'drift.com': 'Drift', 'livechatinc.com': 'LiveChat',
     'tidio': 'Tidio', 'zdassets.com': 'Zendesk', 'js.hs-scripts.com': 'HubSpot', 'freshchat': 'Freshchat', 'wix-chat': 'Wix Chat', 'chat-widget': 'Chat widget',
   }, patterns: [] },
-  whatsapp: { label: 'WhatsApp contact', pts: 15, vendors: {}, patterns: [/wa\.me\//i, /api\.whatsapp\.com/i, /whatsapp:\/\//i] },
-  reviews: { label: 'Google reviews shown or requested', pts: 15, vendors: {
+  whatsapp: { label: 'WhatsApp contact', pts: 10, vendors: {}, patterns: [/wa\.me\//i, /api\.whatsapp\.com/i, /whatsapp:\/\//i] },
+  reviews: { label: 'Google reviews shown or requested', pts: 8, vendors: {
     'elfsight': 'Elfsight', 'trustindex': 'Trustindex', 'search.google.com/local/writereview': 'Google review link', 'g.page/': 'Google review link',
   }, patterns: [/google reviews?/i, /\b\d(\.\d)? ?(stars?|★)/i] },
-  emailCapture: { label: 'Newsletter or email sign-up', pts: 10, vendors: {
+  emailCapture: { label: 'Newsletter or email sign-up', pts: 8, vendors: {
     'mailchimp': 'Mailchimp', 'list-manage.com': 'Mailchimp', 'klaviyo': 'Klaviyo', 'convertkit': 'ConvertKit', 'mailerlite': 'MailerLite',
   }, patterns: [/\b(subscribe|newsletter|sign up for (our )?(updates|offers))\b/i] },
-  contactForm: { label: 'Contact form', pts: 10, vendors: {}, patterns: [/<form[\s>]/i] },
-  social: { label: 'Instagram or Facebook linked', pts: 5, vendors: {}, patterns: [/instagram\.com\/[a-z0-9_.]/i, /facebook\.com\/[a-z0-9.]/i] },
+  contactForm: { label: 'Contact form', pts: 8, vendors: {}, patterns: [/<form[\s>]/i] },
+  social: { label: 'Instagram or Facebook linked', pts: 4, vendors: {}, patterns: [/instagram\.com\/[a-z0-9_.]/i, /facebook\.com\/[a-z0-9.]/i] },
   phone: { label: 'Phone number', pts: 0, vendors: {}, patterns: [/href=["']tel:/i] },
 };
 
@@ -119,8 +119,15 @@ function detectSignals(html) {
   return found;
 }
 
-function scoreSignals(found) {
-  const score = Object.entries(SIGNALS).reduce((sum, [k, s]) => sum + (found[k] ? s.pts : 0), 0);
+// Website signals are worth 70, the Google listing 30. Self-reported answers never change the score.
+function googlePoints(place) {
+  if (!place) return 0;
+  const r = place.rating || 0, n = place.reviewCount || 0;
+  return 5 + (r >= 4.5 ? 10 : r >= 4 ? 5 : 0) + (n >= 100 ? 15 : n >= 30 ? 8 : n >= 1 ? 3 : 0);
+}
+
+function scoreSignals(found, place = null) {
+  const score = Object.entries(SIGNALS).reduce((sum, [k, s]) => sum + (found[k] ? s.pts : 0), 0) + googlePoints(place);
   return { score, band: score < 40 ? 'Starting' : score <= 70 ? 'Emerging' : 'Ready' };
 }
 
