@@ -108,11 +108,11 @@
   </div>
   <script src="js/main.js"></script>
   <script>
-    // ponytail: Web3Forms emails each request to karthik@mercuri.cx with no server of ours. The access key is public by
-    // design (it can only send to that inbox; restrict it to mercuri.cx in the Web3Forms dashboard). Swap for our own endpoint if we need storage.
-    const ENDPOINT = 'https://api.web3forms.com/submit';
-    const ACCESS_KEY = 'WEB3FORMS_ACCESS_KEY';
-    const CAMPAIGN = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'ttclid'];
+    // ponytail: submits into the "Mercuri Invite" Google Form, which stores responses and emails karthik@mercuri.cx.
+    // no-cors means we can't read Google's reply, so success = the request left the browser. Every field is
+    // required on the Google side, so blanks are sent as '—'. If the form's questions change, update these IDs.
+    const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSemJhyuR-aGdsor1hketm9eA4CFLm1tqCvplF4R20I2xS20yA/formResponse';
+    const ENTRY = { name: 'entry.2145389757', email: 'entry.594021018', website: 'entry.185254587', phone: 'entry.722295103' };
 
     document.getElementById('invite-form').onsubmit = async (e) => {
       e.preventDefault();
@@ -127,18 +127,11 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
 
-      const params = new URLSearchParams(location.search);
-      const body = {
-        name: val('name'), email: val('email'), website: val('website'), phone: val('phone') || '—',
-        came_from: document.referrer || 'direct',
-        campaign: CAMPAIGN.filter((k) => params.get(k)).map((k) => `${k}=${params.get(k)}`).join(' ') || '—',
-        subject: `Invite request: ${val('name')} (${val('website')})`,
-        from_name: 'mercuri.cx', access_key: ACCESS_KEY, ...(f.get('botcheck') && { botcheck: true }),
-      };
+      const fields = { name: val('name'), email: val('email'), website: val('website'), phone: val('phone') || '—' };
       try {
-        const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'send failed');
+        if (f.get('botcheck')) throw new Error('bot');
+        const body = new URLSearchParams(Object.entries(fields).map(([k, v]) => [ENTRY[k], v]));
+        await fetch(FORM, { method: 'POST', mode: 'no-cors', body });
         document.getElementById('invite').hidden = true;
         document.getElementById('thanks').hidden = false;
         document.querySelector('#thanks h1').focus();
@@ -146,7 +139,7 @@
         if (window.gtag) gtag('event', 'generate_lead', { method: 'invite_request' });
         if (window.fbq) fbq('track', 'Lead');
       } catch {
-        const mail = `mailto:karthik@mercuri.cx?subject=${encodeURIComponent('Invite request')}&body=${encodeURIComponent(`Name: ${body.name}\nWebsite: ${body.website}\nPhone: ${body.phone}`)}`;
+        const mail = `mailto:karthik@mercuri.cx?subject=${encodeURIComponent('Invite request')}&body=${encodeURIComponent(Object.values(fields).join('\n'))}`;
         err.replaceChildren('Something went wrong sending your request. ', Object.assign(document.createElement('a'), { href: mail, className: 'underline font-semibold', textContent: 'Email us instead' }), '.');
       } finally {
         btn.disabled = false;
