@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Request an invite - Mercuri</title>
+  <meta content="Mercuri is invite only. Request an invite for your studio, salon or clinic and get an AI employee that answers, books and brings customers back." name="description"/>
+  <meta content="index, follow" name="robots"/>
+  <link href="https://mercuri.cx/invite.html" rel="canonical"/>
+  <meta content="website" property="og:type"/>
+  <meta content="Request an invite - Mercuri" property="og:title"/>
+  <meta content="Mercuri is invite only. Request an invite for your studio, salon or clinic and get an AI employee that answers, books and brings customers back." property="og:description"/>
+  <meta content="https://mercuri.cx/invite.html" property="og:url"/>
+  <meta content="https://mercuri.cx/assets/images/og/og-home.svg" property="og:image"/>
+  <meta content="Mercuri homepage preview showing email, SMS and WhatsApp marketing in one platform" property="og:image:alt"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="Request an invite - Mercuri" name="twitter:title"/>
+  <meta content="Mercuri is invite only. Request an invite for your studio, salon or clinic and get an AI employee that answers, books and brings customers back." name="twitter:description"/>
+  <meta content="https://mercuri.cx/assets/images/og/og-home.svg" name="twitter:image"/>
+  <meta content="Mercuri homepage preview showing email, SMS and WhatsApp marketing in one platform" name="twitter:image:alt"/>
+  <link href="assets/images/Mercuri logo 32px.png" rel="icon" sizes="32x32" type="image/png"/>
+  <link href="css/tailwind.css?v=20261104" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+   <style>
+    body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .serif-text {
+            font-family: 'Instrument Serif', serif;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+   </style>
+  </link>
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VTDYSN0C3J"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VTDYSN0C3J');
+</script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-charcoal dark:text-slate-200 transition-colors duration-300">
+  <div id="header-placeholder">
+  </div>
+
+  <main class="px-6 pt-20 pb-24 sm:pt-28 min-h-[70vh]">
+   <div class="max-w-xl mx-auto">
+    <section id="invite">
+     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Invite only</p>
+     <h1 class="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white">Request an invite</h1>
+     <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">We onboard a few businesses each week so every one gets set up properly. Tell us about yours and we'll be in touch.</p>
+
+     <form id="invite-form" class="mt-10 space-y-5" novalidate>
+      <label class="block">
+       <span class="text-sm font-semibold text-charcoal dark:text-white">Your name</span>
+       <input name="name" required maxlength="100" autocomplete="name" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
+      </label>
+      <label class="block">
+       <span class="text-sm font-semibold text-charcoal dark:text-white">Email</span>
+       <input name="email" type="email" required maxlength="200" autocomplete="email" placeholder="you@yourbusiness.com" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
+      </label>
+      <label class="block">
+       <span class="text-sm font-semibold text-charcoal dark:text-white">Business website</span>
+       <input name="website" required maxlength="200" inputmode="url" autocomplete="url" placeholder="yourbusiness.com" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
+      </label>
+      <label class="block">
+       <span class="text-sm font-semibold text-charcoal dark:text-white">Phone or WhatsApp <span class="font-normal text-slate-500">(optional)</span></span>
+       <input name="phone" type="tel" maxlength="40" autocomplete="tel" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
+      </label>
+      <!-- Spam trap: real visitors never see or fill this. -->
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>
+      <p id="invite-error" role="alert" class="text-sm text-red-600"></p>
+      <button id="invite-btn" class="inline-block bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-60">Request an invite</button>
+      <p class="text-sm text-slate-500 dark:text-slate-400">Prefer to talk first? <a class="font-semibold text-slate-600 dark:text-slate-300 hover:text-primary" href="https://calendly.com/karthikmanjunath/30min" target="_blank">Book a demo →</a></p>
+      <p class="text-xs text-slate-500">We'll only use your details to get in touch about Mercuri. <a href="privacy.html" class="underline hover:text-primary">Privacy Policy</a></p>
+     </form>
+    </section>
+
+    <section id="thanks" hidden>
+     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Request received</p>
+     <h1 tabindex="-1" class="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white outline-none">You're on the list</h1>
+     <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">Thanks! We'll review your business and email you when your spot is ready, usually within a week.</p>
+     <p class="mt-8 text-slate-500 dark:text-slate-400">Can't wait? <a class="font-semibold text-slate-600 dark:text-slate-300 hover:text-primary" href="https://calendly.com/karthikmanjunath/30min" target="_blank">Book a demo →</a></p>
+    </section>
+   </div>
+  </main>
+
+  <div id="footer-placeholder">
+  </div>
+  <script src="js/main.js"></script>
+  <script>
+    // ponytail: FormSubmit emails each request to karthik@mercuri.cx with no server of ours. The first submission
+    // triggers a one-time activation email to that inbox. Swap for our own endpoint if we need storage or spam control.
+    const ENDPOINT = 'https://formsubmit.co/ajax/karthik@mercuri.cx';
+    const CAMPAIGN = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'ttclid'];
+
+    document.getElementById('invite-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const f = new FormData(e.target);
+      const err = document.getElementById('invite-error');
+      const btn = document.getElementById('invite-btn');
+      const val = (k) => (f.get(k) || '').trim();
+      if (!val('name')) return (err.textContent = 'Enter your name.');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val('email'))) return (err.textContent = 'Enter a valid email.');
+      if (!val('website')) return (err.textContent = 'Enter your business website.');
+      err.textContent = '';
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      const params = new URLSearchParams(location.search);
+      const body = {
+        name: val('name'), email: val('email'), website: val('website'), phone: val('phone') || '—',
+        came_from: document.referrer || 'direct',
+        campaign: CAMPAIGN.filter((k) => params.get(k)).map((k) => `${k}=${params.get(k)}`).join(' ') || '—',
+        _subject: `Invite request: ${val('name')} (${val('website')})`,
+        _replyto: val('email'), _template: 'table', _honey: f.get('_honey') || '',
+      };
+      try {
+        const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok || String(data.success) !== 'true') throw new Error(data.message || 'send failed');
+        document.getElementById('invite').hidden = true;
+        document.getElementById('thanks').hidden = false;
+        document.querySelector('#thanks h1').focus();
+        window.scrollTo(0, 0);
+        if (window.gtag) gtag('event', 'generate_lead', { method: 'invite_request' });
+        if (window.fbq) fbq('track', 'Lead');
+      } catch {
+        const mail = `mailto:karthik@mercuri.cx?subject=${encodeURIComponent('Invite request')}&body=${encodeURIComponent(`Name: ${body.name}\nWebsite: ${body.website}\nPhone: ${body.phone}`)}`;
+        err.replaceChildren('Something went wrong sending your request. ', Object.assign(document.createElement('a'), { href: mail, className: 'underline font-semibold', textContent: 'Email us instead' }), '.');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Request an invite';
+      }
+    };
+  </script>
+</body>
+</html>
