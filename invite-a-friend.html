@@ -21,7 +21,7 @@
   <meta content="https://mercuri.cx/assets/images/og/og-home.svg" name="twitter:image"/>
   <meta content="Mercuri homepage preview showing email, SMS and WhatsApp marketing in one platform" name="twitter:image:alt"/>
   <link href="assets/images/Mercuri logo 32px.png" rel="icon" sizes="32x32" type="image/png"/>
-  <link href="css/tailwind.css?v=20261104" rel="stylesheet"/>
+  <link href="css/tailwind.css?v=20261104d" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com" rel="preconnect">
    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
@@ -63,101 +63,13 @@
   </div>
 
   <main class="px-6 pt-20 pb-24 sm:pt-28 min-h-[70vh]">
-   <div class="max-w-xl mx-auto">
-    <section id="invite">
-     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">For Mercuri customers</p>
-     <h1 class="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white">Invite a friend</h1>
-     <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">Know another owner who's buried in messages? Tell us who they are and we'll invite them personally.</p>
-
-     <form id="invite-form" class="mt-10 space-y-5" novalidate>
-      <label class="block">
-       <span class="text-sm font-semibold text-charcoal dark:text-white">Your name</span>
-       <input name="your_name" required maxlength="100" autocomplete="name" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
-      </label>
-      <label class="block">
-       <span class="text-sm font-semibold text-charcoal dark:text-white">Your email</span>
-       <input name="your_email" type="email" required maxlength="200" autocomplete="email" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
-      </label>
-      <p class="pt-4 text-sm font-bold uppercase tracking-[0.15em] text-slate-500">Who should we invite?</p>
-      <label class="block">
-       <span class="text-sm font-semibold text-charcoal dark:text-white">Their name</span>
-       <input name="friend_name" required maxlength="100" autocomplete="off" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
-      </label>
-      <label class="block">
-       <span class="text-sm font-semibold text-charcoal dark:text-white">Their email</span>
-       <input name="friend_email" type="email" required maxlength="200" autocomplete="off" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
-      </label>
-      <label class="block">
-       <span class="text-sm font-semibold text-charcoal dark:text-white">Their business website <span class="font-normal text-slate-500">(optional)</span></span>
-       <input name="friend_website" maxlength="200" inputmode="url" autocomplete="off" placeholder="theirbusiness.com" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
-      </label>
-      <!-- Spam trap: real visitors never see or fill this. -->
-      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>
-      <p id="invite-error" role="alert" class="text-sm text-red-600"></p>
-      <button id="invite-btn" class="inline-block bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-60">Send invite</button>
-            <p class="text-xs text-slate-500">We'll only use these details to invite your friend and let you know when they join. <a href="privacy.html" class="underline hover:text-primary">Privacy Policy</a></p>
-     </form>
-    </section>
-
-    <section id="thanks" hidden>
-     <p class="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-6">Invite sent to us</p>
-     <h1 tabindex="-1" class="text-4xl sm:text-6xl font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white outline-none">Thanks for the referral</h1>
-     <p class="mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed">We'll reach out to your friend personally, usually within a few days, and let you know when they're in.</p>
-     <p class="mt-8 text-slate-500 dark:text-slate-400"><a class="font-semibold text-slate-600 dark:text-slate-300 hover:text-primary" href="invite-a-friend.html">Invite someone else →</a></p>
-    </section>
-   </div>
+   <div id="invite-root" class="max-w-xl mx-auto"></div>
   </main>
 
   <div id="footer-placeholder">
   </div>
   <script src="js/main.js"></script>
-  <script>
-    // ponytail: submits into the "Mercuri Invite" Google Form, which stores responses and emails karthik@mercuri.cx.
-    // no-cors means we can't read Google's reply, so success = the request left the browser. Every field is
-    // required on the Google side, so blanks are sent as '—'. If the form's questions change, update these IDs.
-    const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSemJhyuR-aGdsor1hketm9eA4CFLm1tqCvplF4R20I2xS20yA/formResponse';
-    const ENTRY = { name: 'entry.2145389757', email: 'entry.594021018', website: 'entry.185254587', phone: 'entry.722295103' };
-
-    document.getElementById('invite-form').onsubmit = async (e) => {
-      e.preventDefault();
-      const f = new FormData(e.target);
-      const err = document.getElementById('invite-error');
-      const btn = document.getElementById('invite-btn');
-      const val = (k) => (f.get(k) || '').trim();
-      const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!val('your_name')) return (err.textContent = 'Enter your name.');
-      if (!email.test(val('your_email'))) return (err.textContent = 'Enter a valid email for yourself.');
-      if (!val('friend_name')) return (err.textContent = "Enter your friend's name.");
-      if (!email.test(val('friend_email'))) return (err.textContent = "Enter a valid email for your friend.");
-      if (val('friend_email').toLowerCase() === val('your_email').toLowerCase()) return (err.textContent = "That's your own email. Enter your friend's.");
-      err.textContent = '';
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-
-      const fields = {
-        name: `${val('friend_name')} (referred by ${val('your_name')})`,
-        email: val('friend_email'),
-        website: val('friend_website') || '—',
-        phone: `Referred by ${val('your_name')} <${val('your_email')}>`,
-      };
-      try {
-        if (f.get('botcheck')) throw new Error('bot');
-        const body = new URLSearchParams(Object.entries(fields).map(([k, v]) => [ENTRY[k], v]));
-        await fetch(FORM, { method: 'POST', mode: 'no-cors', body });
-        document.getElementById('invite').hidden = true;
-        document.getElementById('thanks').hidden = false;
-        document.querySelector('#thanks h1').focus();
-        window.scrollTo(0, 0);
-        if (window.gtag) gtag('event', 'generate_lead', { method: 'referral' });
-        if (window.fbq) fbq('track', 'Lead');
-      } catch {
-        const mail = `mailto:karthik@mercuri.cx?subject=${encodeURIComponent('Invite request')}&body=${encodeURIComponent(Object.values(fields).join('\n'))}`;
-        err.replaceChildren('Something went wrong sending your invite. ', Object.assign(document.createElement('a'), { href: mail, className: 'underline font-semibold', textContent: 'Email us instead' }), '.');
-      } finally {
-        btn.disabled = false;
-        btn.textContent = 'Send invite';
-      }
-    };
-  </script>
+  <script src="js/invite.js"></script>
+  <script>MercuriInvite.mount(document.getElementById('invite-root'), 'friend');</script>
 </body>
 </html>

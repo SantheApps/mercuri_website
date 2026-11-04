@@ -426,3 +426,18 @@ document.addEventListener('DOMContentLoaded', function() {
         initChatTyping();
     });
 });
+
+// "Request an invite" / "Invite a friend" open as a pop-up (js/invite.js, loaded on first click).
+// The links still work as plain pages without JS, with modifier keys, and on the invite pages themselves.
+document.addEventListener('click', function (e) {
+    const a = e.target.closest && e.target.closest('a[href*="invite.html"], a[href*="invite-a-friend.html"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (/invite(-a-friend)?\.html$/.test(location.pathname)) return;
+    e.preventDefault();
+    const kind = a.getAttribute('href').includes('invite-a-friend.html') ? 'friend' : 'invite';
+    if (window.MercuriInvite) return window.MercuriInvite.open(kind);
+    const s = document.createElement('script');
+    s.src = 'js/invite.js';
+    s.onload = function () { window.MercuriInvite.open(kind); };
+    document.head.appendChild(s);
+});
