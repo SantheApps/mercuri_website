@@ -92,7 +92,7 @@
        <input name="friend_website" maxlength="200" inputmode="url" autocomplete="off" placeholder="theirbusiness.com" class="mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary"/>
       </label>
       <!-- Spam trap: real visitors never see or fill this. -->
-      <input type="text" name="_honey" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>
+      <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>
       <p id="invite-error" role="alert" class="text-sm text-red-600"></p>
       <button id="invite-btn" class="inline-block bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-60">Send invite</button>
             <p class="text-xs text-slate-500">We'll only use these details to invite your friend and let you know when they join. <a href="privacy.html" class="underline hover:text-primary">Privacy Policy</a></p>
@@ -112,9 +112,10 @@
   </div>
   <script src="js/main.js"></script>
   <script>
-    // ponytail: FormSubmit emails each request to karthik@mercuri.cx with no server of ours. The first submission
-    // triggers a one-time activation email to that inbox. Swap for our own endpoint if we need storage or spam control.
-    const ENDPOINT = 'https://formsubmit.co/ajax/karthik@mercuri.cx';
+    // ponytail: Web3Forms emails each request to karthik@mercuri.cx with no server of ours. The access key is public by
+    // design (it can only send to that inbox; restrict it to mercuri.cx in the Web3Forms dashboard). Swap for our own endpoint if we need storage.
+    const ENDPOINT = 'https://api.web3forms.com/submit';
+    const ACCESS_KEY = 'WEB3FORMS_ACCESS_KEY';
     const CAMPAIGN = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid', 'ttclid'];
 
     document.getElementById('invite-form').onsubmit = async (e) => {
@@ -140,8 +141,8 @@
         their_website: val('friend_website') || '—',
         came_from: document.referrer || 'direct',
         campaign: CAMPAIGN.filter((k) => params.get(k)).map((k) => `${k}=${params.get(k)}`).join(' ') || '—',
-        _subject: `Referral: ${val('your_name')} invited ${val('friend_name')}`,
-        _replyto: val('your_email'), _template: 'table', _honey: f.get('_honey') || '',
+        subject: `Referral: ${val('your_name')} invited ${val('friend_name')}`,
+        email: val('your_email'), from_name: 'mercuri.cx', access_key: ACCESS_KEY, ...(f.get('botcheck') && { botcheck: true }),
       };
       try {
         const res = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(body) });
