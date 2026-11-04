@@ -16,7 +16,7 @@ const FEATURES = [
 ];
 
 const MERCURI_FACTS = `Mercuri is an AI employee for studios, salons, spas and clinics. It answers every customer instantly on WhatsApp, SMS, email and Instagram, books appointments, sends reminders, fills cancelled slots, brings back lapsed customers and asks for Google reviews. It learns the business's services and policies, replies in its voice, and hands over to a human when needed.
-Price: one plan, $99/month, everything included (WhatsApp, SMS, email, Instagram, Google reviews, automations, AI). Month to month, first month free, no credit card. Sign up: https://client.mercuri.cx/auth/signup. Book a demo: https://calendly.com/karthikmanjunath/30min.
+Access is invite only: businesses request an invite and Mercuri onboards a few each week. Price: one plan, $99/month, everything included (WhatsApp, SMS, email, Instagram, Google reviews, automations, AI), month to month. Request an invite: https://client.mercuri.cx/auth/signup. Book a demo: https://calendly.com/karthikmanjunath/30min.
 Features: ${FEATURES.join('; ')}.`;
 
 // Sets CORS headers; returns false (and ends the response) when the request must stop here.
