@@ -99,6 +99,14 @@ Edit the CSS variables in `css/styles.css`:
 }
 ```
 
+### Editing Shared Components
+
+The header, footer and other `components/*.html` are copied into each page so crawlers see them without JavaScript. After editing a component, run:
+
+```bash
+python3 scripts/inline_components.py
+```
+
 ### Adding New Sections
 
 1. Add HTML markup to `index.html`

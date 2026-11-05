@@ -151,8 +151,8 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     const ensureFavicon = () => {
-        const iconHref = 'assets/images/Mercuri logo 32px.png';
-        const appleHref = 'assets/images/Mercuri logo 192px.png';
+        const iconHref = 'assets/images/mercuri-logo-32px.png';
+        const appleHref = 'assets/images/mercuri-logo-192px.png';
 
         if (!document.querySelector('link[rel="icon"], link[rel="shortcut icon"]')) {
             const iconLink = document.createElement('link');
@@ -293,6 +293,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const loadComponent = (elementId, path, onLoad) => {
         const element = document.getElementById(elementId);
         if (!element) return;
+        // Already inlined by scripts/inline_components.py: just run the init.
+        if (element.children.length) {
+            if (typeof onLoad === 'function') onLoad();
+            return;
+        }
 
         fetch(path, { cache: 'no-store' })
             .then((response) => {
