@@ -55,9 +55,6 @@
         var u = new URL(a.href);
         CARRY.forEach(function (k) { if (src.get(k)) u.searchParams.set(k, src.get(k)); });
         a.href = u.toString();
-        if (u.pathname.indexOf('/auth/signup') === 0) {
-          a.addEventListener('click', function () { fbq('trackCustom', 'SignupClick'); });
-        }
       });
     });
   }

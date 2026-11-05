@@ -651,7 +651,6 @@
       var src = new URLSearchParams(location.search), u = new URL(a.href, location.href);
       CARRY.forEach(function (k) { if (src.get(k)) u.searchParams.set(k, src.get(k)); });
       a.href = u.toString();
-      if (u.pathname.indexOf('/auth/signup') === 0 && window.fbq) fbq('trackCustom', 'SignupClick');
     }, true);
   </script>
 </body>
