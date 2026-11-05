@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
         link.setAttribute('aria-label', 'Chat with Mercuri on WhatsApp');
         link.innerHTML = `
             <span class="whatsapp-widget__icon" aria-hidden="true">
-                <img alt="" src="assets/images/whatsapp.png"/>
+                <img alt="" src="assets/images/whatsapp-48.webp" width="24" height="24"/>
             </span>
             <span class="whatsapp-widget__label">Chat on WhatsApp</span>
         `;
