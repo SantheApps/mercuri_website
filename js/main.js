@@ -395,3 +395,26 @@ document.addEventListener('click', function (e) {
     s.onload = function () { window.MercuriInvite.open(kind); };
     document.head.appendChild(s);
 });
+
+// Hero phone: replays the booking conversation while it is on screen. Each element shows from step
+// data-show onwards, or only at step data-only (typing dots). No JS or reduced motion keeps the finished thread.
+(function () {
+    const chat = document.getElementById('hero-chat');
+    if (!chat || !window.matchMedia || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const items = chat.querySelectorAll('[data-show], [data-only]');
+    const durations = [900, 1300, 1500, 2600, 1600, 1300, 4000]; // ms on each step; the last holds the booking
+    let step = 0;
+    let timer;
+    const render = () => items.forEach((el) => {
+        // A class, not the hidden attribute: Tailwind's flex utility would override [hidden].
+        el.classList.toggle('hidden', el.dataset.only ? step !== +el.dataset.only : step < +el.dataset.show);
+    });
+    const play = () => {
+        render();
+        timer = setTimeout(() => { step = (step + 1) % durations.length; play(); }, durations[step]);
+    };
+    new IntersectionObserver(([entry]) => {
+        clearTimeout(timer);
+        if (entry.isIntersecting) play();
+    }).observe(chat);
+})();

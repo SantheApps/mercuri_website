@@ -82,7 +82,7 @@
      }
    }
   </script>
-  <link href="css/tailwind.css?v=20261105g" rel="stylesheet"/>
+  <link href="css/tailwind.css?v=20261105h" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com" rel="preconnect">
    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;display=swap" rel="stylesheet"/>
@@ -185,20 +185,37 @@
       <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Already a customer? <a class="font-semibold text-slate-600 dark:text-slate-300 hover:text-primary" href="invite-a-friend.html">Invite a friend →</a></p>
      </div>
     </div>
-    <!-- One conversation, from question to booking -->
-    <figure class="w-full max-w-sm mx-auto lg:mr-0 rounded-3xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 shadow-xl overflow-hidden" aria-label="Example: a customer books a class over WhatsApp at 9:42 PM">
-     <div class="flex items-center gap-3 px-5 py-4 border-b border-slate-100 dark:border-slate-800">
-      <span aria-hidden="true" class="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 grid place-items-center font-bold text-charcoal dark:text-white">M</span>
-      <span>
-       <span class="block font-semibold text-charcoal dark:text-white">Maya</span>
-       <span class="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400"><span aria-hidden="true" class="w-1.5 h-1.5 rounded-full bg-green-500"></span>WhatsApp · 9:42 PM</span>
-      </span>
-     </div>
-     <div class="p-5 space-y-3 bg-slate-50 dark:bg-slate-950/40 text-[15px] leading-snug">
-      <p class="rounded-2xl rounded-tl-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2.5 max-w-[80%] text-charcoal dark:text-slate-100">Any spots in tomorrow's 7am class?</p>
-      <p class="ml-auto rounded-2xl rounded-tr-md bg-charcoal dark:bg-slate-700 text-white px-4 py-2.5 max-w-[85%]"><span class="block text-[11px] font-bold text-primary dark:text-amber-300 mb-0.5">Mercuri · AI employee</span>Yes! 2 spots left. Want me to book you in, Maya?</p>
-      <p class="rounded-2xl rounded-tl-md bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2.5 max-w-[80%] text-charcoal dark:text-slate-100">Yes please</p>
-      <p class="ml-auto rounded-2xl rounded-tr-md bg-charcoal dark:bg-slate-700 text-white px-4 py-2.5 max-w-[85%]">Done ✓ You're booked for 7:00am tomorrow. I'll send a reminder the night before.</p>
+    <!-- Phone: replays one conversation, question to booking (js/main.js). No JS or reduced motion shows the finished thread. -->
+    <figure class="m-0 mx-auto lg:mr-0" aria-label="Example: a customer books tomorrow's 7am class over WhatsApp at 9:42 PM">
+     <div aria-hidden="true" class="w-[clamp(250px,27vw,300px)] max-[720px]:w-[300px] aspect-[300/620] box-border p-2.5 rounded-[46px] bg-[#0A0A0A] shadow-[0_40px_80px_-32px_rgba(10,10,10,0.5)]">
+      <div class="relative h-full rounded-[36px] overflow-hidden bg-[#F3F3F3] flex flex-col text-left">
+       <span class="absolute top-2.5 left-1/2 -ml-[46px] w-[92px] h-[26px] rounded-full bg-[#0A0A0A]"></span>
+       <div class="pt-[46px] px-3.5 pb-2.5 flex items-center gap-2.5 bg-white border-b border-[#DEDEDE]">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        <span class="w-[34px] h-[34px] rounded-full bg-charcoal text-white flex items-center justify-center text-xs font-semibold shrink-0">SY</span>
+        <span class="flex flex-col min-w-0 leading-[1.3]"><span class="text-sm font-semibold text-charcoal">Sunrise Yoga</span><span class="text-[11px] text-slate-500 truncate">WhatsApp · replies instantly</span></span>
+       </div>
+       <div id="hero-chat" class="flex-1 min-h-0 overflow-hidden flex flex-col justify-end gap-2 p-3 text-[13.5px] leading-[1.4] [mask-image:linear-gradient(to_bottom,transparent_0,#000_32px)]">
+        <div class="flex justify-center"><span class="px-2 py-[3px] rounded-md bg-[#E6E6E6] text-[11px] text-slate-500">Today</span></div>
+        <div data-show="1" class="mq-pop ml-auto max-w-[78%] flex flex-col items-end gap-[3px]"><p class="m-0 px-3 py-2 rounded-[16px_16px_4px_16px] bg-[#F8E1C8] text-charcoal">Any spots in tomorrow's 7am class?</p><span class="text-[10px] text-slate-500">9:42 PM</span></div>
+          <div data-only="2" class="mq-pop flex hidden"><div class="px-3 py-[11px] rounded-[16px_16px_16px_4px] bg-white border border-slate-200 flex gap-1"><span class="mq-typing w-1.5 h-1.5 rounded-full bg-slate-400"></span><span class="mq-typing w-1.5 h-1.5 rounded-full bg-slate-400 [animation-delay:.15s]"></span><span class="mq-typing w-1.5 h-1.5 rounded-full bg-slate-400 [animation-delay:.3s]"></span></div></div>
+        <div data-show="3" class="mq-pop max-w-[84%] flex flex-col gap-[3px]"><p class="m-0 px-3 py-2 rounded-[16px_16px_16px_4px] bg-white border border-slate-200 text-charcoal">Yes! 2 spots left. Want me to book you in, Maya?</p><span class="flex items-center gap-[5px] text-[10px] text-slate-500"><span class="w-[5px] h-[5px] rounded-full bg-primary"></span>Mercuri AI · 9:42 PM</span></div>
+        <div data-show="4" class="mq-pop ml-auto max-w-[78%] flex flex-col items-end gap-[3px]"><p class="m-0 px-3 py-2 rounded-[16px_16px_4px_16px] bg-[#F8E1C8] text-charcoal">Yes please</p><span class="text-[10px] text-slate-500">9:43 PM</span></div>
+          <div data-only="5" class="mq-pop flex hidden"><div class="px-3 py-[11px] rounded-[16px_16px_16px_4px] bg-white border border-slate-200 flex gap-1"><span class="mq-typing w-1.5 h-1.5 rounded-full bg-slate-400"></span><span class="mq-typing w-1.5 h-1.5 rounded-full bg-slate-400 [animation-delay:.15s]"></span><span class="mq-typing w-1.5 h-1.5 rounded-full bg-slate-400 [animation-delay:.3s]"></span></div></div>
+        <div data-show="6" class="mq-pop max-w-[86%] flex flex-col gap-[3px]">
+         <div class="rounded-[16px_16px_16px_4px] bg-white border border-slate-200 overflow-hidden text-charcoal">
+          <div class="px-3 py-[7px] flex items-center gap-1.5 bg-charcoal text-white text-[10px] font-semibold tracking-[0.08em]"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#EB973D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>BOOKING CONFIRMED</div>
+          <div class="px-3 pt-[9px] pb-1 flex flex-col gap-px"><span class="text-sm font-semibold">7:00am class</span><span class="text-[12.5px] text-slate-500">Tomorrow</span></div>
+          <p class="m-0 px-3 pt-1 pb-2.5">Done ✓ You're booked for 7:00am tomorrow. I'll send a reminder the night before.</p>
+         </div>
+         <span class="flex items-center gap-[5px] text-[10px] text-slate-500"><span class="w-[5px] h-[5px] rounded-full bg-primary"></span>Mercuri AI · 9:43 PM</span>
+        </div>
+       </div>
+       <div class="px-2.5 pt-2 pb-4 flex items-center gap-2 bg-white border-t border-[#DEDEDE]">
+        <span class="flex-1 h-9 box-border rounded-full bg-[#F3F3F3] border border-[#DEDEDE] flex items-center px-3.5 text-[13px] text-slate-500">Message</span>
+        <span class="w-9 h-9 rounded-full bg-charcoal text-white flex items-center justify-center shrink-0"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+       </div>
+      </div>
      </div>
     </figure>
    </div>
