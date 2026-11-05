@@ -303,51 +303,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     };
 
-    const initMobileMenu = () => {
-        const toggle = document.getElementById('mobile-menu-toggle');
-        const drawer = document.getElementById('mobile-drawer');
-        const overlay = document.getElementById('mobile-drawer-overlay');
-        const closeBtn = document.getElementById('mobile-drawer-close');
-        const icon = document.getElementById('mobile-menu-icon');
-
-        if (!toggle || !drawer) return;
-
-        const closeMenu = () => {
-            drawer.classList.add('hidden');
-            drawer.setAttribute('aria-hidden', 'true');
-            toggle.setAttribute('aria-expanded', 'false');
-            if (icon) icon.textContent = 'menu';
-        };
-
-        const openMenu = () => {
-            drawer.classList.remove('hidden');
-            drawer.setAttribute('aria-hidden', 'false');
-            toggle.setAttribute('aria-expanded', 'true');
-            if (icon) icon.textContent = 'close';
-        };
-
-        toggle.addEventListener('click', () => {
-            if (drawer.classList.contains('hidden')) {
-                openMenu();
-            } else {
-                closeMenu();
-            }
-        });
-
-        if (overlay) overlay.addEventListener('click', closeMenu);
-        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-
-        drawer.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', closeMenu);
-        });
-
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 768) {
-                closeMenu();
-            }
-        });
-    };
-
     const setupGlobalMobileDrawer = () => {
         const toggleDrawer = (open) => {
             const drawer = document.getElementById('mobile-drawer');
@@ -388,6 +343,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        document.addEventListener('keydown', (event) => {
+            const drawer = document.getElementById('mobile-drawer');
+            if (event.key !== 'Escape' || !drawer || drawer.classList.contains('hidden')) return;
+            toggleDrawer(false);
+            document.getElementById('mobile-menu-toggle')?.focus();
+        });
+
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 768) {
                 toggleDrawer(false);
@@ -397,8 +359,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     setupGlobalMobileDrawer();
     applyMobileFullWidthButtons();
+    // The drawer is driven by setupGlobalMobileDrawer's document listener; a second listener on the toggle cancels it out.
     loadComponent('header-placeholder', 'components/header.html', () => {
-        initMobileMenu();
         applyMobileFullWidthButtons(document.getElementById('header-placeholder'));
     });
     loadComponent('footer-placeholder', 'components/footer.html', () => {

@@ -30,7 +30,8 @@
       button: 'Request an invite',
       extra: `<p class="text-sm text-slate-500 dark:text-slate-400">Prefer to talk first? <a class="${LINK}" href="${DEMO}" target="_blank">Book a demo →</a></p>`,
       privacy: "We'll only use your details to get in touch about Mercuri.",
-      check: (v) => !v('name') ? 'Enter your name.' : !EMAIL.test(v('email')) ? 'Enter a valid email.' : !v('website') ? 'Enter your business website.' : '',
+      check: (v) => !v('name') ? ['name', 'Enter your name.'] : !EMAIL.test(v('email')) ? ['email', 'Enter a valid email.']
+        : !v('website') ? ['website', 'Enter your business website.'] : null,
       fields2google: (v) => ({ name: v('name'), email: v('email'), website: v('website'), phone: v('phone') || '—' }),
       lead: 'invite_request',
       thanksKicker: 'Request received',
@@ -52,9 +53,9 @@
       button: 'Send invite',
       extra: '',
       privacy: "We'll only use these details to invite your friend and let you know when they join.",
-      check: (v) => !v('your_name') ? 'Enter your name.' : !EMAIL.test(v('your_email')) ? 'Enter a valid email for yourself.'
-        : !v('friend_name') ? "Enter your friend's name." : !EMAIL.test(v('friend_email')) ? 'Enter a valid email for your friend.'
-        : v('friend_email').toLowerCase() === v('your_email').toLowerCase() ? "That's your own email. Enter your friend's." : '',
+      check: (v) => !v('your_name') ? ['your_name', 'Enter your name.'] : !EMAIL.test(v('your_email')) ? ['your_email', 'Enter a valid email for yourself.']
+        : !v('friend_name') ? ['friend_name', "Enter your friend's name."] : !EMAIL.test(v('friend_email')) ? ['friend_email', 'Enter a valid email for your friend.']
+        : v('friend_email').toLowerCase() === v('your_email').toLowerCase() ? ['friend_email', "That's your own email. Enter your friend's."] : null,
       fields2google: (v) => ({
         name: `${v('friend_name')} (referred by ${v('your_name')})`,
         email: v('friend_email'),
@@ -69,27 +70,37 @@
     },
   };
 
-  // Renders the form into `root`. `compact` = pop-up sizing.
+  // Ad-click and campaign parameters from the landing URL, sent with the analytics lead event.
+  const ATTRIBUTION = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'fbclid', 'ttclid'];
+  const attribution = () => {
+    const q = new URLSearchParams(location.search);
+    return Object.fromEntries(ATTRIBUTION.filter((key) => q.get(key)).map((key) => [key, q.get(key)]));
+  };
+
+  let uid = 0;
+  // Renders the form into `root`. `compact` = pop-up sizing; the pop-up uses h2 so the page keeps a single h1.
   function mount(root, kind, compact) {
     const k = KINDS[kind];
+    const id = `invite-${++uid}`;
+    const hn = compact ? 'h2' : 'h1';
     const h = compact ? 'text-3xl sm:text-4xl' : 'text-4xl sm:text-6xl';
     const p = compact ? 'mt-3 text-slate-600 dark:text-slate-400' : 'mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed';
     root.innerHTML =
       `<section data-view="form">` +
       `<p class="text-xs font-bold uppercase tracking-[0.2em] text-primary ${compact ? 'mb-3' : 'mb-6'}">${k.kicker}</p>` +
-      `<h1 class="${h} font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white">${k.title}</h1>` +
+      `<${hn} id="${id}-title" class="${h} font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white">${k.title}</${hn}>` +
       `<p class="${p}">${k.intro}</p>` +
       `<form class="${compact ? 'mt-6' : 'mt-10'} space-y-5" novalidate>${k.fields}` +
       // Spam trap: real visitors never see or fill this.
       `<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>` +
-      `<p data-error role="alert" class="text-sm text-red-600"></p>` +
+      `<p data-error id="${id}-error" role="alert" class="text-sm text-red-600"></p>` +
       `<button class="inline-block bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-60">${k.button}</button>` +
       k.extra +
       `<p class="text-xs text-slate-500">${k.privacy} <a href="privacy.html" class="underline hover:text-primary">Privacy Policy</a></p>` +
       `</form></section>` +
       `<section data-view="thanks" hidden>` +
       `<p class="text-xs font-bold uppercase tracking-[0.2em] text-primary ${compact ? 'mb-3' : 'mb-6'}">${k.thanksKicker}</p>` +
-      `<h1 tabindex="-1" class="${h} font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white outline-none">${k.thanksTitle}</h1>` +
+      `<${hn} id="${id}-thanks" tabindex="-1" class="${h} font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white outline-none">${k.thanksTitle}</${hn}>` +
       `<p class="${p}">${k.thanksText}</p>` +
       (k.thanksExtra ? `<p class="mt-6 text-slate-500 dark:text-slate-400">${k.thanksExtra}</p>` : '') +
       `</section>`;
@@ -97,24 +108,35 @@
     const form = root.querySelector('form');
     const err = root.querySelector('[data-error]');
     const btn = form.querySelector('button');
+    root.closest('dialog')?.setAttribute('aria-labelledby', `${id}-title`);
     form.onsubmit = async (e) => {
       e.preventDefault();
       const f = new FormData(form);
       const v = (name) => (f.get(name) || '').trim();
+      form.querySelectorAll('[aria-invalid]').forEach((input) => { input.removeAttribute('aria-invalid'); input.removeAttribute('aria-describedby'); });
       const problem = k.check(v);
-      if (problem) return (err.textContent = problem);
+      if (problem) {
+        const input = form.elements[problem[0]];
+        input.setAttribute('aria-invalid', 'true');
+        input.setAttribute('aria-describedby', `${id}-error`);
+        input.focus();
+        return (err.textContent = problem[1]);
+      }
       err.textContent = '';
       btn.disabled = true;
       btn.textContent = 'Sending…';
       const fields = k.fields2google(v);
       try {
         if (f.get('botcheck')) throw new Error('bot');
-        await fetch(FORM, { method: 'POST', mode: 'no-cors', body: new URLSearchParams(Object.entries(fields).map(([key, val]) => [ENTRY[key], val])) });
+        // A hung request falls through to the email fallback instead of leaving "Sending…" up forever.
+        const signal = AbortSignal.timeout ? AbortSignal.timeout(15000) : undefined;
+        await fetch(FORM, { method: 'POST', mode: 'no-cors', signal, body: new URLSearchParams(Object.entries(fields).map(([key, val]) => [ENTRY[key], val])) });
         root.querySelector('[data-view="form"]').hidden = true;
         root.querySelector('[data-view="thanks"]').hidden = false;
-        root.querySelector('[data-view="thanks"] h1').focus();
+        root.closest('dialog')?.setAttribute('aria-labelledby', `${id}-thanks`);
+        root.querySelector(`#${id}-thanks`).focus();
         if (!compact) window.scrollTo(0, 0);
-        if (window.gtag) gtag('event', 'generate_lead', { method: k.lead });
+        if (window.gtag) gtag('event', 'generate_lead', { method: k.lead, ...attribution() });
         if (window.fbq) fbq('track', 'Lead');
       } catch {
         const mail = `mailto:karthik@mercuri.cx?subject=${encodeURIComponent(k.title)}&body=${encodeURIComponent(Object.values(fields).join('\n'))}`;
