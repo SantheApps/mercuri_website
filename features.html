@@ -59,6 +59,8 @@
 
   gtag('config', 'G-VTDYSN0C3J');
 </script>
+  <!-- saved theme from the footer toggle, applied before first paint -->
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-charcoal dark:text-slate-200 transition-colors duration-300">
     <div id="header-placeholder"><!-- inline:header -->
@@ -85,7 +87,7 @@
             <a class="bg-primary text-charcoal px-5 py-2 rounded-xl text-sm font-semibold hover:scale-[1.02] transition-transform shadow-sm" href="invite.html">Request an invite</a>
         </div>
         <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
-            <span class="material-icons-outlined text-2xl" id="mobile-menu-icon">menu</span>
+            <span aria-hidden="true" class="material-icons-outlined text-2xl" id="mobile-menu-icon">menu</span>
         </button>
     </div>
 </nav>
@@ -95,7 +97,7 @@
         <div class="flex items-center justify-between">
             <span class="font-bold text-lg text-charcoal dark:text-white">Menu</span>
             <button class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition" id="mobile-drawer-close" aria-label="Close menu">
-                <span class="material-icons-outlined text-xl">close</span>
+                <span aria-hidden="true" class="material-icons-outlined text-xl">close</span>
             </button>
         </div>
         <nav class="flex flex-col gap-4 text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -869,7 +871,7 @@
         grid-column: 1 / -1;
     }
 
-    .site-footer h5 {
+    .site-footer h2 {
         margin-bottom: 1rem;
     }
 
@@ -925,7 +927,7 @@
                 </div>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Product</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Product</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="features.html">Features</a></li>
                     <li><a class="hover:text-primary" href="ai.html">AI Employee</a></li>
@@ -934,13 +936,13 @@
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Industries</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Industries</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="ai-receptionist-yoga-studios.html">Yoga Studios</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Company</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Company</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="about.html">About Us</a></li>
                     <li><a class="hover:text-primary" href="privacy.html">Privacy Policy</a></li>
@@ -948,7 +950,7 @@
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Resources</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Resources</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="https://docs.mercuri.cx/" target="_blank" rel="noopener noreferrer">Documentation</a></li>
                     <li><a class="hover:text-primary" href="https://blog.mercuri.cx/" target="_blank" rel="noopener noreferrer">Blog</a></li>
@@ -965,8 +967,8 @@
                 </p>
             </div>
             <div class="flex items-center gap-2">
-                <button class="p-2 rounded-full bg-gray-200 dark:bg-slate-800 text-gray-600 dark:text-gray-400" onclick="document.documentElement.classList.toggle('dark')">
-                    <span class="material-icons-outlined text-sm">dark_mode</span>
+                <button id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" class="p-2 rounded-full bg-gray-200 dark:bg-slate-800 text-gray-600 dark:text-gray-400" onclick="var d=document.documentElement.classList.toggle('dark');this.setAttribute('aria-pressed',d);try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}">
+                    <span aria-hidden="true" class="material-icons-outlined text-sm">dark_mode</span>
                 </button>
                 <span class="text-xs text-gray-500 dark:text-gray-400">Toggle Theme</span>
             </div>

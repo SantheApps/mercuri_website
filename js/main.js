@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     box-shadow: 0 14px 26px rgba(37, 211, 102, 0.38);
                 }
                 .whatsapp-widget:focus-visible {
-                    outline: 2px solid #111827;
+                    outline: 2px solid #9B5E1C;
                     outline-offset: 3px;
                 }
                 .whatsapp-widget__icon {
@@ -358,6 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     setupGlobalMobileDrawer();
+    document.getElementById('theme-toggle')?.setAttribute('aria-pressed', document.documentElement.classList.contains('dark'));
     applyMobileFullWidthButtons();
     // The drawer is driven by setupGlobalMobileDrawer's document listener; a second listener on the toggle cancels it out.
     loadComponent('header-placeholder', 'components/header.html', () => {

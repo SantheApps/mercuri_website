@@ -103,7 +103,7 @@
   ]
 }
   </script>
-  <link href="css/tailwind.css?v=20261105e" rel="stylesheet"/>
+  <link href="css/tailwind.css?v=20261105f" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com" rel="preconnect">
    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;display=swap" rel="stylesheet"/>
@@ -123,6 +123,8 @@
 
   gtag('config', 'G-VTDYSN0C3J');
 </script>
+  <!-- saved theme from the footer toggle, applied before first paint -->
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
  <body class="bg-background-light dark:bg-background-dark text-charcoal dark:text-slate-200 transition-colors duration-300">
   <!-- Header Component -->
@@ -150,7 +152,7 @@
             <a class="bg-primary text-charcoal px-5 py-2 rounded-xl text-sm font-semibold hover:scale-[1.02] transition-transform shadow-sm" href="invite.html">Request an invite</a>
         </div>
         <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
-            <span class="material-icons-outlined text-2xl" id="mobile-menu-icon">menu</span>
+            <span aria-hidden="true" class="material-icons-outlined text-2xl" id="mobile-menu-icon">menu</span>
         </button>
     </div>
 </nav>
@@ -160,7 +162,7 @@
         <div class="flex items-center justify-between">
             <span class="font-bold text-lg text-charcoal dark:text-white">Menu</span>
             <button class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition" id="mobile-drawer-close" aria-label="Close menu">
-                <span class="material-icons-outlined text-xl">close</span>
+                <span aria-hidden="true" class="material-icons-outlined text-xl">close</span>
             </button>
         </div>
         <nav class="flex flex-col gap-4 text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -203,17 +205,17 @@
     </div>
     <div class="grid md:grid-cols-3 gap-5">
      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-8">
-      <span class="material-icons-outlined text-3xl text-primary-ink dark:text-primary">mark_chat_unread</span>
+      <span aria-hidden="true" class="material-icons-outlined text-3xl text-primary-ink dark:text-primary">mark_chat_unread</span>
       <h3 class="mt-4 font-bold text-xl text-charcoal dark:text-white">Unanswered DMs</h3>
       <p class="mt-2 text-slate-600 dark:text-slate-400 leading-relaxed">Questions about class times and prices go cold before you finish teaching.</p>
      </div>
      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-8">
-      <span class="material-icons-outlined text-3xl text-primary-ink dark:text-primary">event_busy</span>
+      <span aria-hidden="true" class="material-icons-outlined text-3xl text-primary-ink dark:text-primary">event_busy</span>
       <h3 class="mt-4 font-bold text-xl text-charcoal dark:text-white">No-shows</h3>
       <p class="mt-2 text-slate-600 dark:text-slate-400 leading-relaxed">Empty mats in a class that was "full".</p>
      </div>
      <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-8">
-      <span class="material-icons-outlined text-3xl text-primary-ink dark:text-primary">person_off</span>
+      <span aria-hidden="true" class="material-icons-outlined text-3xl text-primary-ink dark:text-primary">person_off</span>
       <h3 class="mt-4 font-bold text-xl text-charcoal dark:text-white">Lapsed members</h3>
       <p class="mt-2 text-slate-600 dark:text-slate-400 leading-relaxed">They stop coming, and nobody notices.</p>
      </div>
@@ -222,7 +224,7 @@
   </section>
 
   <!-- HOW IT WORKS -->
-  <section class="py-20 sm:py-28 px-6 bg-charcoal text-white">
+  <section class="py-20 sm:py-28 px-6 bg-charcoal dark:bg-slate-800 text-white">
    <div class="max-w-6xl mx-auto">
     <div class="text-center max-w-4xl mx-auto mb-14">
      <p class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-4">How it works</p>
@@ -266,7 +268,7 @@
   <!-- TESTIMONIAL -->
   <section class="py-20 sm:py-24 px-6 bg-slate-100/70 dark:bg-slate-900/40">
    <div class="max-w-3xl mx-auto">
-    <figure class="rounded-2xl bg-charcoal text-white p-8 sm:p-12 flex flex-col">
+    <figure class="rounded-2xl bg-charcoal dark:bg-slate-800 text-white p-8 sm:p-12 flex flex-col">
      <span class="text-5xl leading-none font-serif text-primary">“</span>
      <blockquote class="mt-2 text-xl leading-relaxed">Great app with probably the best customer service I have experienced. They get on and guide you, making everything simple, easy and short. This is a huge asset for my business.</blockquote>
      <figcaption class="mt-8 flex items-center gap-3">
@@ -283,23 +285,23 @@
     <h2 class="text-center text-3xl sm:text-5xl font-bold tracking-tight leading-[1.1] text-charcoal dark:text-white mb-12">Questions from studio owners</h2>
     <div class="divide-y divide-slate-200 dark:divide-slate-800 border-y border-slate-200 dark:border-slate-800">
      <details class="group py-6">
-      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">Does it work with my booking software?<span class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
+      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">Does it work with my booking software?<span aria-hidden="true" class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
       <p class="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">Mercuri syncs bookings with Wix Bookings and can import your contacts from Mindbody. Using something else? Tell us when you request an invite.</p>
      </details>
      <details class="group py-6">
-      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">Will students know it’s AI?<span class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
+      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">Will students know it’s AI?<span aria-hidden="true" class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
       <p class="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">Mercuri is an AI assistant that replies on your studio’s behalf, in your voice. Whenever a student needs a person, it hands the conversation to you.</p>
      </details>
      <details class="group py-6">
-      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">Which channels does it use?<span class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
+      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">Which channels does it use?<span aria-hidden="true" class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
       <p class="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">WhatsApp, SMS and email, all in one inbox.</p>
      </details>
      <details class="group py-6">
-      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">Can I step into a conversation?<span class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
+      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">Can I step into a conversation?<span aria-hidden="true" class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
       <p class="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">Yes. Every conversation is in your shared inbox, and you can reply yourself at any time.</p>
      </details>
      <details class="group py-6">
-      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">What does it cost?<span class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
+      <summary class="flex justify-between items-center gap-6 cursor-pointer list-none font-bold text-lg text-charcoal dark:text-white">What does it cost?<span aria-hidden="true" class="material-icons-outlined text-slate-400 group-open:rotate-45 transition-transform">add</span></summary>
       <p class="mt-3 text-slate-600 dark:text-slate-400 leading-relaxed">Plans start free, and Pro, with everything included, is $99 a month. Mercuri is invite only, so request an invite to get started.</p>
      </details>
     </div>
@@ -308,7 +310,7 @@
 
   <!-- CTA BANNER -->
   <section class="px-6 pb-20 sm:pb-24">
-   <div class="max-w-6xl mx-auto rounded-3xl bg-charcoal text-white px-8 py-12 sm:px-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+   <div class="max-w-6xl mx-auto rounded-3xl bg-charcoal dark:bg-slate-800 text-white px-8 py-12 sm:px-14 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
     <h2 class="text-3xl sm:text-4xl font-bold tracking-tight leading-[1.15] max-w-2xl">Ready to fill every class?</h2>
     <a class="shrink-0 self-start md:self-auto bg-white text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all" href="invite.html">Request an invite</a>
    </div>
@@ -326,7 +328,7 @@
         grid-column: 1 / -1;
     }
 
-    .site-footer h5 {
+    .site-footer h2 {
         margin-bottom: 1rem;
     }
 
@@ -382,7 +384,7 @@
                 </div>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Product</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Product</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="features.html">Features</a></li>
                     <li><a class="hover:text-primary" href="ai.html">AI Employee</a></li>
@@ -391,13 +393,13 @@
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Industries</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Industries</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="ai-receptionist-yoga-studios.html">Yoga Studios</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Company</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Company</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="about.html">About Us</a></li>
                     <li><a class="hover:text-primary" href="privacy.html">Privacy Policy</a></li>
@@ -405,7 +407,7 @@
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Resources</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Resources</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="https://docs.mercuri.cx/" target="_blank" rel="noopener noreferrer">Documentation</a></li>
                     <li><a class="hover:text-primary" href="https://blog.mercuri.cx/" target="_blank" rel="noopener noreferrer">Blog</a></li>
@@ -422,8 +424,8 @@
                 </p>
             </div>
             <div class="flex items-center gap-2">
-                <button class="p-2 rounded-full bg-gray-200 dark:bg-slate-800 text-gray-600 dark:text-gray-400" onclick="document.documentElement.classList.toggle('dark')">
-                    <span class="material-icons-outlined text-sm">dark_mode</span>
+                <button id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" class="p-2 rounded-full bg-gray-200 dark:bg-slate-800 text-gray-600 dark:text-gray-400" onclick="var d=document.documentElement.classList.toggle('dark');this.setAttribute('aria-pressed',d);try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}">
+                    <span aria-hidden="true" class="material-icons-outlined text-sm">dark_mode</span>
                 </button>
                 <span class="text-xs text-gray-500 dark:text-gray-400">Toggle Theme</span>
             </div>

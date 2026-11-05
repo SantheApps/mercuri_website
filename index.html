@@ -82,7 +82,7 @@
      }
    }
   </script>
-  <link href="css/tailwind.css?v=20261105e" rel="stylesheet"/>
+  <link href="css/tailwind.css?v=20261105f" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com" rel="preconnect">
    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;display=swap" rel="stylesheet"/>
@@ -102,6 +102,8 @@
 
   gtag('config', 'G-VTDYSN0C3J');
 </script>
+  <!-- saved theme from the footer toggle, applied before first paint -->
+  <script>try{if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')}catch(e){}</script>
 </head>
  <body class="bg-background-light dark:bg-background-dark text-charcoal dark:text-slate-200 transition-colors duration-300">
   <!-- Header Component -->
@@ -129,7 +131,7 @@
             <a class="bg-primary text-charcoal px-5 py-2 rounded-xl text-sm font-semibold hover:scale-[1.02] transition-transform shadow-sm" href="invite.html">Request an invite</a>
         </div>
         <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition" id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Open menu">
-            <span class="material-icons-outlined text-2xl" id="mobile-menu-icon">menu</span>
+            <span aria-hidden="true" class="material-icons-outlined text-2xl" id="mobile-menu-icon">menu</span>
         </button>
     </div>
 </nav>
@@ -139,7 +141,7 @@
         <div class="flex items-center justify-between">
             <span class="font-bold text-lg text-charcoal dark:text-white">Menu</span>
             <button class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-gray-200 dark:border-slate-700 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800 transition" id="mobile-drawer-close" aria-label="Close menu">
-                <span class="material-icons-outlined text-xl">close</span>
+                <span aria-hidden="true" class="material-icons-outlined text-xl">close</span>
             </button>
         </div>
         <nav class="flex flex-col gap-4 text-sm font-medium text-gray-700 dark:text-gray-300">
@@ -157,6 +159,7 @@
     </div>
 </div>
 <!-- /inline:header --></div>
+  <main id="main">
     <!-- HERO -->
   <header class="pt-20 pb-16 sm:pt-28 sm:pb-20 px-6 border-b border-slate-100 dark:border-slate-800">
    <div class="max-w-4xl mx-auto text-center">
@@ -194,7 +197,7 @@
   </header>
 
   <!-- OUTCOMES -->
-  <section class="relative overflow-hidden py-20 sm:py-28 px-6 bg-charcoal text-white">
+  <section class="relative overflow-hidden py-20 sm:py-28 px-6 bg-charcoal dark:bg-slate-800 text-white">
    <!-- warm glow -->
    <div aria-hidden="true" class="pointer-events-none absolute -left-40 top-1/3 w-[36rem] h-[36rem] rounded-full bg-primary/20 blur-[120px]"></div>
    <div class="relative max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
@@ -242,7 +245,7 @@
 
      <!-- 7:42 AM · WhatsApp -->
      <div class="sm:absolute sm:left-[2%] sm:top-[12%] sm:w-[44%] max-sm:w-[85%]">
-      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span class="material-icons-outlined text-[15px] text-amber-300">wb_sunny</span>7:42 AM</p>
+      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span aria-hidden="true" class="material-icons-outlined text-[15px] text-amber-300">wb_sunny</span>7:42 AM</p>
       <div class="rounded-xl bg-white/10 border border-white/15 backdrop-blur p-3 shadow-xl">
        <p class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-green-400"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>WhatsApp</p>
        <p class="mt-1 text-white leading-snug">Can I switch to the 6pm class?</p>
@@ -251,7 +254,7 @@
 
      <!-- 1:15 PM · Email -->
      <div class="sm:absolute sm:right-[0%] sm:top-[4%] sm:w-[42%] max-sm:w-[85%] max-sm:self-end">
-      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span class="material-icons-outlined text-[15px] text-amber-300">light_mode</span>1:15 PM</p>
+      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span aria-hidden="true" class="material-icons-outlined text-[15px] text-amber-300">light_mode</span>1:15 PM</p>
       <div class="rounded-xl bg-white/10 border border-white/15 backdrop-blur p-3 shadow-xl">
        <p class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-sky-300"><span class="w-1.5 h-1.5 rounded-full bg-sky-300"></span>Email</p>
        <p class="mt-1 text-white leading-snug">Do you have a slot this Saturday?</p>
@@ -261,14 +264,14 @@
      <!-- center: AI reply -->
      <div class="sm:absolute sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:w-[58%] max-sm:order-last max-sm:mt-2">
       <div class="rounded-2xl bg-gradient-to-br from-[#3a2a17] to-[#241b12] border border-primary/40 shadow-[0_0_60px_rgba(235,151,61,0.35)] px-5 py-5">
-       <p class="flex items-center gap-2 text-[11px] font-bold text-primary"><span class="w-6 h-6 rounded-lg bg-primary grid place-items-center text-white"><span class="material-icons-outlined text-[15px]">bolt</span></span>Your AI employee</p>
+       <p class="flex items-center gap-2 text-[11px] font-bold text-primary"><span class="w-6 h-6 rounded-lg bg-primary grid place-items-center text-white"><span aria-hidden="true" class="material-icons-outlined text-[15px]">bolt</span></span>Your AI employee</p>
        <p class="mt-3 text-[17px] sm:text-lg font-medium text-white leading-snug">Yes! You're booked for Saturday at 2:30pm ✓</p>
       </div>
      </div>
 
      <!-- 9:10 PM · SMS -->
      <div class="sm:absolute sm:right-[2%] sm:bottom-[8%] sm:w-[44%] max-sm:w-[85%] max-sm:self-end">
-      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span class="material-icons-outlined text-[15px] text-indigo-300">bedtime</span>9:10 PM</p>
+      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span aria-hidden="true" class="material-icons-outlined text-[15px] text-indigo-300">bedtime</span>9:10 PM</p>
       <div class="rounded-xl bg-white/10 border border-white/15 backdrop-blur p-3 shadow-xl">
        <p class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-slate-300"><span class="w-1.5 h-1.5 rounded-full bg-slate-300"></span>SMS</p>
        <p class="mt-1 text-white leading-snug">C to confirm my 4:15 tomorrow</p>
@@ -277,7 +280,7 @@
 
      <!-- 11:48 PM · WhatsApp -->
      <div class="sm:absolute sm:left-[0%] sm:bottom-[12%] sm:w-[40%] max-sm:w-[85%]">
-      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span class="material-icons-outlined text-[15px] text-indigo-300">dark_mode</span>11:48 PM</p>
+      <p class="mb-2 flex items-center gap-1.5 font-mono text-[11px] text-slate-300"><span aria-hidden="true" class="material-icons-outlined text-[15px] text-indigo-300">dark_mode</span>11:48 PM</p>
       <div class="rounded-xl bg-white/10 border border-white/15 backdrop-blur p-3 shadow-xl">
        <p class="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wide text-green-400"><span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>WhatsApp</p>
        <p class="mt-1 text-white leading-snug">Any spots for a massage tomorrow?</p>
@@ -299,12 +302,12 @@
      </p>
      <div class="grid sm:grid-cols-2 gap-8">
       <div>
-       <span class="material-icons-outlined text-primary-ink dark:text-primary text-3xl mb-3 block">send</span>
+       <span aria-hidden="true" class="material-icons-outlined text-primary-ink dark:text-primary text-3xl mb-3 block">send</span>
        <h3 class="font-bold text-charcoal dark:text-white mb-1.5">Asks for the review</h3>
        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">A friendly request after every visit, by SMS or WhatsApp, with your Google review link.</p>
       </div>
       <div>
-       <span class="material-icons-outlined text-primary-ink dark:text-primary text-3xl mb-3 block">visibility</span>
+       <span aria-hidden="true" class="material-icons-outlined text-primary-ink dark:text-primary text-3xl mb-3 block">visibility</span>
        <h3 class="font-bold text-charcoal dark:text-white mb-1.5">Watches every review</h3>
        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">Every new Google review shows up in Mercuri, with the ones still waiting for a reply flagged.</p>
       </div>
@@ -314,12 +317,12 @@
     <div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl overflow-hidden text-[13px]">
      <div class="px-5 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
       <span class="font-bold text-charcoal dark:text-white">Reviews</span>
-      <span class="text-slate-500 dark:text-slate-400"><span class="font-bold text-charcoal dark:text-white">4.8</span> <span class="text-amber-500">★</span> · 212 Google reviews</span>
+      <span class="text-slate-500 dark:text-slate-400"><span class="font-bold text-charcoal dark:text-white">4.8</span> <span class="text-amber-500" aria-hidden="true">★</span> · 212 Google reviews</span>
      </div>
      <div class="p-5 space-y-4 bg-slate-50/60 dark:bg-slate-950/40">
       <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
        <div class="flex items-center gap-2">
-        <span class="text-amber-500">★★★★★</span>
+        <span class="text-amber-500" role="img" aria-label="5 out of 5 stars">★★★★★</span>
         <span class="font-semibold text-charcoal dark:text-white">Priya S.</span>
         <span class="text-slate-500 dark:text-slate-400 text-[11px]">· today</span>
        </div>
@@ -327,7 +330,7 @@
       </div>
       <div class="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4">
        <div class="flex items-center gap-2">
-        <span class="text-amber-500">★★<span class="text-slate-300 dark:text-slate-600">★★★</span></span>
+        <span class="text-amber-500" role="img" aria-label="2 out of 5 stars">★★<span class="text-slate-300 dark:text-slate-600">★★★</span></span>
         <span class="font-semibold text-charcoal dark:text-white">Rahul M.</span>
         <span class="text-slate-500 dark:text-slate-400 text-[11px]">· 2h</span>
         <span class="ml-auto text-[9px] font-bold uppercase tracking-wide text-slate-700 bg-slate-100 dark:bg-slate-800 dark:text-slate-300 rounded px-1.5 py-0.5">Needs a reply</span>
@@ -335,7 +338,7 @@
        <p class="mt-2 text-slate-600 dark:text-slate-300 leading-snug">Class started 15 minutes late and the studio was too warm.</p>
       </div>
       <div class="rounded-xl border border-dashed border-slate-300 dark:border-slate-700 p-4 flex items-center gap-3">
-       <span class="material-icons-outlined text-primary-ink dark:text-primary">send</span>
+       <span aria-hidden="true" class="material-icons-outlined text-primary-ink dark:text-primary">send</span>
        <span class="text-slate-600 dark:text-slate-300">Review request sent to <span class="font-semibold text-charcoal dark:text-white">Jordan K.</span> · 2h after their class</span>
       </div>
      </div>
@@ -353,7 +356,7 @@
      <p class="text-lg text-slate-600 dark:text-slate-400">Every business books differently. See how your AI employee answers, books and follows up the way your customers expect.</p>
     </div>
     <div class="grid sm:grid-cols-3 gap-5">
-     <a class="group rounded-xl overflow-hidden bg-charcoal shadow-sm hover:shadow-xl transition-shadow" href="ai-receptionist-yoga-studios.html">
+     <a class="group rounded-xl overflow-hidden bg-charcoal dark:bg-slate-800 shadow-sm hover:shadow-xl transition-shadow" href="ai-receptionist-yoga-studios.html">
       <div class="flex items-center justify-between gap-3 px-5 py-4">
        <h3 class="font-bold text-xl text-white">Studios</h3>
        <p class="shrink-0 text-sm font-semibold text-white/90"><span class="sm:max-lg:sr-only">See how it works </span><span class="inline-block group-hover:translate-x-1 transition-transform">→</span></p>
@@ -361,7 +364,7 @@
       <div class="h-1 bg-gradient-to-r from-primary to-amber-300"></div>
       <img alt="Yoga class in a bright studio" loading="lazy" width="800" height="600" class="w-full aspect-video object-cover" src="assets/images/industries/studio.webp"/>
      </a>
-     <a class="group rounded-xl overflow-hidden bg-charcoal shadow-sm hover:shadow-xl transition-shadow" href="invite.html">
+     <a class="group rounded-xl overflow-hidden bg-charcoal dark:bg-slate-800 shadow-sm hover:shadow-xl transition-shadow" href="invite.html">
       <div class="flex items-center justify-between gap-3 px-5 py-4">
        <h3 class="font-bold text-xl text-white">Salons &amp; Spas</h3>
        <p class="shrink-0 text-sm font-semibold text-white/90"><span class="sm:max-lg:sr-only">Request an invite </span><span class="inline-block group-hover:translate-x-1 transition-transform">→</span></p>
@@ -369,7 +372,7 @@
       <div class="h-1 bg-gradient-to-r from-primary to-amber-300"></div>
       <img alt="Stylist blow-drying a client's hair in a salon" loading="lazy" width="800" height="600" class="w-full aspect-video object-cover" src="assets/images/industries/salon.webp"/>
      </a>
-     <a class="group rounded-xl overflow-hidden bg-charcoal shadow-sm hover:shadow-xl transition-shadow" href="invite.html">
+     <a class="group rounded-xl overflow-hidden bg-charcoal dark:bg-slate-800 shadow-sm hover:shadow-xl transition-shadow" href="invite.html">
       <div class="flex items-center justify-between gap-3 px-5 py-4">
        <h3 class="font-bold text-xl text-white">Clinics</h3>
        <p class="shrink-0 text-sm font-semibold text-white/90"><span class="sm:max-lg:sr-only">Request an invite </span><span class="inline-block group-hover:translate-x-1 transition-transform">→</span></p>
@@ -386,7 +389,7 @@
    <div class="max-w-6xl mx-auto">
     <h2 class="text-center text-3xl sm:text-5xl font-bold tracking-tight leading-[1.1] text-charcoal dark:text-white mb-14">Owners on getting set up with Mercuri</h2>
     <div class="grid md:grid-cols-3 gap-5">
-     <figure class="rounded-2xl bg-charcoal text-white p-8 flex flex-col">
+     <figure class="rounded-2xl bg-charcoal dark:bg-slate-800 text-white p-8 flex flex-col">
       <span class="text-5xl leading-none font-serif text-primary">“</span>
       <blockquote class="mt-2 text-lg leading-relaxed flex-1">Great app with probably the best customer service I have experienced. They get on and guide you, making everything simple, easy and short. This is a huge asset for my business.</blockquote>
       <figcaption class="mt-8 flex items-center gap-3">
@@ -394,7 +397,7 @@
        <span><span class="block font-bold">Charles Grace</span><span class="block text-sm text-slate-400">Owner, Iron Lion Gym</span></span>
       </figcaption>
      </figure>
-     <figure class="rounded-2xl bg-charcoal text-white p-8 flex flex-col">
+     <figure class="rounded-2xl bg-charcoal dark:bg-slate-800 text-white p-8 flex flex-col">
       <span class="text-5xl leading-none font-serif text-primary">“</span>
       <blockquote class="mt-2 text-lg leading-relaxed flex-1">Mercuri's integration with Wix made our WhatsApp blasts simple and effective. Easy setup, great templates, and smooth automation. Perfect for reaching customers fast!</blockquote>
       <figcaption class="mt-8 flex items-center gap-3">
@@ -402,7 +405,7 @@
        <span><span class="block font-bold">Shruti Seth</span><span class="block text-sm text-slate-400">Osteopath &amp; physiotherapist</span></span>
       </figcaption>
      </figure>
-     <figure class="rounded-2xl bg-charcoal text-white p-8 flex flex-col">
+     <figure class="rounded-2xl bg-charcoal dark:bg-slate-800 text-white p-8 flex flex-col">
       <span class="text-5xl leading-none font-serif text-primary">“</span>
       <blockquote class="mt-2 text-lg leading-relaxed flex-1">After checking many products in the Wix market, this product is by far the best of its kind for sending utility text messages, while the support is AMAZING. LOVED IT!</blockquote>
       <figcaption class="mt-8 flex items-center gap-3">
@@ -430,6 +433,7 @@
    </div>
   </section>
 
+  </main>
   <!-- Footer Component -->
   <div id="footer-placeholder"><!-- inline:footer -->
 <style>
@@ -442,7 +446,7 @@
         grid-column: 1 / -1;
     }
 
-    .site-footer h5 {
+    .site-footer h2 {
         margin-bottom: 1rem;
     }
 
@@ -498,7 +502,7 @@
                 </div>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Product</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Product</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="features.html">Features</a></li>
                     <li><a class="hover:text-primary" href="ai.html">AI Employee</a></li>
@@ -507,13 +511,13 @@
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Industries</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Industries</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="ai-receptionist-yoga-studios.html">Yoga Studios</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Company</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Company</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="about.html">About Us</a></li>
                     <li><a class="hover:text-primary" href="privacy.html">Privacy Policy</a></li>
@@ -521,7 +525,7 @@
                 </ul>
             </div>
             <div>
-                <h5 class="font-bold mb-6 dark:text-white">Resources</h5>
+                <h2 class="font-bold mb-6 dark:text-white">Resources</h2>
                 <ul class="space-y-4 text-sm text-gray-500 dark:text-gray-400">
                     <li><a class="hover:text-primary" href="https://docs.mercuri.cx/" target="_blank" rel="noopener noreferrer">Documentation</a></li>
                     <li><a class="hover:text-primary" href="https://blog.mercuri.cx/" target="_blank" rel="noopener noreferrer">Blog</a></li>
@@ -538,8 +542,8 @@
                 </p>
             </div>
             <div class="flex items-center gap-2">
-                <button class="p-2 rounded-full bg-gray-200 dark:bg-slate-800 text-gray-600 dark:text-gray-400" onclick="document.documentElement.classList.toggle('dark')">
-                    <span class="material-icons-outlined text-sm">dark_mode</span>
+                <button id="theme-toggle" type="button" aria-label="Dark mode" aria-pressed="false" class="p-2 rounded-full bg-gray-200 dark:bg-slate-800 text-gray-600 dark:text-gray-400" onclick="var d=document.documentElement.classList.toggle('dark');this.setAttribute('aria-pressed',d);try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}">
+                    <span aria-hidden="true" class="material-icons-outlined text-sm">dark_mode</span>
                 </button>
                 <span class="text-xs text-gray-500 dark:text-gray-400">Toggle Theme</span>
             </div>

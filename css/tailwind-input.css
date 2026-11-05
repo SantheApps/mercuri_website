@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Keyboard focus: brand ink in light mode (3:1+ on light and charcoal), brand orange in dark mode. */
+  :focus-visible { outline: 2px solid #9B5E1C; outline-offset: 3px; border-radius: 4px; }
+  .dark :focus-visible { outline-color: #EB973D; }
+
+  /* Reduced motion: no smooth scrolling and no hover lifts; colour changes stay. */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, ::before, ::after { animation: none !important; }
+    [class*="translate-"]:hover, .whatsapp-widget:hover { transform: none !important; }
+  }
+}
