@@ -25,13 +25,13 @@
       fields:
         field('name', 'Your name', 'required maxlength="100" autocomplete="name"') +
         field('email', 'Email', 'type="email" required maxlength="200" autocomplete="email" placeholder="you@yourbusiness.com"') +
-        field('website', 'Business website', 'required maxlength="200" inputmode="url" autocomplete="url" placeholder="yourbusiness.com"') +
+        field('website', 'Website or Instagram', 'required maxlength="200" autocomplete="url" placeholder="yourstudio.com or @yourstudio"') +
         field('phone', 'Phone or WhatsApp', 'type="tel" maxlength="40" autocomplete="tel"', true),
       button: 'Request an invite',
       extra: `<p class="text-sm text-slate-500 dark:text-slate-400">Prefer to talk first? <a class="${LINK}" href="${DEMO}" target="_blank">Book a demo →</a></p>`,
       privacy: "We'll only use your details to get in touch about Mercuri.",
       check: (v) => !v('name') ? ['name', 'Enter your name.'] : !EMAIL.test(v('email')) ? ['email', 'Enter a valid email.']
-        : !v('website') ? ['website', 'Enter your business website.'] : null,
+        : !v('website') ? ['website', 'Enter your website or Instagram handle.'] : null,
       fields2google: (v) => ({ name: v('name'), email: v('email'), website: v('website'), phone: v('phone') || '—' }),
       lead: 'invite_request',
       thanksKicker: 'Request received',
