@@ -94,7 +94,7 @@
       // Spam trap: real visitors never see or fill this.
       `<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>` +
       `<p data-error id="${id}-error" role="alert" class="text-sm text-red-600"></p>` +
-      `<button class="inline-block bg-charcoal dark:bg-primary text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-60">${k.button}</button>` +
+      `<button class="inline-block bg-charcoal dark:bg-primary text-white dark:text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-60">${k.button}</button>` +
       k.extra +
       `<p class="text-xs text-slate-500">${k.privacy} <a href="privacy.html" class="underline hover:text-primary">Privacy Policy</a></p>` +
       `</form></section>` +
