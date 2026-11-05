@@ -142,12 +142,12 @@
             ]
         }
     </script>
-    <link href="css/tailwind.css" rel="stylesheet"/>
+    <link href="css/tailwind.css?v=20261105j" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400..700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&amp;icon_names=cancel,check_circle&amp;display=block" rel="stylesheet"/>
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -239,11 +239,12 @@
     </div>
 </div>
 <!-- /inline:header --></div>
+<main id="main">
 
     <header class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-28 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
-                <p class="uppercase tracking-widest text-sm font-bold text-primary mb-6">Pricing</p>
+                <p class="uppercase tracking-widest text-sm font-bold text-primary-ink mb-6 dark:text-primary">Pricing</p>
                 <h1 class="serif-text text-4xl sm:text-5xl lg:text-7xl leading-[1.1] text-charcoal dark:text-white mb-6">
                     Simple, Transparent Pricing
                 </h1>
@@ -259,10 +260,10 @@
         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 shadow-sm flex flex-col gap-6">
                 <div>
-                    <p class="text-xs uppercase tracking-widest text-primary font-bold mb-2">Free</p>
+                    <p class="text-xs uppercase tracking-widest text-primary-ink font-bold mb-2 dark:text-primary">Free</p>
                     <div class="flex items-baseline gap-2">
                         <span class="text-4xl font-semibold">$0</span>
-                        <span class="text-sm text-gray-500">/ month</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">/ month</span>
                     </div>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For solo founders getting started</p>
                 </div>
@@ -281,10 +282,10 @@
 
             <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 shadow-sm flex flex-col gap-6">
                 <div>
-                    <p class="text-xs uppercase tracking-widest text-primary font-bold mb-2">Growth</p>
+                    <p class="text-xs uppercase tracking-widest text-primary-ink font-bold mb-2 dark:text-primary">Growth</p>
                     <div class="flex items-baseline gap-2">
                         <span class="text-4xl font-semibold">$29</span>
-                        <span class="text-sm text-gray-500">/ month</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">/ month</span>
                     </div>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For growing businesses</p>
                 </div>
@@ -304,12 +305,12 @@
             </div>
 
             <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 shadow-lg ring-2 ring-primary flex flex-col gap-6 relative">
-                <span class="absolute -top-3 left-6 bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full">Most Popular</span>
+                <span class="absolute -top-3 left-6 bg-primary text-charcoal text-xs font-semibold px-3 py-1 rounded-full">Most Popular</span>
                 <div>
-                    <p class="text-xs uppercase tracking-widest text-primary font-bold mb-2">Pro</p>
+                    <p class="text-xs uppercase tracking-widest text-primary-ink font-bold mb-2 dark:text-primary">Pro</p>
                     <div class="flex items-baseline gap-2">
                         <span class="text-4xl font-semibold">$99</span>
-                        <span class="text-sm text-gray-500">/ month</span>
+                        <span class="text-sm text-gray-500 dark:text-gray-400">/ month</span>
                     </div>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For high-volume teams</p>
                 </div>
@@ -329,7 +330,7 @@
 
             <div class="bg-white dark:bg-slate-900 rounded-2xl p-7 shadow-sm flex flex-col gap-6">
                 <div>
-                    <p class="text-xs uppercase tracking-widest text-primary font-bold mb-2">Enterprise</p>
+                    <p class="text-xs uppercase tracking-widest text-primary-ink font-bold mb-2 dark:text-primary">Enterprise</p>
                     <div class="text-3xl font-semibold">Custom Pricing</div>
                     <p class="text-sm text-gray-600 dark:text-gray-400 mt-3">For enterprise deployments &amp; SLAs</p>
                 </div>
@@ -352,7 +353,7 @@
 
     <section class="max-w-7xl mx-auto px-6 py-16 sm:py-20 lg:py-24">
         <div class="text-center mb-12">
-            <p class="uppercase tracking-widest text-sm font-bold text-primary mb-4">Compare</p>
+            <p class="uppercase tracking-widest text-sm font-bold text-primary-ink mb-4 dark:text-primary">Compare</p>
             <h2 class="serif-text text-3xl sm:text-4xl md:text-5xl text-charcoal dark:text-white">Compare All Features</h2>
         </div>
 
@@ -367,21 +368,21 @@
                         <col class="plan-col">
                     </colgroup>
                     <thead>
-                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
-                            <th class="py-4 px-6">Conversations</th>
-                            <th class="py-4 px-6 text-center">Free</th>
-                            <th class="py-4 px-6 text-center">Growth</th>
-                            <th class="py-4 px-6 text-center">Pro</th>
-                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                            <th scope="col" class="py-4 px-6">Conversations</th>
+                            <th scope="col" class="py-4 px-6 text-center">Free</th>
+                            <th scope="col" class="py-4 px-6 text-center">Growth</th>
+                            <th scope="col" class="py-4 px-6 text-center">Pro</th>
+                            <th scope="col" class="py-4 px-6 text-center">Enterprise</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Shared Inbox</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Team Members</td>
@@ -392,17 +393,17 @@
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Assign Conversations</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                         <tr>
                             <td class="py-4 px-6 font-medium">Internal Notes</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -418,12 +419,12 @@
                         <col class="plan-col">
                     </colgroup>
                     <thead>
-                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
-                            <th class="py-4 px-6">Contacts</th>
-                            <th class="py-4 px-6 text-center">Free</th>
-                            <th class="py-4 px-6 text-center">Growth</th>
-                            <th class="py-4 px-6 text-center">Pro</th>
-                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                            <th scope="col" class="py-4 px-6">Contacts</th>
+                            <th scope="col" class="py-4 px-6 text-center">Free</th>
+                            <th scope="col" class="py-4 px-6 text-center">Growth</th>
+                            <th scope="col" class="py-4 px-6 text-center">Pro</th>
+                            <th scope="col" class="py-4 px-6 text-center">Enterprise</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
@@ -436,21 +437,21 @@
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Tags &amp; Labels</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">CRM Sync (Wix / Shopify)</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                         <tr>
                             <td class="py-4 px-6 font-medium">HubSpot / Pipedrive Sync</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
                             <td class="py-4 px-6 text-center">Add-on</td>
                             <td class="py-4 px-6 text-center">Included</td>
                             <td class="py-4 px-6 text-center">Included</td>
@@ -469,28 +470,28 @@
                         <col class="plan-col">
                     </colgroup>
                     <thead>
-                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
-                            <th class="py-4 px-6">Marketing</th>
-                            <th class="py-4 px-6 text-center">Free</th>
-                            <th class="py-4 px-6 text-center">Growth</th>
-                            <th class="py-4 px-6 text-center">Pro</th>
-                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                            <th scope="col" class="py-4 px-6">Marketing</th>
+                            <th scope="col" class="py-4 px-6 text-center">Free</th>
+                            <th scope="col" class="py-4 px-6 text-center">Growth</th>
+                            <th scope="col" class="py-4 px-6 text-center">Pro</th>
+                            <th scope="col" class="py-4 px-6 text-center">Enterprise</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Broadcast Campaigns</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
                             <td class="py-4 px-6 text-center">Unlimited</td>
                             <td class="py-4 px-6 text-center">Unlimited</td>
                             <td class="py-4 px-6 text-center">Unlimited</td>
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Scheduled Campaigns</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                         <tr>
                             <td class="py-4 px-6 font-medium">Campaign Analytics</td>
@@ -513,12 +514,12 @@
                         <col class="plan-col">
                     </colgroup>
                     <thead>
-                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
-                            <th class="py-4 px-6">Automations</th>
-                            <th class="py-4 px-6 text-center">Free</th>
-                            <th class="py-4 px-6 text-center">Growth</th>
-                            <th class="py-4 px-6 text-center">Pro</th>
-                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                            <th scope="col" class="py-4 px-6">Automations</th>
+                            <th scope="col" class="py-4 px-6 text-center">Free</th>
+                            <th scope="col" class="py-4 px-6 text-center">Growth</th>
+                            <th scope="col" class="py-4 px-6 text-center">Pro</th>
+                            <th scope="col" class="py-4 px-6 text-center">Enterprise</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
@@ -531,22 +532,22 @@
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Multi-Step Workflows</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                             <td class="py-4 px-6 text-center">Custom</td>
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Webhooks</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                         <tr>
                             <td class="py-4 px-6 font-medium">API Access</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                             <td class="py-4 px-6 text-center">Higher Limits</td>
                             <td class="py-4 px-6 text-center">Custom</td>
                         </tr>
@@ -564,12 +565,12 @@
                         <col class="plan-col">
                     </colgroup>
                     <thead>
-                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
-                            <th class="py-4 px-6">AI Assistants</th>
-                            <th class="py-4 px-6 text-center">Free</th>
-                            <th class="py-4 px-6 text-center">Growth</th>
-                            <th class="py-4 px-6 text-center">Pro</th>
-                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                            <th scope="col" class="py-4 px-6">AI Assistants</th>
+                            <th scope="col" class="py-4 px-6 text-center">Free</th>
+                            <th scope="col" class="py-4 px-6 text-center">Growth</th>
+                            <th scope="col" class="py-4 px-6 text-center">Pro</th>
+                            <th scope="col" class="py-4 px-6 text-center">Enterprise</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
@@ -601,12 +602,12 @@
                         <col class="plan-col">
                     </colgroup>
                     <thead>
-                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
-                            <th class="py-4 px-6">Templates &amp; Logs</th>
-                            <th class="py-4 px-6 text-center">Free</th>
-                            <th class="py-4 px-6 text-center">Growth</th>
-                            <th class="py-4 px-6 text-center">Pro</th>
-                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                            <th scope="col" class="py-4 px-6">Templates &amp; Logs</th>
+                            <th scope="col" class="py-4 px-6 text-center">Free</th>
+                            <th scope="col" class="py-4 px-6 text-center">Growth</th>
+                            <th scope="col" class="py-4 px-6 text-center">Pro</th>
+                            <th scope="col" class="py-4 px-6 text-center">Enterprise</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
@@ -633,10 +634,10 @@
                         </tr>
                         <tr>
                             <td class="py-4 px-6 font-medium">Export Logs</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -652,35 +653,35 @@
                         <col class="plan-col">
                     </colgroup>
                     <thead>
-                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-400">
-                            <th class="py-4 px-6">Developer Tools</th>
-                            <th class="py-4 px-6 text-center">Free</th>
-                            <th class="py-4 px-6 text-center">Growth</th>
-                            <th class="py-4 px-6 text-center">Pro</th>
-                            <th class="py-4 px-6 text-center">Enterprise</th>
+                        <tr class="border-b border-gray-200 dark:border-slate-800 text-xs uppercase tracking-widest text-gray-500 dark:text-gray-400">
+                            <th scope="col" class="py-4 px-6">Developer Tools</th>
+                            <th scope="col" class="py-4 px-6 text-center">Free</th>
+                            <th scope="col" class="py-4 px-6 text-center">Growth</th>
+                            <th scope="col" class="py-4 px-6 text-center">Pro</th>
+                            <th scope="col" class="py-4 px-6 text-center">Enterprise</th>
                         </tr>
                     </thead>
                     <tbody class="text-sm">
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Webhooks</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                         <tr class="border-b border-gray-200 dark:border-slate-800">
                             <td class="py-4 px-6 font-medium">Public API</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                             <td class="py-4 px-6 text-center">Higher Limits</td>
                             <td class="py-4 px-6 text-center">Custom</td>
                         </tr>
                         <tr>
                             <td class="py-4 px-6 font-medium">Sandbox Mode</td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
-                            <td class="py-4 px-6 text-center"><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
+                            <td class="py-4 px-6 text-center"><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -691,37 +692,37 @@
             <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
                 <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
                     Conversations
-                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                    <span class="text-primary-ink group-open:rotate-180 transition dark:text-primary">⌄</span>
                 </summary>
                 <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                    <div class="flex items-center justify-between"><span>Shared Inbox</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>Shared Inbox</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
                     <div class="flex items-center justify-between"><span>Team Members</span><span>1 · 3 · Unlimited · Unlimited</span></div>
-                    <div class="flex items-center justify-between"><span>Assign Conversations</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
-                    <div class="flex items-center justify-between"><span>Internal Notes</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>Assign Conversations</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
+                    <div class="flex items-center justify-between"><span>Internal Notes</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
                 </div>
             </details>
 
             <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
                 <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
                     Contacts
-                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                    <span class="text-primary-ink group-open:rotate-180 transition dark:text-primary">⌄</span>
                 </summary>
                 <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
                     <div class="flex items-center justify-between"><span>Contact Limit</span><span>Unlimited · Unlimited · Unlimited · Unlimited</span></div>
-                    <div class="flex items-center justify-between"><span>Tags &amp; Labels</span><span><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
-                    <div class="flex items-center justify-between"><span>CRM Sync (Wix / Shopify)</span><span><span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
-                    <div class="flex items-center justify-between"><span>HubSpot / Pipedrive Sync</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · Add-on · Included · Included</span></div>
+                    <div class="flex items-center justify-between"><span>Tags &amp; Labels</span><span><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
+                    <div class="flex items-center justify-between"><span>CRM Sync (Wix / Shopify)</span><span><span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
+                    <div class="flex items-center justify-between"><span>HubSpot / Pipedrive Sync</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · Add-on · Included · Included</span></div>
                 </div>
             </details>
 
             <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
                 <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
                     Marketing
-                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                    <span class="text-primary-ink group-open:rotate-180 transition dark:text-primary">⌄</span>
                 </summary>
                 <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                    <div class="flex items-center justify-between"><span>Broadcast Campaigns</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · Unlimited · Unlimited · Unlimited</span></div>
-                    <div class="flex items-center justify-between"><span>Scheduled Campaigns</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>Broadcast Campaigns</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · Unlimited · Unlimited · Unlimited</span></div>
+                    <div class="flex items-center justify-between"><span>Scheduled Campaigns</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
                     <div class="flex items-center justify-between"><span>Campaign Analytics</span><span>— · Advanced · Advanced · Custom</span></div>
                 </div>
             </details>
@@ -729,20 +730,20 @@
             <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
                 <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
                     Automations
-                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                    <span class="text-primary-ink group-open:rotate-180 transition dark:text-primary">⌄</span>
                 </summary>
                 <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
                     <div class="flex items-center justify-between"><span>Active Workflows</span><span>3 · 20 · Unlimited · Unlimited</span></div>
-                    <div class="flex items-center justify-between"><span>Multi-Step Workflows</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · Custom</span></div>
-                    <div class="flex items-center justify-between"><span>Webhooks</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
-                    <div class="flex items-center justify-between"><span>API Access</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · Higher · Custom</span></div>
+                    <div class="flex items-center justify-between"><span>Multi-Step Workflows</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · Custom</span></div>
+                    <div class="flex items-center justify-between"><span>Webhooks</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
+                    <div class="flex items-center justify-between"><span>API Access</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · Higher · Custom</span></div>
                 </div>
             </details>
 
             <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
                 <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
                     AI Assistants
-                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                    <span class="text-primary-ink group-open:rotate-180 transition dark:text-primary">⌄</span>
                 </summary>
                 <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
                     <div class="flex items-center justify-between"><span>AI Agents</span><span>— · 1 · Unlimited · Custom</span></div>
@@ -753,25 +754,25 @@
             <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
                 <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
                     Templates &amp; Logs
-                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                    <span class="text-primary-ink group-open:rotate-180 transition dark:text-primary">⌄</span>
                 </summary>
                 <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
                     <div class="flex items-center justify-between"><span>WhatsApp Templates</span><span>Unlimited · Unlimited · Unlimited · Unlimited</span></div>
                     <div class="flex items-center justify-between"><span>SMS Templates</span><span>Unlimited · Unlimited · Unlimited · Unlimited</span></div>
                     <div class="flex items-center justify-between"><span>Message Retention</span><span>30d · 90d · 180d · Custom</span></div>
-                    <div class="flex items-center justify-between"><span>Export Logs</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>Export Logs</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
                 </div>
             </details>
 
             <details class="group bg-white dark:bg-slate-900 rounded-2xl p-5 shadow-sm">
                 <summary class="flex items-center justify-between cursor-pointer text-base font-semibold">
                     Developer Tools
-                    <span class="text-primary group-open:rotate-180 transition">⌄</span>
+                    <span class="text-primary-ink group-open:rotate-180 transition dark:text-primary">⌄</span>
                 </summary>
                 <div class="mt-4 space-y-3 text-sm text-gray-600 dark:text-gray-400">
-                    <div class="flex items-center justify-between"><span>Webhooks</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
-                    <div class="flex items-center justify-between"><span>Public API</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · Higher · Custom</span></div>
-                    <div class="flex items-center justify-between"><span>Sandbox Mode</span><span><span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-red-400 text-sm align-middle">cancel</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span> · <span class="material-symbols-outlined text-green-500 text-sm align-middle">check_circle</span></span></div>
+                    <div class="flex items-center justify-between"><span>Webhooks</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
+                    <div class="flex items-center justify-between"><span>Public API</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · Higher · Custom</span></div>
+                    <div class="flex items-center justify-between"><span>Sandbox Mode</span><span><span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-red-600 dark:text-red-400 text-sm align-middle">cancel</span><span class="sr-only">Not included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span> · <span aria-hidden="true" class="material-symbols-outlined text-green-700 dark:text-green-400 text-sm align-middle">check_circle</span><span class="sr-only">Included</span></span></div>
                 </div>
             </details>
         </div>
@@ -779,54 +780,54 @@
 
     <section class="max-w-5xl mx-auto px-6 pb-24" id="faq">
         <div class="text-center mb-12">
-            <p class="uppercase tracking-widest text-sm font-bold text-primary mb-4">FAQ</p>
+            <p class="uppercase tracking-widest text-sm font-bold text-primary-ink mb-4 dark:text-primary">FAQ</p>
             <h2 class="serif-text text-3xl sm:text-4xl md:text-5xl text-charcoal dark:text-white">Frequently Asked Questions</h2>
         </div>
         <div class="space-y-4">
             <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
-                <h4 class="text-lg font-semibold mb-3">How does Mercuri pricing work?</h4>
+                <h3 class="text-lg font-semibold mb-3">How does Mercuri pricing work?</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     Your total monthly cost includes a platform subscription (Free, Growth, Pro, or Enterprise), WhatsApp and SMS message charges, and $3/month per SMS phone number (if purchased). Total = Plan fee + Messages sent + Phone numbers.
                 </p>
             </div>
             <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
-                <h4 class="text-lg font-semibold mb-3">How is WhatsApp pricing calculated?</h4>
+                <h3 class="text-lg font-semibold mb-3">How is WhatsApp pricing calculated?</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     WhatsApp includes Meta’s conversation fee (varies by country and type) plus Mercuri’s platform fee of $0.025 per message. This applies to template messages, campaigns, automations, and AI replies.
                 </p>
             </div>
             <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
-                <h4 class="text-lg font-semibold mb-3">How is AI usage charged?</h4>
+                <h3 class="text-lg font-semibold mb-3">How is AI usage charged?</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     There are no AI limits. Each AI-generated reply is charged at $0.025 per message. AI continues working — you’re billed based on usage.
                 </p>
             </div>
             <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
-                <h4 class="text-lg font-semibold mb-3">How is SMS pricing calculated?</h4>
+                <h3 class="text-lg font-semibold mb-3">How is SMS pricing calculated?</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     SMS messages are charged per message based on destination country and carrier rates. Rates are visible in your dashboard before sending.
                 </p>
             </div>
             <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
-                <h4 class="text-lg font-semibold mb-3">Do I need to buy a phone number?</h4>
+                <h3 class="text-lg font-semibold mb-3">Do I need to buy a phone number?</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     SMS numbers cost $3 per month per number. WhatsApp does not require a monthly number rental.
                 </p>
             </div>
             <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
-                <h4 class="text-lg font-semibold mb-3">Can I use my existing WhatsApp Business number?</h4>
+                <h3 class="text-lg font-semibold mb-3">Can I use my existing WhatsApp Business number?</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     Yes. You can connect your existing WhatsApp Business number to the WhatsApp Business API through Meta approval.
                 </p>
             </div>
             <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
-                <h4 class="text-lg font-semibold mb-3">Are messages included in my subscription plan?</h4>
+                <h3 class="text-lg font-semibold mb-3">Are messages included in my subscription plan?</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     No. Your subscription gives you access to the platform features. Messaging is charged separately based on usage.
                 </p>
             </div>
             <div class="rounded-2xl bg-white dark:bg-slate-900 p-6 shadow-sm">
-                <h4 class="text-lg font-semibold mb-3">Are there any hidden fees or contracts?</h4>
+                <h3 class="text-lg font-semibold mb-3">Are there any hidden fees or contracts?</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">
                     No. There are no setup fees and no long-term contracts.
                 </p>
@@ -854,6 +855,7 @@
         </div>
     </section>
 
+</main>
     <div id="footer-placeholder"><!-- inline:footer -->
 <style>
     .site-footer .site-footer-grid {

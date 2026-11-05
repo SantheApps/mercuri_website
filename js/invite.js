@@ -13,7 +13,7 @@
   const INPUT = 'mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary';
   const LINK = 'font-semibold text-slate-600 dark:text-slate-300 hover:text-primary';
   const field = (name, label, attrs, optional) =>
-    `<label class="block"><span class="text-sm font-semibold text-charcoal dark:text-white">${label}${optional ? ' <span class="font-normal text-slate-500">(optional)</span>' : ''}</span>` +
+    `<label class="block"><span class="text-sm font-semibold text-charcoal dark:text-white">${label}${optional ? ' <span class="font-normal text-slate-500 dark:text-slate-400">(optional)</span>' : ''}</span>` +
     `<input name="${name}" ${attrs} class="${INPUT}"/></label>`;
 
   // Static markup only; visitor input is never written back into the page.
@@ -46,7 +46,7 @@
       fields:
         field('your_name', 'Your name', 'required maxlength="100" autocomplete="name"') +
         field('your_email', 'Your email', 'type="email" required maxlength="200" autocomplete="email"') +
-        '<p class="pt-4 text-sm font-bold uppercase tracking-[0.15em] text-slate-500">Who should we invite?</p>' +
+        '<p class="pt-4 text-sm font-bold uppercase tracking-[0.15em] text-slate-500 dark:text-slate-400">Who should we invite?</p>' +
         field('friend_name', 'Their name', 'required maxlength="100" autocomplete="off"') +
         field('friend_email', 'Their email', 'type="email" required maxlength="200" autocomplete="off"') +
         field('friend_website', 'Their business website', 'maxlength="200" inputmode="url" autocomplete="off" placeholder="theirbusiness.com"', true),
@@ -87,19 +87,19 @@
     const p = compact ? 'mt-3 text-slate-600 dark:text-slate-400' : 'mt-6 text-lg sm:text-xl text-slate-600 dark:text-slate-400 leading-relaxed';
     root.innerHTML =
       `<section data-view="form">` +
-      `<p class="text-xs font-bold uppercase tracking-[0.2em] text-primary ${compact ? 'mb-3' : 'mb-6'}">${k.kicker}</p>` +
+      `<p class="text-xs font-bold uppercase tracking-[0.2em] text-primary-ink dark:text-primary ${compact ? 'mb-3' : 'mb-6'}">${k.kicker}</p>` +
       `<${hn} id="${id}-title" class="${h} font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white">${k.title}</${hn}>` +
       `<p class="${p}">${k.intro}</p>` +
       `<form class="${compact ? 'mt-6' : 'mt-10'} space-y-5" novalidate>${k.fields}` +
       // Spam trap: real visitors never see or fill this.
       `<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" class="hidden" aria-hidden="true"/>` +
-      `<p data-error id="${id}-error" role="alert" class="text-sm text-red-600"></p>` +
+      `<p data-error id="${id}-error" role="alert" class="text-sm text-red-600 dark:text-red-400"></p>` +
       `<button class="inline-block bg-charcoal dark:bg-primary text-white dark:text-charcoal px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all disabled:opacity-60">${k.button}</button>` +
       k.extra +
-      `<p class="text-xs text-slate-500">${k.privacy} <a href="privacy.html" class="underline hover:text-primary">Privacy Policy</a></p>` +
+      `<p class="text-xs text-slate-500 dark:text-slate-400">${k.privacy} <a href="privacy.html" class="underline hover:text-primary">Privacy Policy</a></p>` +
       `</form></section>` +
       `<section data-view="thanks" hidden>` +
-      `<p class="text-xs font-bold uppercase tracking-[0.2em] text-primary ${compact ? 'mb-3' : 'mb-6'}">${k.thanksKicker}</p>` +
+      `<p class="text-xs font-bold uppercase tracking-[0.2em] text-primary-ink dark:text-primary ${compact ? 'mb-3' : 'mb-6'}">${k.thanksKicker}</p>` +
       `<${hn} id="${id}-thanks" tabindex="-1" class="${h} font-bold tracking-tight leading-[1.05] text-charcoal dark:text-white outline-none">${k.thanksTitle}</${hn}>` +
       `<p class="${p}">${k.thanksText}</p>` +
       (k.thanksExtra ? `<p class="mt-6 text-slate-500 dark:text-slate-400">${k.thanksExtra}</p>` : '') +

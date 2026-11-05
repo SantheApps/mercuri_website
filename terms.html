@@ -73,13 +73,13 @@
         Mercuri
       </a>
       <div class="hidden md:flex flex-1 items-center justify-center gap-1 text-[15px] font-medium text-ink">
-        <a href="index.html#features" class="hover:bg-band rounded-md px-3 py-1.5">Features</a>
-        <a href="index.html#platform" class="hover:bg-band rounded-md px-3 py-1.5">AI Agents</a>
-        <a href="index.html#reviews" class="hover:bg-band rounded-md px-3 py-1.5">Reviews</a>
-        <a href="index.html#pricing" class="hover:bg-band rounded-md px-3 py-1.5">Pricing</a>
+        <a href="features.html" class="hover:bg-band rounded-md px-3 py-1.5">Features</a>
+        <a href="ai.html" class="hover:bg-band rounded-md px-3 py-1.5">AI Employee</a>
+        <a href="index.html" class="hover:bg-band rounded-md px-3 py-1.5">Reviews</a>
+        <a href="pricing.html" class="hover:bg-band rounded-md px-3 py-1.5">Pricing</a>
       </div>
       <div class="ml-auto md:ml-0 flex items-center gap-2">
-        <a href="https://client.mercuri.cx/auth/signin" class="hidden sm:block text-[15px] font-medium text-ink hover:bg-band rounded-md px-3 py-1.5">Log in</a>
+        <a href="https://client.mercuri.cx/auth/signin" class="hidden sm:block text-[15px] font-medium text-ink hover:bg-band rounded-md px-3 py-1.5">Sign in</a>
         <a class="rounded-lg bg-blue text-white text-[15px] font-medium px-4 py-2 hover:bg-blue-dark transition-colors" href="invite.html">Request an invite</a>
       </div>
     </nav>
@@ -191,8 +191,8 @@
     <div class="mx-auto max-w-6xl px-5 py-10 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
       <p class="flex items-center gap-2 font-bold text-ink"><img src="assets/images/mercuri-logo-192px.png" alt="" class="w-5 h-5"> Mercuri</p>
       <div class="flex gap-6">
-        <a href="index.html#features" class="hover:text-ink">Features</a>
-        <a href="index.html#platform" class="hover:text-ink">AI Agents</a>
+        <a href="features.html" class="hover:text-ink">Features</a>
+        <a href="ai.html" class="hover:text-ink">AI Employee</a>
         <a href="privacy.html" class="hover:text-ink">Privacy</a>
         <a href="terms.html" class="hover:text-ink">Terms</a>
       </div>
@@ -207,27 +207,6 @@
       { threshold: 0.15 }
     );
     document.querySelectorAll('.rise').forEach((el) => io.observe(el));
-
-    // Rotating hero word, Notion-style
-    const words = [
-      { w: 'full classes',     bg: '#ffdec4', dot: '#f76808' },
-      { w: 'filled waitlists', bg: '#eaddfb', dot: '#9065f0' },
-      { w: 'repeat members',   bg: '#c9e7e2', dot: '#2f8378' },
-    ];
-    let wi = 0;
-    const pill = document.getElementById('hero-pill');
-    const dot = document.getElementById('hero-dot');
-    const word = document.getElementById('hero-word');
-    setInterval(() => {
-      pill.style.opacity = 0;
-      setTimeout(() => {
-        wi = (wi + 1) % words.length;
-        word.textContent = words[wi].w;
-        pill.style.background = words[wi].bg;
-        dot.style.background = words[wi].dot;
-        pill.style.opacity = 1;
-      }, 300);
-    }, 2800);
   </script>
 </body>
 </html>
