@@ -8,7 +8,6 @@
   const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSemJhyuR-aGdsor1hketm9eA4CFLm1tqCvplF4R20I2xS20yA/formResponse';
   const ENTRY = { name: 'entry.2145389757', email: 'entry.594021018', website: 'entry.185254587', phone: 'entry.722295103' };
   const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const DEMO = 'https://calendly.com/karthikmanjunath/30min';
 
   const INPUT = 'mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary';
   const LINK = 'font-semibold text-slate-600 dark:text-slate-300 hover:text-primary';
@@ -28,16 +27,15 @@
         field('website', 'Website or Instagram', 'required maxlength="200" autocomplete="url" placeholder="yourstudio.com or @yourstudio"') +
         field('phone', 'Phone or WhatsApp', 'type="tel" maxlength="40" autocomplete="tel"', true),
       button: 'Request an invite',
-      extra: `<p class="text-sm text-slate-500 dark:text-slate-400">Prefer to talk first? <a class="${LINK}" href="${DEMO}" target="_blank">Book a demo →</a></p>`,
       privacy: "We'll only use your details to get in touch about Mercuri.",
       check: (v) => !v('name') ? ['name', 'Enter your name.'] : !EMAIL.test(v('email')) ? ['email', 'Enter a valid email.']
         : !v('website') ? ['website', 'Enter your website or Instagram handle.'] : null,
       fields2google: (v) => ({ name: v('name'), email: v('email'), website: v('website'), phone: v('phone') || '—' }),
       lead: 'invite_request',
+      extra: '',
       thanksKicker: 'Request received',
       thanksTitle: "You're on the list",
       thanksText: "Thanks! We'll review your business and email you when your spot is ready, usually within a week.",
-      thanksExtra: `Can't wait? <a class="${LINK}" href="${DEMO}" target="_blank">Book a demo →</a>`,
     },
     friend: {
       kicker: 'For Mercuri customers',
@@ -137,7 +135,7 @@
         root.querySelector(`#${id}-thanks`).focus();
         if (!compact) window.scrollTo(0, 0);
         if (window.gtag) gtag('event', 'generate_lead', { method: k.lead, ...attribution() });
-        if (window.fbq) fbq('track', 'Lead');
+        if (window.fbq && k.lead === 'invite_request') fbq('track', 'Lead', { content_name: 'Request an invite' });
       } catch {
         const mail = `mailto:karthik@mercuri.cx?subject=${encodeURIComponent(k.title)}&body=${encodeURIComponent(Object.values(fields).join('\n'))}`;
         err.replaceChildren('Something went wrong sending this. ', Object.assign(document.createElement('a'), { href: mail, className: 'underline font-semibold', textContent: 'Email us instead' }), '.');
