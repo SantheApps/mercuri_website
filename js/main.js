@@ -299,20 +299,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// "Request an invite" / "Invite a friend" open as a pop-up (js/invite.js, loaded on first click).
+// "Request an invite" / "Invite a friend" open as a pop-up (js/invite.js, loaded on first use).
 // The links still work as plain pages without JS, with modifier keys, and on the invite pages themselves.
-document.addEventListener('click', function (e) {
-    const a = e.target.closest && e.target.closest('a[href*="invite.html"], a[href*="invite-a-friend.html"]');
-    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-    if (/invite(-a-friend)?\.html$/.test(location.pathname)) return;
-    e.preventDefault();
-    const kind = a.getAttribute('href').includes('invite-a-friend.html') ? 'friend' : 'invite';
+const onInvitePage = /invite(-a-friend)?\.html$/.test(location.pathname);
+function openInvite(kind) {
     if (window.MercuriInvite) return window.MercuriInvite.open(kind);
     const s = document.createElement('script');
     s.src = 'js/invite.js';
     s.onload = function () { window.MercuriInvite.open(kind); };
     document.head.appendChild(s);
+}
+document.addEventListener('click', function (e) {
+    const a = e.target.closest && e.target.closest('a[href*="invite.html"], a[href*="invite-a-friend.html"]');
+    if (!a || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    if (onInvitePage) return;
+    e.preventDefault();
+    openInvite(a.getAttribute('href').includes('invite-a-friend.html') ? 'friend' : 'invite');
 });
+// Ad links: any page + ?invite=1 opens the Request an invite pop-up on arrival (e.g. mercuri.cx/?invite=1).
+if (!onInvitePage && new URLSearchParams(location.search).get('invite') === '1') openInvite('invite');
 
 // Hero phone: replays the booking conversation while it is on screen. Each element shows from step
 // data-show onwards, or only at step data-only (typing dots). No JS or reduced motion keeps the finished thread.
