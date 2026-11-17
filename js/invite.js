@@ -6,7 +6,9 @@
   // ponytail: no-cors means we can't read Google's reply, so success = the request left the browser. Every field is
   // required on the Google side, so blanks are sent as '—'. If the form's questions change, update these IDs.
   const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSemJhyuR-aGdsor1hketm9eA4CFLm1tqCvplF4R20I2xS20yA/formResponse';
-  const ENTRY = { name: 'entry.2145389757', email: 'entry.594021018', website: 'entry.185254587', phone: 'entry.722295103' };
+  // tracking: optional "Tracking" question read by the form's Apps Script, which sends the server-side Meta Lead
+  // (scripts/meta-capi-lead.gs). Fields with an empty ID are not sent, so leave it '' until the question exists.
+  const ENTRY = { name: 'entry.2145389757', email: 'entry.594021018', website: 'entry.185254587', phone: 'entry.722295103', tracking: '' };
   const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const INPUT = 'mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary';
@@ -75,6 +77,14 @@
     return Object.fromEntries(ATTRIBUTION.filter((key) => q.get(key)).map((key) => [key, q.get(key)]));
   };
 
+  const cookie = (name) => (document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)')) || [])[1] || '';
+  // Meta's click ID: the _fbc cookie, or built from ?fbclid= when the pixel is blocked and never set the cookie.
+  const fbc = () => {
+    const clickId = new URLSearchParams(location.search).get('fbclid');
+    return cookie('_fbc') || (clickId ? `fb.1.${Date.now()}.${clickId}` : '');
+  };
+  const newEventId = () => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`);
+
   let uid = 0;
   // Renders the form into `root`. `compact` = pop-up sizing; the pop-up uses h2 so the page keeps a single h1.
   function mount(root, kind, compact) {
@@ -124,18 +134,22 @@
       btn.disabled = true;
       btn.textContent = 'Sending…';
       const fields = k.fields2google(v);
+      // One ID for the browser Lead and the form's server-side Lead, so Meta counts them once.
+      const eventId = newEventId();
+      const isLead = k.lead === 'invite_request';
+      if (isLead) fields.tracking = JSON.stringify({ event_id: eventId, email: v('email'), fbp: cookie('_fbp'), fbc: fbc(), url: location.href, ua: navigator.userAgent });
       try {
         if (f.get('botcheck')) throw new Error('bot');
         // A hung request falls through to the email fallback instead of leaving "Sending…" up forever.
         const signal = AbortSignal.timeout ? AbortSignal.timeout(15000) : undefined;
-        await fetch(FORM, { method: 'POST', mode: 'no-cors', signal, body: new URLSearchParams(Object.entries(fields).map(([key, val]) => [ENTRY[key], val])) });
+        await fetch(FORM, { method: 'POST', mode: 'no-cors', signal, body: new URLSearchParams(Object.entries(fields).filter(([key]) => ENTRY[key]).map(([key, val]) => [ENTRY[key], val])) });
         root.querySelector('[data-view="form"]').hidden = true;
         root.querySelector('[data-view="thanks"]').hidden = false;
         root.closest('dialog')?.setAttribute('aria-labelledby', `${id}-thanks`);
         root.querySelector(`#${id}-thanks`).focus();
         if (!compact) window.scrollTo(0, 0);
         if (window.gtag) gtag('event', 'generate_lead', { method: k.lead, ...attribution() });
-        if (window.fbq && k.lead === 'invite_request') fbq('track', 'Lead', { content_name: 'Request an invite' });
+        if (window.fbq && isLead) fbq('track', 'Lead', { content_name: 'Request an invite' }, { eventID: eventId });
       } catch {
         const mail = `mailto:karthik@mercuri.cx?subject=${encodeURIComponent(k.title)}&body=${encodeURIComponent(Object.values(fields).join('\n'))}`;
         err.replaceChildren('Something went wrong sending this. ', Object.assign(document.createElement('a'), { href: mail, className: 'underline font-semibold', textContent: 'Email us instead' }), '.');
