@@ -7,7 +7,10 @@
 //   2. Paste this file into the Apps Script editor and save.
 //   3. Project Settings > Script properties: META_TOKEN = Conversions API token
 //      (Events Manager > pixel 1625917745253902 > Settings > Conversions API > Generate access token).
-//      Optional while testing: META_TEST_CODE = the code from Events Manager > Test events.
+//      Then exactly one of:
+//        META_CAPI_ENABLED = true            live events (set it only on the real form, nowhere else), or
+//        META_TEST_EVENT_CODE = <test code>  events show only under Events Manager > Test events.
+//      With neither set, nothing is sent. With both, events carry the test code.
 //   4. Triggers > Add trigger: sendLeadToMeta, From form, On form submit. Approve the permissions prompt.
 // Only submissions with a "Tracking" answer are sent: the site fills it for Request an invite only,
 // so Invite a friend (existing customers) never becomes a Lead.
@@ -15,6 +18,8 @@
 const PIXEL_ID = '1625917745253902';
 // ponytail: pinned Graph API version; Meta retires each about two years after release, bump it then.
 const GRAPH = 'https://graph.facebook.com/v23.0/';
+// Only pages on the live site. Apps Script has no URL class, so match the scheme + host exactly.
+const SITE_URL = /^https:\/\/(www\.)?mercuri\.cx(\/|\?|#|$)/;
 
 function sendLeadToMeta(e) {
   const tracking = e.response.getItemResponses().find((r) => r.getItem().getTitle() === 'Tracking');
@@ -22,8 +27,13 @@ function sendLeadToMeta(e) {
   let t;
   try { t = JSON.parse(tracking.getResponse()); } catch (err) { return console.warn('Tracking answer is not JSON'); }
   if (!t.event_id || !t.email) return;
+  // Second safety check: localhost, 127.0.0.1, previews and staging copies never reach Meta.
+  if (!SITE_URL.test(t.url || '')) return console.warn('Skipped: page is not on mercuri.cx (' + t.url + ')');
 
   const props = PropertiesService.getScriptProperties();
+  const live = props.getProperty('META_CAPI_ENABLED') === 'true';
+  const testCode = props.getProperty('META_TEST_EVENT_CODE');
+  if (!live && !testCode) return console.warn('Skipped: set META_CAPI_ENABLED=true (live) or META_TEST_EVENT_CODE (test)');
   const token = props.getProperty('META_TOKEN');
   if (!token) return console.error('META_TOKEN script property is missing');
 
@@ -43,7 +53,6 @@ function sendLeadToMeta(e) {
       custom_data: { content_name: 'Request an invite' },
     }],
   };
-  const testCode = props.getProperty('META_TEST_CODE');
   if (testCode) body.test_event_code = testCode;
 
   const res = UrlFetchApp.fetch(GRAPH + PIXEL_ID + '/events?access_token=' + encodeURIComponent(token), {

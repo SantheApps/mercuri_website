@@ -1,7 +1,9 @@
 // Load components when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     const initMetaPixel = () => {
-        if (window.fbq) return;
+        // Production only. Meta's Conversions API Gateway forwards these browser events to Meta as server
+        // events, so a pixel running on localhost, 127.0.0.1 or a preview copy logs real Leads (19 Nov).
+        if (window.fbq || !['mercuri.cx', 'www.mercuri.cx'].includes(location.hostname)) return;
 
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
