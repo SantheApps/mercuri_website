@@ -8,7 +8,9 @@
   const FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSemJhyuR-aGdsor1hketm9eA4CFLm1tqCvplF4R20I2xS20yA/formResponse';
   // tracking: optional "Tracking" question read by the form's Apps Script, which sends the server-side Meta Lead
   // (scripts/meta-capi-lead.gs). Fields with an empty ID are not sent, so leave it '' until the question exists.
-  const ENTRY = { name: 'entry.2145389757', email: 'entry.594021018', website: 'entry.185254587', phone: 'entry.722295103', tracking: '' };
+  const ENTRY = { name: 'entry.2145389757', email: 'entry.594021018', website: 'entry.185254587', phone: 'entry.722295103', tracking: '',
+    // First-touch attribution (stored by js/main.js), Request an invite only. Same rule: '' until the question exists.
+    utm_source: '', utm_medium: '', utm_campaign: '', utm_content: '', utm_term: '', fbclid: '', landing_page: '' };
   const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const INPUT = 'mt-2 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 px-4 py-3 focus:border-primary focus:ring-primary';
@@ -83,6 +85,7 @@
     const clickId = new URLSearchParams(location.search).get('fbclid');
     return cookie('_fbc') || (clickId ? `fb.1.${Date.now()}.${clickId}` : '');
   };
+  const firstTouch = () => { try { return JSON.parse(sessionStorage.getItem('mercuri_first_touch')) || {}; } catch (e) { return {}; } };
   const newEventId = () => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`);
 
   let uid = 0;
@@ -137,6 +140,7 @@
       // One ID for the browser Lead and the form's server-side Lead, so Meta counts them once.
       const eventId = newEventId();
       const isLead = k.lead === 'invite_request';
+      if (isLead) Object.assign(fields, firstTouch());
       if (isLead) fields.tracking = JSON.stringify({ event_id: eventId, email: v('email'), fbp: cookie('_fbp'), fbc: fbc(), url: location.href, ua: navigator.userAgent });
       try {
         if (f.get('botcheck')) throw new Error('bot');

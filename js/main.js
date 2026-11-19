@@ -316,8 +316,23 @@ document.addEventListener('click', function (e) {
     e.preventDefault();
     openInvite(a.getAttribute('href').includes('invite-a-friend.html') ? 'friend' : 'invite');
 });
-// Ad links: any page + ?invite=1 opens the Request an invite pop-up on arrival (e.g. mercuri.cx/?invite=1).
-if (!onInvitePage && new URLSearchParams(location.search).get('invite') === '1') openInvite('invite');
+// Ad links: any page + ?invite=1 or #invite opens the Request an invite pop-up on arrival (e.g. mercuri.cx/?invite=1).
+// Opening never fires a Lead; that happens only after a successful submit (js/invite.js).
+if (!onInvitePage && (new URLSearchParams(location.search).get('invite') === '1' || location.hash === '#invite')) openInvite('invite');
+
+// First-touch attribution, sent with Request an invite (js/invite.js). Stored once per tab on the first page
+// viewed, so moving between pages before opening the pop-up keeps the ad's values; later pages never overwrite it.
+(function () {
+    try {
+        if (sessionStorage.getItem('mercuri_first_touch')) return;
+        const q = new URLSearchParams(location.search);
+        const touch = { landing_page: location.href };
+        ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid'].forEach(function (k) {
+            if (q.get(k)) touch[k] = q.get(k);
+        });
+        sessionStorage.setItem('mercuri_first_touch', JSON.stringify(touch));
+    } catch (e) {} // storage blocked (private mode, settings): the form still sends, without attribution
+})();
 
 // Hero phone: replays the booking conversation while it is on screen. Each element shows from step
 // data-show onwards, or only at step data-only (typing dots). No JS or reduced motion keeps the finished thread.
