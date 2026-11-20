@@ -103,7 +103,7 @@
   ]
 }
   </script>
-  <link href="css/tailwind.css?v=20261119a" rel="stylesheet"/>
+  <link href="css/tailwind.css?v=20261120a" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com" rel="preconnect">
    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&amp;display=swap" rel="stylesheet"/>
@@ -130,7 +130,7 @@
   <!-- Header Component -->
   <div id="header-placeholder"><!-- inline:header -->
 <div class="bg-charcoal text-white dark:bg-slate-900 py-2 text-center text-xs font-medium tracking-wide">
-    New: Mercuri for yoga studios. <a class="underline hover:text-primary transition-colors" href="ai-receptionist-yoga-studios.html">See how it works →</a>
+    New: Mercuri for Wix Bookings. <a class="underline hover:text-primary transition-colors" href="wix-bookings.html">See how it works →</a>
 </div>
 <nav class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-100 dark:border-slate-800">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -141,6 +141,16 @@
             </a>
             <div class="hidden md:flex items-center gap-6 whitespace-nowrap text-sm font-medium text-gray-600 dark:text-gray-400">
                 <a class="hover:text-primary transition-colors" href="how-it-works.html">How it works</a>
+                <!-- ponytail: CSS-only dropdown (hover + focus-within); add JS aria-expanded if it grows past a few links -->
+                <div class="relative group">
+                    <button type="button" class="inline-flex items-center gap-0.5 hover:text-primary transition-colors" aria-haspopup="true">Integrations<span aria-hidden="true" class="material-icons-outlined text-base">expand_more</span></button>
+                    <div class="absolute left-0 top-full pt-3 hidden group-hover:block group-focus-within:block">
+                        <div class="w-72 whitespace-normal rounded-xl border border-gray-100 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-lg p-2">
+                            <a class="block rounded-lg px-3 py-2 hover:bg-gray-50 dark:hover:bg-slate-800" href="wix-bookings.html"><span class="block font-semibold text-charcoal dark:text-white">Wix Bookings</span><span class="block text-xs text-gray-500 dark:text-gray-400">Confirmations and reminders for every booking</span></a>
+                            <a class="block rounded-lg px-3 py-2 hover:bg-gray-50 dark:hover:bg-slate-800 text-gray-600 dark:text-gray-400" href="how-it-works.html#integrations">All integrations →</a>
+                        </div>
+                    </div>
+                </div>
                 <a class="hover:text-primary transition-colors" href="pricing.html">Pricing</a>
             </div>
         </div>
@@ -165,6 +175,9 @@
         </div>
         <nav class="flex flex-col gap-4 text-sm font-medium text-gray-700 dark:text-gray-300">
             <a class="hover:text-primary transition-colors" href="how-it-works.html">How it works</a>
+            <span class="text-xs font-bold uppercase tracking-wider text-gray-400">Integrations</span>
+            <a class="pl-3 -mt-2 hover:text-primary transition-colors" href="wix-bookings.html">Wix Bookings</a>
+            <a class="pl-3 -mt-2 hover:text-primary transition-colors" href="how-it-works.html#integrations">All integrations</a>
             <a class="hover:text-primary transition-colors" href="pricing.html">Pricing</a>
         </nav>
         <div class="h-px bg-gray-200 dark:bg-slate-700"></div>
