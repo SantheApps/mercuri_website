@@ -187,7 +187,7 @@ For contributions or issues, please contact the Mercuri team.
 ## 📞 Contact
 
 - Website: [mercuri.cx](https://mercuri.cx)
-- Support: support@mercuri.cx
+- Support: karthik@mercuri.cx
 
 ---
 
